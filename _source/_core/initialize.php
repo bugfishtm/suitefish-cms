@@ -516,6 +516,7 @@
 	#################################################################################################################################################
 		$object["debug"] 		= 	new x_class_debug();
 			$object["debug"]->js_error_create_db($object["mysql"], _TABLE_LOG_JS_);
+			$object["debug"]->required_php_module("mysqli", true); 
 		$object["eventbox"] 	= 	new x_class_eventbox(_HIVE_SITE_COOKIE_);
 		$object["curl"] 		= 	new x_class_curl();	
 		$object["crypt"] 		= 	new x_class_crypt();	
@@ -644,7 +645,7 @@
 	#################################################################################################################################################
 	// Default User Setup
 	#################################################################################################################################################	
-		if(!defined("_USER_MULTI_LOGIN_")) 		{ define("_USER_MULTI_LOGIN_", false); }
+		if(!defined("_USER_MULTI_LOGIN_")) 		{ define("_USER_MULTI_LOGIN_", true); }
 		if(!defined("_USER_REC_DROP_")) 		{ define("_USER_REC_DROP_", true); }
 		if(!defined("_USER_MAX_SESSION_")) 		{ define("_USER_MAX_SESSION_", 7); }
 		if(!defined("_USER_TOKEN_TIME_")) 		{ define("_USER_TOKEN_TIME_", 600); }

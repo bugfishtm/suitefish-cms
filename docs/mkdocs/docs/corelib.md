@@ -1,6 +1,11 @@
 # Core Library
 The current page demonstrates the core functionalities of the CMS system, showcasing essential features such as content creation, editing, and organization. It highlights tools for managing digital assets, user roles, and permissions, allowing users to efficiently control and customize the website's content. This page serves as a practical overview of how the CMS enables streamlined content management, workflow automation, and publishing capabilities.
 
+## Status Check
+
+| Function | Description | Parameters |
+|----------|-------------|------------|
+| `hive__is_main($object)` | Checks if the current Viewed Site Module mode is the Administrator Page (Main Site) - True if yes, False if no. |
 
 ## URL Builder
 

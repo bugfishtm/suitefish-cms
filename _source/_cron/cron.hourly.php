@@ -40,6 +40,18 @@
 		
 		// Scan Site Folder for Available Modules
 		$scan = scandir($object["path"]."/_site/");
+				
+		// Loop through and remove files
+		foreach ($scan as $key => $item) {
+			if (!is_dir($item) || $item === '.' || $item === '..') {
+				unset($scan[$key]); // Remove files and "." or ".." entries
+			}
+		}
+
+		// Re-index the array (optional)
+		$scan = array_values($scan);
+		
+		// Variables Set
 		define("_HIVE_CRON_INIT_SCAN_", $scan);
 		unset($scan);
 		

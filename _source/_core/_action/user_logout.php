@@ -44,7 +44,7 @@
 	}
 	
 	session_destroy();
-	
+	$object["user"]->logout();
 	function removeAllCookies() {
 		if (isset($_SERVER['HTTP_COOKIE'])) {
 			$cookies = explode(';', $_SERVER['HTTP_COOKIE']);

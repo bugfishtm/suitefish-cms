@@ -127,7 +127,7 @@
 		}
 		
 		// Check for Activation of New Mail
-		if($_GET["mai_token"] AND $_GET["mai_user"]) { 
+		if(@$_GET["mai_token"] AND @$_GET["mai_user"]) { 
 			$mail_change_with_token = true;
 			$return = hive__template_mail_activate($object, "mai_token", "mai_user", false, false );
 			if($return == 1) { $text = $object["lang"]->translate("hive_login_msg_m_ok"); }

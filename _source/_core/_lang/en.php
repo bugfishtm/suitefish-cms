@@ -13,6 +13,9 @@
 # Here you can enter translations for DE (German) like below!
 # New Translation options should be applied to this sites config.php _HIVE_LANG_ARRAY_
 # This files are public visible! You can use Database Mode if you want your translations hidden. ?>
+##########################################################################################
+## Backend Default Language Overrides for Login Scripts
+##########################################################################################
 
 # Strings - General
 string_email=E-Mail
@@ -50,6 +53,7 @@ hive_login_msg_l_disabled=Your user account has been disabled!
 hive_login_mail_serror=Error while trying to send E-Mail. This is an internal error that needs to be investigated and should be reported to our website's staff.
 hive_login_msg_register_ok=Please check your E-Mail inbox to activate your new account!
 hive_login_msg_passfiltererror=The entered password does not meet the password rules!
+hive_login_msg_mailexist=You are trying to register an account with an E-Mail that already exists!
 login_password_rules=Password Rules
 login_password_sign=Required Characters:
 login_password_cap=Required Capital Letters:

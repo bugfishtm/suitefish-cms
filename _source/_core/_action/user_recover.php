@@ -107,7 +107,7 @@
 		$show_error = false;
 		$object["csrf"] = new x_class_csrf(_HIVE_SITE_COOKIE_."__login_csrf");
 	
-		if($_GET["rec_token"] AND $_GET["rec_user"]) {
+		if(@$_GET["rec_token"] AND @$_GET["rec_user"]) {
 			$formext = "?rec_token=".htmlentities($_GET["rec_token"] ?? '')."&rec_user=".htmlentities($_GET["rec_user"] ?? '')."";
 			$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 			if($object["user"]->recover_token_valid($_GET["rec_user"], $_GET["rec_token"])) {
@@ -240,7 +240,7 @@
 								<input type="hidden" name="resetbutton" value="1">
                                 <!-- End of Form -->
                                 <div class="form-group">
-									<?php if($_GET["rec_token"] AND $_GET["rec_user"]) { ?>
+									<?php if(@$_GET["rec_token"] AND @$_GET["rec_user"]) { ?>
                                     <!-- Form -->
 									<b><?php echo $object["lang"]->translate("login_password_rules"); ?></b>
 									<ul>

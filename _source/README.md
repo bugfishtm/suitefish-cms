@@ -1,4 +1,4 @@
-# Source Directory
+📁 **Website Source Code**
 
 Welcome to the Root Directory of your website! This folder contains the complete website code that should be uploaded to your web server to make your website operational.
 
@@ -6,4 +6,5 @@ Upon deploying this website code to your web server, MySQL tables will be instal
 
 Developers are advised to visit our documentation at https://bugfishtm.github.io/bugfish-cms
 
-Happy coding! 🚀
+Happy coding and have a great one!   
+🐟 Bugfish <3  

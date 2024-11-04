@@ -471,10 +471,7 @@ We have an example template image module for developers in our github repository
 |_administrator| Integrated Feature Rich Administrator Module|
 |_adminbsbdocs| Documentation for AdminBSB Dashboard|
 |_frameworkdocs|Documentation for Bugfish Framework|
-|_lab| Auto-Redirect to Token Switch Page |
 |_simpletheme| Simple Theme Showcase Demo|
-|_software| Software Distribution Module we have running at software.bugfish.eu|
-|_storepage| CMS Distribution Module we have running at store.bugfish.eu|
 |_voltdocs| Volt Dashboard Theme Documentation |
 |_volttheme|Volt Theme Showcase Module|
 |_windmilldocs| Windmill Theme Showcase Module|

@@ -112,29 +112,31 @@
 				if(hive__trim(@$_POST["password"]) != "") { 
 					if(hive__trim(@$_POST["password_confirm"]) != "") { 
 						if($object["user"]->passfilter_check(@$_POST["password"])) { 
-							if(@$_POST["password_confirm"] == @$_POST["password"]) { 
-								$return = $object["user"]->addUser($_POST["usermail"], $_POST["usermail"], $_POST["password"]);
-								if($return) { 
-									$bind = array();
-									$bind[0]["value"] = hive__trim($_POST["usermail"]);
-									$bind[0]["value"] = strtolower($bind[0]["value"]);
-									$newuser = $object["mysql"]->select("SELECT * FROM "._TABLE_USER_." WHERE LOWER(user_mail) = ?", false, $bind);
-									if(is_array($newuser)) {
-										$return = $object["user"]->activation_request($bind[0]["value"]);
-										if($return) {
-											$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-											if($object["mail"]->send($_POST["usermail"], $_POST["usermail"], $object["lang"]->translate("hive_login_mail_title_register"), $object["lang"]->translate("hive_login_mail_pre_register")."<br /><a href='".$current_url."/_core/_action/user_activate.php?act_token=".$object["user"]->mail_ref_token."&act_user=".$object["user"]->mail_ref_user."'>".$current_url."/_core/_action/user_activate.php?act_token=".$object["user"]->mail_ref_token."&act_user=".$object["user"]->mail_ref_user."</a>", true, _SMTP_MAILS_FOOTER_, _SMTP_MAILS_HEADER_, false))
-											{ $object["eventbox"]->ok($object["lang"]->translate("hive_login_msg_register_ok")); } else { $object["eventbox"]->error($object["lang"]->translate("hive_login_mail_serror")); }
-										} else { 
+							if(!$object["user"]->mailExists(@$_POST["usermail"])) { 
+								if(@$_POST["password_confirm"] == @$_POST["password"]) { 
+									$return = $object["user"]->addUser($_POST["usermail"], $_POST["usermail"], $_POST["password"]);
+									if($return) { 
+										$bind = array();
+										$bind[0]["value"] = hive__trim($_POST["usermail"]);
+										$bind[0]["value"] = strtolower($bind[0]["value"]);
+										$newuser = $object["mysql"]->select("SELECT * FROM "._TABLE_USER_." WHERE LOWER(user_mail) = ?", false, $bind);
+										if(is_array($newuser)) {
+											$return = $object["user"]->activation_request($bind[0]["value"]);
+											if($return) {
+												$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+												if($object["mail"]->send($_POST["usermail"], $_POST["usermail"], $object["lang"]->translate("hive_login_mail_title_register"), $object["lang"]->translate("hive_login_mail_pre_register")."<br /><a href='".$current_url."/_core/_action/user_activate.php?act_token=".$object["user"]->mail_ref_token."&act_user=".$object["user"]->mail_ref_user."'>".$current_url."/_core/_action/user_activate.php?act_token=".$object["user"]->mail_ref_token."&act_user=".$object["user"]->mail_ref_user."</a>", true, _SMTP_MAILS_FOOTER_, _SMTP_MAILS_HEADER_, false))
+												{ $object["eventbox"]->ok($object["lang"]->translate("hive_login_msg_register_ok")); } else { $object["eventbox"]->error($object["lang"]->translate("hive_login_mail_serror")); }
+											} else { 
+												$object["eventbox"]->error($object["lang"]->translate("hive_login_msg_m_noadr"));
+											}
+										} else {
 											$object["eventbox"]->error($object["lang"]->translate("hive_login_msg_m_noadr"));
 										}
 									} else {
 										$object["eventbox"]->error($object["lang"]->translate("hive_login_msg_m_noadr"));
 									}
-								} else {
-									$object["eventbox"]->error($object["lang"]->translate("hive_login_msg_m_noadr"));
-								}
-							} else { $object["eventbox"]->error($object["lang"]->translate("hive_login_msg_nomatchpass")); }
+								} else { $object["eventbox"]->error($object["lang"]->translate("hive_login_msg_nomatchpass")); }
+							} else { $object["eventbox"]->error($object["lang"]->translate("hive_login_msg_mailexist")); }
 						} else { $object["eventbox"]->error($object["lang"]->translate("hive_login_msg_passfiltererror")); }
 					} else { $object["eventbox"]->error($object["lang"]->translate("hive_login_msg_empty")); }
 				} else { $object["eventbox"]->error($object["lang"]->translate("hive_login_msg_empty")); }

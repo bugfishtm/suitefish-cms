@@ -35,6 +35,31 @@
 			} else { return false; }}
 
 	#################################################################################################################################################
+	// Check for another Active Main Instance
+	#################################################################################################################################################	
+		function hive__is_main($object) {
+			// Check is Mode is Set
+			if(!defined("_HIVE_MODE_")) { return false; }
+			// Check for Apache Set Site Mod
+			if(@getenv("_HIVE_MODE_ENV_OVR_")) {
+				if(@getenv("_HIVE_MODE_ENV_OVR_") == _HIVE_MODE_) {
+					return true;
+				}
+			} 
+			// If Admin Page Site is Set than Check if current Site is Admin Site
+			if(_HIVE_ADMIN_SITE_) {
+				if(_HIVE_ADMIN_SITE_ == _HIVE_MODE_) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			// Return True if Nothing Found in out simple logic
+			return true;
+		}
+	
+	
+	#################################################################################################################################################
 	// Check for Local or Remote Global Permissions (OR PERMISSION CHECK)
 	#################################################################################################################################################
 		function hive__access($object, $rights_local, $global_search = false) {
@@ -79,6 +104,7 @@
 			if(is_numeric($user_id) AND @in_array(@$theme_name, _HIVE_LANG_ARRAY_)) {
 				$x = $object["user"]->get($user_id);
 				$tmp = @unserialize($x["hive_extradata"]);
+				if(!is_array($tmp)) { $tmp = array(); }
 				$tmp[$mode]["lang"] = $theme_name;
 				$tmp = serialize($tmp);
 				$bind[0]["value"] = $tmp;
@@ -91,6 +117,7 @@
 			if(is_numeric($user_id) AND @in_array(@$theme_name, _HIVE_THEME_ARRAY_)) {
 				$x = $object["user"]->get($user_id);
 				$tmp = @unserialize($x["hive_extradata"]);
+				if(!is_array($tmp)) { $tmp = array(); }
 				$tmp[$mode]["theme"] = $theme_name;
 				$tmp = serialize($tmp);
 				$bind[0]["value"] = $tmp;
@@ -103,6 +130,7 @@
 			if(is_numeric($user_id)) {
 				$x = $object["user"]->get($user_id);
 				$tmp = @unserialize($x["hive_extradata"]);
+				if(!is_array($tmp)) { $tmp = array(); }
 				$tmp[$mode]["theme_sub"] = $theme_name;
 				$tmp = serialize($tmp);
 				$bind[0]["value"] = $tmp;
@@ -115,6 +143,7 @@
 			if(is_numeric($user_id)) {
 				$x = $object["user"]->get($user_id);
 				$tmp = @unserialize($x["hive_extradata"]);
+				if(!is_array($tmp)) { $tmp = array(); }
 				$tmp[$mode]["color"] = $theme_name;
 				$tmp = serialize($tmp);
 				$bind[0]["value"] = $tmp;
