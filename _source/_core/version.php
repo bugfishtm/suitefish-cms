@@ -27,4 +27,4 @@
 	$x = array();
 	
 	// Version Information
-	$x["version"] 		= "3.40"; 
+	$x["version"] 		= "3.41"; 

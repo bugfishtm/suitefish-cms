@@ -34,6 +34,37 @@
 	#################################################################################################################################################
 	// Includes and Requirements
 	#################################################################################################################################################
+		$object["loadup"] = array();
+		$object["loadup"]["framework"] = array();
+		$object["loadup"]["framework"][0] = $object["path"]."/_core/_framework/classes/x_class_2fa.php";
+		$object["loadup"]["framework"][1] = $object["path"]."/_core/_framework/classes/x_class_api.php";
+		$object["loadup"]["framework"][2] = $object["path"]."/_core/_framework/classes/x_class_benchmark.php";
+		$object["loadup"]["framework"][3] = $object["path"]."/_core/_framework/classes/x_class_block.php";
+		$object["loadup"]["framework"][4] = $object["path"]."/_core/_framework/classes/x_class_comment.php";
+		$object["loadup"]["framework"][5] = $object["path"]."/_core/_framework/classes/x_class_crypt.php";
+		$object["loadup"]["framework"][6] = $object["path"]."/_core/_framework/classes/x_class_csrf.php";
+		$object["loadup"]["framework"][7] = $object["path"]."/_core/_framework/classes/x_class_curl.php";
+		$object["loadup"]["framework"][8] = $object["path"]."/_core/_framework/classes/x_class_debug.php";
+		$object["loadup"]["framework"][9] = $object["path"]."/_core/_framework/classes/x_class_eventbox.php";
+		$object["loadup"]["framework"][10] = $object["path"]."/_core/_framework/classes/x_class_hitcounter.php";
+		$object["loadup"]["framework"][11] = $object["path"]."/_core/_framework/classes/x_class_ipbl.php";
+		$object["loadup"]["framework"][12] = $object["path"]."/_core/_framework/classes/x_class_lang.php";
+		$object["loadup"]["framework"][13] = $object["path"]."/_core/_framework/classes/x_class_log.php";
+		$object["loadup"]["framework"][14] = $object["path"]."/_core/_framework/classes/x_class_mail.php";
+		$object["loadup"]["framework"][15] = $object["path"]."/_core/_framework/classes/x_class_mail_item.php";
+		$object["loadup"]["framework"][16] = $object["path"]."/_core/_framework/classes/x_class_mail_phpmailer.php";
+		$object["loadup"]["framework"][17] = $object["path"]."/_core/_framework/classes/x_class_mail_template.php";
+		$object["loadup"]["framework"][18] = $object["path"]."/_core/_framework/classes/x_class_mysql.php";
+		$object["loadup"]["framework"][19] = $object["path"]."/_core/_framework/classes/x_class_mysql_item.php";
+		$object["loadup"]["framework"][20] = $object["path"]."/_core/_framework/classes/x_class_perm.php";
+		$object["loadup"]["framework"][21] = $object["path"]."/_core/_framework/classes/x_class_perm_item.php";
+		$object["loadup"]["framework"][22] = $object["path"]."/_core/_framework/classes/x_class_redis.php";
+		$object["loadup"]["framework"][23] = $object["path"]."/_core/_framework/classes/x_class_referer.php";
+		$object["loadup"]["framework"][24] = $object["path"]."/_core/_framework/classes/x_class_table.php";
+		$object["loadup"]["framework"][25] = $object["path"]."/_core/_framework/classes/x_class_user.php";
+		$object["loadup"]["framework"][26] = $object["path"]."/_core/_framework/classes/x_class_var.php";
+		$object["loadup"]["framework"][27] = $object["path"]."/_core/_framework/classes/x_class_version.php";
+		$object["loadup"]["framework"][28] = $object["path"]."/_core/_framework/classes/x_class_zip.php";
 		require_once($object["path"]."/_core/_framework/classes/x_class_2fa.php");
 		require_once($object["path"]."/_core/_framework/classes/x_class_api.php");
 		require_once($object["path"]."/_core/_framework/classes/x_class_benchmark.php");
@@ -67,6 +98,15 @@
 	#################################################################################################################################################
 	// Requirements of Framework Functionalities
 	#################################################################################################################################################
+		$object["loadup"]["framework"][29] = $object["path"]."/_core/_framework/functions/x_button.php";
+		$object["loadup"]["framework"][30] = $object["path"]."/_core/_framework/functions/x_captcha.php";
+		$object["loadup"]["framework"][31] = $object["path"]."/_core/_framework/functions/x_cookiebanner.php";
+		$object["loadup"]["framework"][32] = $object["path"]."/_core/_framework/functions/x_curl.php";
+		$object["loadup"]["framework"][33] = $object["path"]."/_core/_framework/functions/x_eventbox.php";
+		$object["loadup"]["framework"][34] = $object["path"]."/_core/_framework/functions/x_library.php";
+		$object["loadup"]["framework"][35] = $object["path"]."/_core/_framework/functions/x_rss.php";
+		$object["loadup"]["framework"][36] = $object["path"]."/_core/_framework/functions/x_search.php";
+		$object["loadup"]["framework"][37] = $object["path"]."/_core/_framework/functions/x_table.php";
 		require_once($object["path"]."/_core/_framework/functions/x_button.php");
 		require_once($object["path"]."/_core/_framework/functions/x_captcha.php");
 		require_once($object["path"]."/_core/_framework/functions/x_cookiebanner.php");
@@ -80,6 +120,12 @@
 	#################################################################################################################################################
 	// Requirements of _core/_lib/*
 	#################################################################################################################################################
+		$object["loadup"]["cms"] = array();
+		$object["loadup"]["cms"][0] = $object["path"]."/_core/_lib/lib.hive.php";
+		$object["loadup"]["cms"][1] = $object["path"]."/_core/_lib/lib.simple.php";
+		$object["loadup"]["cms"][2] = $object["path"]."/_core/_lib/lib.volt.php";
+		$object["loadup"]["cms"][3] = $object["path"]."/_core/_lib/lib.windmill.php";
+		$object["loadup"]["cms"][4] = $object["path"]."/_core/_lib/lib.adminbsb.php";
 		require_once($object["path"]."/_core/_lib/lib.hive.php");
 		require_once($object["path"]."/_core/_lib/lib.simple.php");
 		require_once($object["path"]."/_core/_lib/lib.volt.php");
@@ -130,7 +176,7 @@
 	#################################################################################################################################################
 	// Define cfg_ruleset.php Setup
 	#################################################################################################################################################
-		if(file_exists(@$object["path"]."/cfg_ruleset.php")) 	{ require_once($object["path"]."/cfg_ruleset.php"); } 	
+		if(file_exists(@$object["path"]."/cfg_ruleset.php")) 	{ require_once($object["path"]."/cfg_ruleset.php"); $object["loadup"]["cms"][5] = $object["path"]."/cfg_ruleset.php"; } 	
 		// Array of Site Modes to Switch to and Force use only of them.
 		if(!is_array(@$hive_mode_array)) 						{ $hive_mode_array = false; }
 		// Set Override Switch
@@ -428,26 +474,29 @@
 	#################################################################################################################################################
 	// Get Site Mode Library Files
 	#################################################################################################################################################
+		$object["loadup"]["lib"] = array();
+		$object["loadup"]["wfc"] = array();
 		if(!defined("_HIVE_CRIT_ER_")) { 
-			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_lib/lib.*.php") as $filename) { if(@basename($filename) == "index.php") { continue; } require_once $filename;}	 
-			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_wfc/wfc.*.php") as $filename) { if(@basename($filename) == "index.php") { continue; } require_once $filename;}	 
+			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_lib/lib.*.php") as $filename) { if(@basename($filename) == "index.php") { continue; } require_once $filename; array_push($object["loadup"]["lib"], $filename); }	 
+			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_wfc/wfc.*.php") as $filename) { if(@basename($filename) == "index.php") { continue; } require_once $filename; array_push($object["loadup"]["wfc"], $filename); }	 
 			// Extension Libraries
 			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
 				if (is_dir($hive_extension_loader_current_init."/_lib")) {
-						foreach (glob($hive_extension_loader_current_init."/_lib/lib.*.php") as $filenamex){ require_once $filenamex; }
+						foreach (glob($hive_extension_loader_current_init."/_lib/lib.*.php") as $filenamex){ require_once $filenamex; array_push($object["loadup"]["lib"], $filenamex); }
 				}		
 			}	
 			// Extension Libraries
 			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
 				if (is_dir($hive_extension_loader_current_init."/_wfc")) {
-						foreach (glob($hive_extension_loader_current_init."/_wfc/wfc.*.php") as $filenamex){ require_once $filenamex; }
+						foreach (glob($hive_extension_loader_current_init."/_wfc/wfc.*.php") as $filenamex){ require_once $filenamex; array_push($object["loadup"]["wfc"], $filenamex); }
 				}
 			}	
 		}			
 	
 	#################################################################################################################################################
 	// Load Global Configurations from Site Modules (Preconfiguration)
-	#################################################################################################################################################		
+	#################################################################################################################################################	
+		$object["loadup"]["config_global_pre"] = array();	
 		if(!defined("_HIVE_CRIT_ER_"))  {
 			if(is_array(_HIVE_MODE_ARRAY_))  {
 				foreach(_HIVE_MODE_ARRAY_ as $key => $value) {
@@ -460,6 +509,7 @@
 						$object["hive_mode_config"]["prefix"] = _HIVE_COOKIE_."_".$value."_";
 						$object["hive_mode_config"]["cookie"] = _HIVE_COOKIE_."_".$value."_";
 						require_once($value."/_config/global_pre.php");
+						array_push($object["loadup"]["config_global_pre"], $value."/_config/global_pre.php");
 					}
 				}
 			}
@@ -468,9 +518,11 @@
 	#################################################################################################################################################
 	// Load Site Specific Pre Configuration (and of extension modules)
 	#################################################################################################################################################	
+		$object["loadup"]["config_pre"] = array();	
 		if(!defined("_HIVE_CRIT_ER_"))  {
 			if(file_exists($object["path"]."/_site/"._HIVE_MODE_."/_config/config_pre.php")) { 
 				require_once($object["path"]."/_site/"._HIVE_MODE_."/_config/config_pre.php"); 
+				array_push($object["loadup"]["config_pre"], $object["path"]."/_site/"._HIVE_MODE_."/_config/config_pre.php");
 			}	
 			// Extension Libraries
 			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
@@ -482,6 +534,7 @@
 					$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
 					$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
 					require_once $hive_extension_loader_current_init."/_config/config_pre.php";
+					array_push($object["loadup"]["config_pre"], $hive_extension_loader_current_init."/_config/config_pre.php");
 				}
 			}	
 		} unset($object["extension"]);
@@ -532,7 +585,8 @@
 
 	#################################################################################################################################################
 	// Load Global Configurations from Site Modules (Middleware)
-	#################################################################################################################################################		
+	#################################################################################################################################################	
+		$object["loadup"]["config_global"] = array();		
 		if(!defined("_HIVE_CRIT_ER_"))  {
 			if(is_array(_HIVE_MODE_ARRAY_))  {
 				foreach(_HIVE_MODE_ARRAY_ as $key => $value) {
@@ -545,6 +599,7 @@
 						$object["hive_mode_config"]["prefix"] = _HIVE_COOKIE_."_".$value."_";
 						$object["hive_mode_config"]["cookie"] = _HIVE_COOKIE_."_".$value."_";
 						require_once($value."/_config/global.php");
+						array_push($object["loadup"]["config_global"], $value."/_config/global.php");
 					}
 				}
 			}
@@ -553,9 +608,11 @@
 	#################################################################################################################################################
 	// Instance Settings
 	#################################################################################################################################################
+		$object["loadup"]["config"] = array();		
 		if(!defined("_HIVE_CRIT_ER_")) { 
 			if(file_exists($object["path"]."/_site/"._HIVE_MODE_."/_config/config.php")) { 
 				require_once($object["path"]."/_site/"._HIVE_MODE_."/_config/config.php"); 
+				array_push($object["loadup"]["config"], $object["path"]."/_site/"._HIVE_MODE_."/_config/config.php");
 			} 
 			// Extension Libraries
 			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
@@ -567,6 +624,7 @@
 					$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
 					$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
 					require_once $hive_extension_loader_current_init."/_config/config.php";
+					array_push($object["loadup"]["config"], $hive_extension_loader_current_init."/_config/config.php");
 				}
 			} unset($object["extension"]);	
 		}	
@@ -596,6 +654,7 @@
 	#################################################################################################################################################
 	// Load Modules Current Selected MySQL Configuration
 	#################################################################################################################################################
+		$object["loadup"]["mysql"] = array();		
 		if(!defined("_HIVE_CRIT_ER_")) { 
 			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_mysql/mysql.*.php") as $filename){ 
 				if(@basename($filename) == "index.php") { continue; } 
@@ -603,6 +662,7 @@
 					$object["log"]->warning("MySQL Table Installation for: '<b>".@htmlspecialchars(_HIVE_MODE_ ?? '')."</b>' with Table Name: '<b>".@htmlspecialchars(_HIVE_SITE_PREFIX_.substr(basename($filename), 6, -4) ?? '' )."</b>'", "mysql");
 					require_once($filename);
 					$object["mysql"]->free_all();
+					array_push($object["loadup"]["mysql"], $filename);
 				}
 			}	
 			// Extension Libraries
@@ -619,6 +679,7 @@
 						$object["log"]->warning("MySQL Table Installation for: '<b>"._HIVE_MODE_."</b>' on Extension: '<b>".htmlspecialchars($object["extension"]["name"] ?? '') ."</b>' with Table Name: '<b>".@htmlspecialchars($object["extension"]["prefix"].substr(basename($filenamemm), 6, -4) ?? '' )."</b>'", "mysql");
 						require_once($filenamemm);
 						$object["mysql"]->free_all();
+						array_push($object["loadup"]["mysql"], $filenamemm);
 					}
 				}	
 			} unset($object["extension"]);	
@@ -1055,7 +1116,8 @@ RewriteRule ^(_disabled) - [F,L]"); }
 
 	#################################################################################################################################################
 	// Load Global Configurations from Site Modules (Post Configuration)
-	#################################################################################################################################################		
+	#################################################################################################################################################	
+		$object["loadup"]["config_global_post"] = array();	
 		if(!defined("_HIVE_CRIT_ER_"))  {
 			if(is_array(_HIVE_MODE_ARRAY_))  {
 				foreach(_HIVE_MODE_ARRAY_ as $key => $value) {
@@ -1068,6 +1130,7 @@ RewriteRule ^(_disabled) - [F,L]"); }
 						$object["hive_mode_config"]["prefix"] = _HIVE_COOKIE_."_".$value."_";
 						$object["hive_mode_config"]["cookie"] = _HIVE_COOKIE_."_".$value."_";
 						require_once($value."/_config/global_post.php");
+						array_push($object["loadup"]["config_global_post"], $value."/_config/global_post.php");
 					}
 				}
 			}
@@ -1076,9 +1139,11 @@ RewriteRule ^(_disabled) - [F,L]"); }
 	#################################################################################################################################################
 	// Instance Settings Post
 	#################################################################################################################################################
+		$object["loadup"]["config_post"] = array();
 		if(!defined("_HIVE_CRIT_ER_")) { 
 			if(file_exists($object["path"]."/_site/"._HIVE_MODE_."/_config/config_post.php")) { 
 				require_once($object["path"]."/_site/"._HIVE_MODE_."/_config/config_post.php"); 
+				array_push($object["loadup"]["config_post"], $object["path"]."/_site/"._HIVE_MODE_."/_config/config_post.php");
 			} 
 			// Extension Libraries
 			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
@@ -1090,6 +1155,7 @@ RewriteRule ^(_disabled) - [F,L]"); }
 					$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
 					$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
 					require_once $hive_extension_loader_current_init."/_config/config_post.php";
+					array_push($object["loadup"]["config_post"], $hive_extension_loader_current_init."/_config/config_post.php");
 				}
 			} unset($object["extension"]);	
 			

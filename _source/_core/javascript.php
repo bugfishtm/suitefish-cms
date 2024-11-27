@@ -55,6 +55,9 @@
 			$object["extension"]["name"]   = basename($filename);
 			$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
 			$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
+			$object["inject"] = array(); 	 
+			if(file_exists($object["extension"]["path"]."/_lang/"._HIVE_LANG_.".php")) { $object["inject"]["lang"] = new x_class_lang(false, false, false, false, $object["extension"]["path"]."/_lang/"._HIVE_LANG_.".php");  } 
+			elseif(file_exists($object["extension"]["path"]."/_lang/en.php")) { $object["inject"]["lang"] = new x_class_lang(false, false, false, false, $object["extension"]["path"]."/_lang/en.php");  } 
 			foreach (glob($filename."/_js/js.*") as $filenamex){ 
 				hive__require_once($object, $filenamex);
 			}
