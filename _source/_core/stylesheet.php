@@ -1,9 +1,13 @@
 <?php
-	/* 	 _           ___ _     _   _____ _____ _____ 
-		| |_ _ _ ___|  _|_|___| |_|     |     |   __|
-		| . | | | . |  _| |_ -|   |   --| | | |__   |
-		|___|___|_  |_| |_|___|_|_|_____|_|_|_|_____|
-				|___|                                
+	/* 
+		 ____  __  __  ___  ____  ____  ___  _   _ 
+		(  _ \(  )(  )/ __)( ___)(_  _)/ __)( )_( )
+		 ) _ < )(__)(( (_-. )__)  _)(_ \__ \ ) _ ( 
+		(____/(______)\___/(__)  (____)(___/(_) (_) www.bugfish.eu
+				 ___ _   _ ___ _____ ___ ___ ___ ___ _  _ 
+				/ __| | | |_ _|_   _| __| __|_ _/ __| || |
+				\__ \ |_| || |  | | | _|| _| | |\__ \ __ |
+				|___/\___/|___| |_| |___|_| |___|___/_||_|
 		Copyright (C) 2024 Jan Maurice Dahlmanns [Bugfish]
 
 		This program is free software: you can redistribute it and/or modify
@@ -37,24 +41,24 @@
 	  
 	// Content is Text/CSS
 	header('Content-Type: text/css'); 
-  
+ 
+	// Output Empty Array if Current Website Error
+	if(defined("_HIVE_CRIT_ER_")) {
+		exit();
+	}
+	
+	// Site Mode Infos to be consistent
+	$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_);
+	
     // Include Necessary CSS Files into this File
 	foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_css/css.*") as $filename){ 
 		hive__require_once($object, $filename); 
 	}
 	
 	// Include Extension Scripts
-	foreach (_HIVE_SITE_EXT_ as $filename) {
+	foreach ($object["extensions_path"] as $filename) {
 		if (is_dir($filename."/_css")) {
-			$object["extension"] = array(); 
-			$object["extension"]["info"]   = hive__require_x($filename."/version.php");
-			$object["extension"]["path"]   = $filename;
-			$object["extension"]["name"]   = basename($filename);
-			$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
-			$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
-			$object["inject"] = array(); 	 
-			if(file_exists($object["extension"]["path"]."/_lang/"._HIVE_LANG_.".php")) { $object["inject"]["lang"] = new x_class_lang(false, false, false, false, $object["extension"]["path"]."/_lang/"._HIVE_LANG_.".php");  } 
-			elseif(file_exists($object["extension"]["path"]."/_lang/en.php")) { $object["inject"]["lang"] = new x_class_lang(false, false, false, false, $object["extension"]["path"]."/_lang/en.php");  } 
+			$object["extension"] = hive__init_extension_header($object, basename($filename)); 
 			foreach (glob($filename."/_css/css.*") as $filenamex){ 
 				hive__require_once($object, $filenamex);
 			}

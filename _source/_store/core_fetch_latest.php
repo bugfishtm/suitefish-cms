@@ -1,9 +1,13 @@
 <?php
-	/* 	 _           ___ _     _   _____ _____ _____ 
-		| |_ _ _ ___|  _|_|___| |_|     |     |   __|
-		| . | | | . |  _| |_ -|   |   --| | | |__   |
-		|___|___|_  |_| |_|___|_|_|_____|_|_|_|_____|
-				|___|                                
+	/* 
+		 ____  __  __  ___  ____  ____  ___  _   _ 
+		(  _ \(  )(  )/ __)( ___)(_  _)/ __)( )_( )
+		 ) _ < )(__)(( (_-. )__)  _)(_ \__ \ ) _ ( 
+		(____/(______)\___/(__)  (____)(___/(_) (_) www.bugfish.eu
+				 ___ _   _ ___ _____ ___ ___ ___ ___ _  _ 
+				/ __| | | |_ _|_   _| __| __|_ _/ __| || |
+				\__ \ |_| || |  | | | _|| _| | |\__ \ __ |
+				|___/\___/|___| |_| |___|_| |___|___/_||_|
 		Copyright (C) 2024 Jan Maurice Dahlmanns [Bugfish]
 
 		This program is free software: you can redistribute it and/or modify
@@ -20,7 +24,7 @@
 		along with this program.  If not, see <https://www.gnu.org/licenses/>.
 		
 		File Description:
-			API to get Latest Available Deployed Core Release of bugfishCMS
+			API to get Latest Available Deployed Core Release of Suitefish
 			if deployed via Administrator Panel or similar Site Module.
 	*/
 		

@@ -1,6 +1,13 @@
 📁 **Default Languages Folder**
 
-Default Languages for the CMS Backend Structure are stored here in english.
+Default Languages for the CMS Backend Structure are stored here.
 
-Happy coding and have a great one!  
+de = german  
+en = english  
+es = spanish  
+fr = french  
+it = italian  
+ja = japanese
+zh = chinese
+
 🐟 Bugfish <3

@@ -1,9 +1,13 @@
 <?php
-	/* 	 _           ___ _     _   _____ _____ _____ 
-		| |_ _ _ ___|  _|_|___| |_|     |     |   __|
-		| . | | | . |  _| |_ -|   |   --| | | |__   |
-		|___|___|_  |_| |_|___|_|_|_____|_|_|_|_____|
-				|___|                                
+	/* 
+		 ____  __  __  ___  ____  ____  ___  _   _ 
+		(  _ \(  )(  )/ __)( ___)(_  _)/ __)( )_( )
+		 ) _ < )(__)(( (_-. )__)  _)(_ \__ \ ) _ ( 
+		(____/(______)\___/(__)  (____)(___/(_) (_) www.bugfish.eu
+				 ___ _   _ ___ _____ ___ ___ ___ ___ _  _ 
+				/ __| | | |_ _|_   _| __| __|_ _/ __| || |
+				\__ \ |_| || |  | | | _|| _| | |\__ \ __ |
+				|___/\___/|___| |_| |___|_| |___|___/_||_|
 		Copyright (C) 2024 Jan Maurice Dahlmanns [Bugfish]
 
 		This program is free software: you can redistribute it and/or modify
@@ -25,11 +29,54 @@
 			files and load extensions configuration and mysql files. MySQL Core and Site Module Files will
 			be installed automatically if Table Name related to MySQL Init File Name does not exist.
 			
-	*/ if(!is_array($object)) { @http_response_code(503); echo "Startup Error - Please delete your settings.php file and re-install this instance..."; exit(); }	
+	*/ if(!is_array(@$object)) { @http_response_code(503); echo "Startup Error - Please delete your settings.php file and re-install this instance..."; exit(); }	
+	#################################################################################################################################################
+	// Prevent Init Functionality to only fetch settings File
+	#################################################################################################################################################
+	if(!defined("_HIVE_PREVENT_INIT_")) { 
+	#################################################################################################################################################
+	// Define cfg_ruleset.php Setup
+	#################################################################################################################################################
+		if(file_exists(@$object["path"]."/cfg_ruleset.php")) 	{ require_once($object["path"]."/cfg_ruleset.php"); $object["loadup"]["cms"][1] = $object["path"]."/cfg_ruleset.php"; } 	
+		// Array of Site Modes to Switch to and Force use only of them.
+		if(!is_array(@$hive_mode_array)) 						{ $hive_mode_array = false; }
+		// Set Override Switch
+		if(!@$hive_mode_override) 								{ $hive_mode_override = false; }
+		// Set default Hive Mode if not Set
+		if(!@$hive_mode_default) 								{ $hive_mode_default = "_administrator"; }	
+		// Administrator Switch to Site Functionality
+		if(!@$administrative_page) 								{ define('_HIVE_ADMIN_SITE_', "_administrator"); } else { define('_HIVE_ADMIN_SITE_',   $administrative_page); } unset($administrative_page);
+		// Set fetch Site modules by URL Array
+		if(!defined("_HIVE_MOD_FETCH_")) 						{ define('_HIVE_MOD_FETCH_',   false); } 
+		// Set enable/disable for developer.php file on Start if not defined
+		if(!defined("_HIVE_MOD_CHANGES_")) 						{ define('_HIVE_MOD_CHANGES_', false); }
+		// Set enable/disable for _core/_action/token_switch.php file on Start if not defined
+		if(!defined("_HIVE_ALLOW_TOKEN_")) 						{ define('_HIVE_ALLOW_TOKEN_', true);	 }
+		// Set PHP Errors Log Path on Start if not defined
+		if(!defined("_HIVE_PHP_LOG_PATH_")) 					{ define('_HIVE_PHP_LOG_PATH_', false); }
+		// Set PHP Errors Output on Start if not defined
+		if(!defined("_HIVE_PHP_DISPLAY_ERROR_ON_START_")) 		{ define('_HIVE_PHP_DISPLAY_ERROR_ON_START_', 0); }
+		// Set Primary Store URL if not defined
+		if(!defined("_HIVE_SERVER_")) 							{ define("_HIVE_SERVER_", array("https://store.bugfish.eu")); }
+		// Set Primary Core Update URL if not defined
+		if(!defined("_HIVE_SERVER_CORE_")) 						{ define("_HIVE_SERVER_CORE_", "https://store.bugfish.eu"); }
+		// Set Cookie Domain if set in cfg_ruleset.php
+		if(defined("_HIVE_COOKIE_DOMAIN_")) 					{ ini_set('session.cookie_domain', _HIVE_COOKIE_DOMAIN_); }	
+		// Restrict Upgrade to Admin Interface on Default
+		if(!defined("_HIVE_RESTRICT_UPDATE_")) 					{ define("_HIVE_RESTRICT_UPDATE_", false); }	
+	
+	#################################################################################################################################################
+	// Error Reporting
+	#################################################################################################################################################
+		error_reporting(E_ALL); 
+		ini_set('log_errors', TRUE);
+		if(defined("_HIVE_PHP_LOG_PATH_")) { if(_HIVE_PHP_LOG_PATH_) { ini_set('error_log',_HIVE_PHP_LOG_PATH_);}}
+		if(defined("_HIVE_PHP_DISPLAY_ERROR_ON_START_")) { ini_set('display_errors', _HIVE_PHP_DISPLAY_ERROR_ON_START_); } else { ini_set('display_errors', 0); }
+
 	#################################################################################################################################################
 	// Define Defaults
 	#################################################################################################################################################
-		define("_HIVE_CREATOR_", 'Powered by <a href="https://github.com/bugfishtm/bugfish-cms" rel="noopener" target="_blank">Bugfish CMS</a>!');
+		define("_HIVE_CREATOR_", 'Powered by <a href="https://github.com/bugfishtm/suitefish-cms" rel="noopener" target="_blank">Suitefish CMS</a>!');
 		
 	#################################################################################################################################################
 	// Includes and Requirements
@@ -122,95 +169,32 @@
 	#################################################################################################################################################
 		$object["loadup"]["cms"] = array();
 		$object["loadup"]["cms"][0] = $object["path"]."/_core/_lib/lib.hive.php";
-		$object["loadup"]["cms"][1] = $object["path"]."/_core/_lib/lib.simple.php";
-		$object["loadup"]["cms"][2] = $object["path"]."/_core/_lib/lib.volt.php";
-		$object["loadup"]["cms"][3] = $object["path"]."/_core/_lib/lib.windmill.php";
-		$object["loadup"]["cms"][4] = $object["path"]."/_core/_lib/lib.adminbsb.php";
 		require_once($object["path"]."/_core/_lib/lib.hive.php");
-		require_once($object["path"]."/_core/_lib/lib.simple.php");
-		require_once($object["path"]."/_core/_lib/lib.volt.php");
-		require_once($object["path"]."/_core/_lib/lib.windmill.php");
-		require_once($object["path"]."/_core/_lib/lib.adminbsb.php");
 		
 	#################################################################################################################################################
 	// Create Maybe lost System Folders
 	#################################################################################################################################################
 		hive__folder_create($object["path"]."/_data", true, false);
-		hive__folder_create($object["path"]."/_data/__internal/_backup", true, true);
-		hive__folder_create($object["path"]."/_data/__internal/_docker", true, true);
-		hive__folder_create($object["path"]."/_disabled", true, true);
-		hive__folder_create($object["path"]."/_disabled/_site", true, false);
-		hive__folder_create($object["path"]."/_disabled/_script", true, false);
-		hive__folder_create($object["path"]."/_disabled/_image", true, false);
 		hive__folder_create($object["path"]."/_image", true, false);
-		hive__folder_create($object["path"]."/_script", true, false);
+		hive__folder_create($object["path"]."/_image/__disabled", true, true);
 		hive__folder_create($object["path"]."/_site", true, false);
+		hive__folder_create($object["path"]."/_site/__disabled", true, true);
 		hive__folder_create($object["path"]."/_store", true, false);
-		hive__folder_create($object["path"]."/_store/_tpl", true, true);
-		hive__folder_create($object["path"]."/_store/_tpl/_docker", true, false);
-		hive__folder_create($object["path"]."/_store/_tpl/_extension", true, false);
-		hive__folder_create($object["path"]."/_store/_tpl/_image", true, false);
-		hive__folder_create($object["path"]."/_store/_tpl/_script", true, false);
-		hive__folder_create($object["path"]."/_store/_tpl/_site", true, false);
-		hive__folder_create($object["path"]."/_store/_temp", true, true);
-		hive__folder_create($object["path"]."/_store/_module", true, false);
-		hive__folder_create($object["path"]."/_store/_module/_cache", true, false);
-		hive__folder_create($object["path"]."/_store/_module/_changelog", true, false);
-		hive__folder_create($object["path"]."/_store/_module/_image", true, false);
-		hive__folder_create($object["path"]."/_store/_module/_release", true, false);
-		hive__folder_create($object["path"]."/_store/_hub", true, false);
-		hive__folder_create($object["path"]."/_store/_hub/_changelog", true, false);
-		hive__folder_create($object["path"]."/_store/_hub/_download", true, false);
-		hive__folder_create($object["path"]."/_store/_hub/_download/_cache", true, false);
-		hive__folder_create($object["path"]."/_store/_hub/_download/_image", true, false);
-		hive__folder_create($object["path"]."/_store/_hub/_download/_release", true, false);
-		hive__folder_create($object["path"]."/_store/_hub/_download/_changelog", true, false);
-		hive__folder_create($object["path"]."/_store/_hub/_release", true, false);
 		hive__folder_create($object["path"]."/_store/_core", true, false);
-		hive__folder_create($object["path"]."/_store/_core/_release", true, false);
 		hive__folder_create($object["path"]."/_store/_core/_changelog", true, false);
-		hive__folder_create($object["path"]."/_store/_app", true, false);
-		hive__folder_create($object["path"]."/_store/_app/_release", true, false);
-		hive__folder_create($object["path"]."/_store/_app/_changelog", true, false);
-	
-	#################################################################################################################################################
-	// Define cfg_ruleset.php Setup
-	#################################################################################################################################################
-		if(file_exists(@$object["path"]."/cfg_ruleset.php")) 	{ require_once($object["path"]."/cfg_ruleset.php"); $object["loadup"]["cms"][5] = $object["path"]."/cfg_ruleset.php"; } 	
-		// Array of Site Modes to Switch to and Force use only of them.
-		if(!is_array(@$hive_mode_array)) 						{ $hive_mode_array = false; }
-		// Set Override Switch
-		if(!@$hive_mode_override) 								{ $hive_mode_override = false; }
-		// Set default Hive Mode if not Set
-		if(!@$hive_mode_default) 								{ $hive_mode_default = "_administrator"; }
-		// Administrator Switch to Site Functionality
-		if(!defined("_HIVE_ADMIN_SITE_")) 						{ define('_HIVE_ADMIN_SITE_', "_administrator");	 }
-		// Set fetch Site modules by URL Array
-		if(!defined("_HIVE_MOD_FETCH_")) 						{ define('_HIVE_MOD_FETCH_',   false); }
-		// Set enable/disable for developer.php file on Start if not defined
-		if(!defined("_HIVE_MOD_CHANGES_")) 						{ define('_HIVE_MOD_CHANGES_', false); }
-		// Set enable/disable for _core/_action/token_switch.php file on Start if not defined
-		if(!defined("_HIVE_ALLOW_TOKEN_")) 						{ define('_HIVE_ALLOW_TOKEN_', true);	 }
-		// Set PHP Errors Log Path on Start if not defined
-		if(!defined("_HIVE_PHP_LOG_PATH_")) 					{ define('_HIVE_PHP_LOG_PATH_', false); }
-		// Set PHP Errors Output on Start if not defined
-		if(!defined("_HIVE_PHP_DISPLAY_ERROR_ON_START_")) 		{ define('_HIVE_PHP_DISPLAY_ERROR_ON_START_', 0); }
-		// Set Primary Store URL if not defined
-		if(!defined("_HIVE_SERVER_")) 							{ define("_HIVE_SERVER_", array("https://store.bugfish.eu")); }
-		// Set Primary Core Update URL if not defined
-		if(!defined("_HIVE_SERVER_CORE_")) 						{ define("_HIVE_SERVER_CORE_", "https://store.bugfish.eu"); }
-		// Set Cookie Domain if set in cfg_ruleset.php
-		if(defined("_HIVE_COOKIE_DOMAIN_")) 					{ ini_set('session.cookie_domain', _HIVE_COOKIE_DOMAIN_); }	
-		// Restrict Upgrade to Admin Interface on Default
-		if(!defined("_HIVE_RESTRICT_UPDATE_")) 					{ define("_HIVE_RESTRICT_UPDATE_", false); }	
-	
-	#################################################################################################################################################
-	// Error Reporting
-	#################################################################################################################################################
-		error_reporting(E_ALL); 
-		ini_set('log_errors', TRUE);
-		if(defined("_HIVE_PHP_LOG_PATH_")) { if(_HIVE_PHP_LOG_PATH_) { ini_set('error_log',_HIVE_PHP_LOG_PATH_);}}
-		if(defined("_HIVE_PHP_DISPLAY_ERROR_ON_START_")) { ini_set('display_errors', _HIVE_PHP_DISPLAY_ERROR_ON_START_); } else { ini_set('display_errors', 0); }
+		hive__folder_create($object["path"]."/_store/_core/_release", true, false);
+		hive__folder_create($object["path"]."/_store/_core/__cache", true, true);
+		hive__folder_create($object["path"]."/_store/_module", true, false);
+		hive__folder_create($object["path"]."/_store/_module/_changelog", true, false);
+		hive__folder_create($object["path"]."/_store/_module/_release", true, false);
+		hive__folder_create($object["path"]."/_store/_module/_image", true, false);
+		hive__folder_create($object["path"]."/_store/_module/__cache", true, true);
+		hive__folder_create($object["path"]."/_store/_software", true, false);
+		hive__folder_create($object["path"]."/_store/_software/_changelog", true, false);
+		hive__folder_create($object["path"]."/_store/_software/_release", true, false);
+		hive__folder_create($object["path"]."/_store/_software/__cache", true, true);
+		hive__folder_create($object["path"]."/_template", true, true);
+		hive__folder_create($object["path"]."/_template/__cache", true, true);
 		
 	#################################################################################################################################################
 	// Start Session
@@ -222,34 +206,34 @@
 	#################################################################################################################################################
 		$object["prefix"]						= @$mysql["prefix"];
 		// Default Table Constants - Classes Auto-Creation
-		define("_TABLE_LOG_", 				$object["prefix"]."log");
-		define("_TABLE_LOG_IP_", 			$object["prefix"]."log_ip");
-		define("_TABLE_LOG_BENCHMARK_", 	$object["prefix"]."log_benchmark");
-		define("_TABLE_LOG_CURL_", 			$object["prefix"]."log_curl");
-		define("_TABLE_LOG_MAIL_", 			$object["prefix"]."log_mail");
-		define("_TABLE_LOG_MYSQL_", 		$object["prefix"]."log_mysql");
-		define("_TABLE_LOG_REFERER_", 		$object["prefix"]."log_referer");
-		define("_TABLE_LOG_CRON_", 			$object["prefix"]."log_cron");
-		define("_TABLE_LOG_JS_", 			$object["prefix"]."log_js");
-		define("_TABLE_LOG_VISIT_", 		$object["prefix"]."log_hitcounter");
+		define("_TABLE_LOG_", 				$object["prefix"]."cms_log");
+		define("_TABLE_LOG_IP_", 			$object["prefix"]."cms_log_ip");
+		define("_TABLE_LOG_BENCHMARK_", 	$object["prefix"]."cms_log_benchmark");
+		define("_TABLE_LOG_CURL_", 			$object["prefix"]."cms_log_curl");
+		define("_TABLE_LOG_MAIL_", 			$object["prefix"]."cms_log_mail");
+		define("_TABLE_LOG_MYSQL_", 		$object["prefix"]."cms_log_mysql");
+		define("_TABLE_LOG_REFERER_", 		$object["prefix"]."cms_log_referer");
+		define("_TABLE_LOG_CRON_", 			$object["prefix"]."cms_log_cron");
+		define("_TABLE_LOG_JS_", 			$object["prefix"]."cms_log_js");
+		define("_TABLE_LOG_VISIT_", 		$object["prefix"]."cms_log_hitcounter");
 		// Default Table Constants - Classes Auto-Creation
-		define("_TABLE_USER_", 				$object["prefix"]."user");
-		define("_TABLE_USER_EXTRAFIELDS_", 	$object["prefix"]."user_extrafields");
-		define("_TABLE_USER_SESSION_",		$object["prefix"]."user_session");
-		define("_TABLE_USER_PERM_",			$object["prefix"]."user_perm");
-		define("_TABLE_USER_GROUP_",		$object["prefix"]."user_group");
-		define("_TABLE_USER_GROUP_PERM_",	$object["prefix"]."user_group_perm");
-		define("_TABLE_USER_GROUP_LINK_",	$object["prefix"]."user_group_link");
+		define("_TABLE_USER_", 				$object["prefix"]."cms_user");
+		define("_TABLE_USER_EXTRAFIELDS_", 	$object["prefix"]."cms_user_extrafield");
+		define("_TABLE_USER_SESSION_",		$object["prefix"]."cms_user_session");
+		define("_TABLE_USER_PERM_",			$object["prefix"]."cms_user_perm");
+		define("_TABLE_USER_GROUP_",		$object["prefix"]."cms_group");
+		define("_TABLE_USER_GROUP_PERM_",	$object["prefix"]."cms_group_perm");
+		define("_TABLE_USER_GROUP_LINK_",	$object["prefix"]."cms_group_link");
 		// Default Table Constants - Classes Auto-Creation
-		define("_TABLE_VAR_", 				$object["prefix"]."sys_var");
-		define("_TABLE_LANG_",				$object["prefix"]."sys_lang");
-		define("_TABLE_MAIL_TPL_",			$object["prefix"]."sys_template_mail");
-		define("_TABLE_API_", 				$object["prefix"]."sys_api");
-		define("_TABLE_COMMENT_", 			$object["prefix"]."sys_comment");
+		define("_TABLE_VAR_", 				$object["prefix"]."cms_var");
+		define("_TABLE_LANG_",				$object["prefix"]."cms_lang");
+		define("_TABLE_MAIL_TPL_",			$object["prefix"]."cms_mail_tpl");
+		define("_TABLE_API_", 				$object["prefix"]."cms_api");
+		define("_TABLE_COMMENT_", 			$object["prefix"]."cms_comment");
 		// Tables for Store and Token Access to Modules - Installed out of _core/_mysql folder!
-		define("_TABLE_STORE_", 			$object["prefix"]."store");
-		define("_TABLE_HUB_", 				$object["prefix"]."hub");
-		define("_TABLE_TOKEN_",				$object["prefix"]."token");
+		define("_TABLE_STORE_", 			$object["prefix"]."cms_store");
+		define("_TABLE_WORKER_", 			$object["prefix"]."cms_worker");
+		define("_TABLE_TOKEN_",				$object["prefix"]."cms_token");
 		
 	#################################################################################################################################################
 	// Main Constant Definitions
@@ -258,16 +242,16 @@
 		define("_HIVE_COOKIE_", 				@$object["cookie"]);
 		define("_HIVE_PATH_", 					@$object["path"]);	
 		define("_HIVE_PATH_DATA_", 				@$object["path"]."/_data/");	
+		define("_HIVE_PATH_STORE_", 			@$object["path"]."/_store/");	
 		define("_HIVE_PATH_SITE_", 				@$object["path"]."/_site/");	
-		define("_HIVE_PATH_SCRIPT_", 			@$object["path"]."/_script/");	
+		define("_HIVE_PATH_SITE_OFF_", 			@$object["path"]."/_site/__disabled/");		
 		define("_HIVE_PATH_IMAGE_", 			@$object["path"]."/_image/");	
-		define("_HIVE_PATH_OFF_", 				@$object["path"]."/_disabled/");	
-		define("_HIVE_PATH_IMAGE_OFF_", 		@$object["path"]."/_disabled/_image/");	
-		define("_HIVE_PATH_SCRIPT_OFF_", 		@$object["path"]."/_disabled/_script/");	
-		define("_HIVE_PATH_SITE_OFF_", 			@$object["path"]."/_disabled/_site/");	
+		define("_HIVE_PATH_IMAGE_OFF_", 		@$object["path"]."/_image/__disabled/");	
+		define("_HIVE_PATH_TPL_", 				@$object["path"]."/_template/");	
+		define("_HIVE_PATH_TPL_C_", 			@$object["path"]."/_template/__cache/");	
 
 	#################################################################################################################################################
-	// Current Hive Mode Determination
+	// Current Hive Mode Determination // Set Hive_OVR_PRE_SETTINGS_MODE to override Site mode when the Settings is Executes
 	#################################################################################################################################################
 	if(!defined("_HIVE_OVR_PRE_SETTING_MODE_")) { 
 		if($hive_mode_override) { define("_HIVE_MODE_DEFAULT_", $hive_mode_override); } else { define("_HIVE_MODE_DEFAULT_", $hive_mode_default); } unset($hive_mode_default);
@@ -280,7 +264,7 @@
 				$contents = scandir($directory);
 				foreach ($contents as $item) {
 					$itemPath = $directory . '/' . $item;
-					if (is_dir($itemPath) && !in_array($item, array('.', '..'))) {
+					if (is_dir($itemPath) && !in_array($item, array('.', '..', '__disabled'))) {
 						$folders[] = $item;
 					}
 					unset($itemPath);
@@ -346,7 +330,7 @@
 				$contents = scandir($directory);
 				foreach ($contents as $item) {
 					$itemPath = $directory . '/' . $item;
-					if (is_dir($itemPath) && !in_array($item, array('.', '..'))) {
+					if (is_dir($itemPath) && !in_array($item, array('.', '..', '__disabled'))) {
 						$folders[] = $item;
 					}
 					unset($itemPath);
@@ -359,7 +343,7 @@
 				exit();
 			}		
 	}
-
+	
 	#################################################################################################################################################
 	// Relative and Absolute Variable Declaration
 	#################################################################################################################################################
@@ -368,17 +352,17 @@
 		define('_HIVE_SITE_PREFIX_', 		_HIVE_PREFIX_."_"._HIVE_MODE_."_");	
 		define('_HIVE_SITE_PATH_DATA_', 	$object["path"]."/_data/"._HIVE_MODE_."/");	
 		define('_HIVE_SITE_PATH_EXT_', 		$object["path"]."/_data/"._HIVE_MODE_."/_extension/");	
-		define('_HIVE_SITE_PATH_EXT_OFF_', 	$object["path"]."/_data/"._HIVE_MODE_."/_extension_disabled/");	
+		define('_HIVE_SITE_PATH_EXT_DATA_PUBLIC_', $object["path"]."/_data/"._HIVE_MODE_."/_extension-data/_public/");	
+		define('_HIVE_SITE_PATH_EXT_DATA_PRIVATE_', $object["path"]."/_data/"._HIVE_MODE_."/_extension-data/_private/");	
+		define('_HIVE_SITE_PATH_EXT_OFF_', 	$object["path"]."/_data/"._HIVE_MODE_."/_extension-disabled/");	
 		define('_HIVE_SITE_PATH_PUBLIC_', 	$object["path"]."/_data/"._HIVE_MODE_."/_public/");	
-		define('_HIVE_SITE_PATH_PRIVATE_', 	$object["path"]."/_data/"._HIVE_MODE_."/_private/");	
-		define('_HIVE_SITE_PATH_DOMAIN_', 	$object["path"]."/_data/"._HIVE_MODE_."/_domain/");	
+		define('_HIVE_SITE_PATH_PRIVATE_', 	$object["path"]."/_data/"._HIVE_MODE_."/_private/");
 
 	#################################################################################################################################################
 	// Get Current Extensions
 	#################################################################################################################################################
 		if( trim(_HIVE_MODE_ ?? '') != "") { $object["extensions_path"] = hive__extension_path(_HIVE_MODE_); }
 		else { $object["extensions_path"] = array(); }
-		define("_HIVE_SITE_EXT_", $object["extensions_path"]);
 
 	#################################################################################################################################################
 	// Get Current Core Data
@@ -397,20 +381,43 @@
 		} else {
 			$object["hive_mode"] = false;
 			unset($_SESSION[_HIVE_COOKIE_."hive_mode"]);
-		}			
-		
+		}		
+
 	#################################################################################################################################################
 	// Create Site Modules Folders
 	#################################################################################################################################################
 		if(is_array($object["hive_mode"])) {
 				hive__folder_create(_HIVE_SITE_PATH_DATA_, true, false);
 				hive__folder_create(_HIVE_SITE_PATH_EXT_, true, false);
+				hive__folder_create(_HIVE_SITE_PATH_EXT_DATA_PUBLIC_, true, false);
+				hive__folder_create(_HIVE_SITE_PATH_EXT_DATA_PRIVATE_, true, true);
 				hive__folder_create(_HIVE_SITE_PATH_EXT_OFF_, true, true);
 				hive__folder_create(_HIVE_SITE_PATH_PUBLIC_, true, false);
 				hive__folder_create(_HIVE_SITE_PATH_PRIVATE_, true, true);
-				hive__folder_create(_HIVE_SITE_PATH_DOMAIN_, true, false);
-		}		
+		}	
 		
+	#################################################################################################################################################
+	// Preload Hive Mode Config - Pre Variable
+	#################################################################################################################################################
+	$object["hive_mode_config_pre"] = array();
+	$object["hive_mode_config_pre"]["extension"] = array();
+	$object["hive_mode_config_pre"]["site"] = array();
+	if(is_array(_HIVE_MODE_ARRAY_)) {
+		foreach(_HIVE_MODE_ARRAY_ as $k => $v) {
+			if(file_exists($object["path"]."/_site/".$v."/version.php")) { 
+				$object["hive_mode_config_pre"]["site"][$v] = hive__require_x($object["path"]."/_site/".$v."/version.php");
+			}
+		}
+	}
+	if(is_array($object["extensions_path"])) {
+		foreach($object["extensions_path"] as $k => $v) {
+			if(file_exists($v."/version.php")) { 
+				$v = basename($v);
+				$object["hive_mode_config_pre"]["extension"][$v] = hive__require_x($v."/version.php");
+			}
+		}
+	}	
+	
 	#################################################################################################################################################
 	// MySQL Initializations
 	#################################################################################################################################################
@@ -418,43 +425,46 @@
 		if ($object["mysql"]->lasterror != false) { $object["mysql"]->displayError(true, 503); exit(); }		
 		if(is_array($object["hive_mode"])) {  $object["mysql"]->log_config(_TABLE_LOG_MYSQL_, _HIVE_MODE_);	}
 			else {  $object["mysql"]->log_config(_TABLE_LOG_MYSQL_, "");	}
-		
+
 	#################################################################################################################################################
 	// Load Log Class
 	#################################################################################################################################################
 		$object["log"] 			= 	new x_class_log($object["mysql"], _TABLE_LOG_CRON_, "");
 		if(is_array($object["hive_mode"])) { $object["log"] = new x_class_log($object["mysql"], _TABLE_LOG_, _HIVE_MODE_); }
 			else { $object["log"] 			= 	new x_class_log($object["mysql"], _TABLE_LOG_, ""); }
-		$object["log_tmp"] 		= 	new x_class_log($object["mysql"], _TABLE_LOG_, "");		
-		
+		$object["log_tmp"] 		= 	new x_class_log($object["mysql"], _TABLE_LOG_, "");	
+	
 	#################################################################################################################################################
 	// Load Pre-Defined Core Tables if Needed
 	#################################################################################################################################################
-		if(!$object["mysql"]->table_exists($object["prefix"]."store")) {
-			$object["log_tmp"]->warning("MySQL Table Installation: '<b>".@htmlspecialchars($object["prefix"]."store" ?? '' )."</b>'", "mysql");
-			require_once(_HIVE_PATH_."/_core/_mysql/mysql.store.php");
+		if(!$object["mysql"]->table_exists($object["prefix"]."cms_store")) {
+			$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_); 
+			$object["log_tmp"]->warning("[CORE] [MYSQL] [INSTALL] [TABLE] ".@htmlspecialchars($object["prefix"]."cms_store" ?? '' )."", "mysql");
+			require_once(_HIVE_PATH_."/_core/_mysql/mysql.cms_store.php");
 			$object["mysql"]->free_all();
-		}	
-		if(!$object["mysql"]->table_exists($object["prefix"]."token")) {
-			$object["log_tmp"]->warning("MySQL Table Installation: '<b>".@htmlspecialchars($object["prefix"]."token" ?? '' )."</b>'", "mysql");
-			require_once(_HIVE_PATH_."/_core/_mysql/mysql.token.php");
+		} unset($object["hive_mode_config"]);
+		if(!$object["mysql"]->table_exists($object["prefix"]."cms_token")) {
+			$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_); 
+			$object["log_tmp"]->warning("[CORE] [MYSQL] [INSTALL] [TABLE] ".@htmlspecialchars($object["prefix"]."cms_token" ?? '' )."", "mysql");
+			require_once(_HIVE_PATH_."/_core/_mysql/mysql.cms_token.php");
 			$object["mysql"]->free_all();
-		}
-		if(!$object["mysql"]->table_exists($object["prefix"]."hub")) {
-			$object["log_tmp"]->warning("MySQL Table Installation: '<b>".@htmlspecialchars($object["prefix"]."hub" ?? '' )."</b>'", "mysql");
-			require_once(_HIVE_PATH_."/_core/_mysql/mysql.hub.php");
+		} unset($object["hive_mode_config"]);
+		if(!$object["mysql"]->table_exists($object["prefix"]."cms_worker")) {
+			$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_); 
+			$object["log_tmp"]->warning("[CORE] [MYSQL] [INSTALL] [TABLE] ".@htmlspecialchars($object["prefix"]."cms_worker" ?? '' )."", "mysql");
+			require_once(_HIVE_PATH_."/_core/_mysql/mysql.cms_worker.php");
 			$object["mysql"]->free_all();
-		}
+		} unset($object["hive_mode_config"]);
 		$object["mysql"]->benchmark_config(true, _HIVE_SITE_COOKIE_);
-		unset($mysql);		
-		
+		unset($mysql);				
+	
 	#################################################################################################################################################
 	// Classes Variables Initializations
 	#################################################################################################################################################
 		if(is_array($object["hive_mode"])) {  $object["var"] 			= 	new x_class_var($object["mysql"], _TABLE_VAR_, _HIVE_MODE_); }
 			else { $object["var"] 			= 	new x_class_var($object["mysql"], _TABLE_VAR_, ""); }
-		$object["var_glob"] 				= 	new x_class_var($object["mysql"], _TABLE_VAR_, "");
-		
+		$object["var_glob"] 				= 	new x_class_var($object["mysql"], _TABLE_VAR_, "");		
+
 	#################################################################################################################################################
 	// Init Current Site Build Number and Version/RNAME Vonstants
 	#################################################################################################################################################
@@ -469,8 +479,8 @@
 		$tmp_rname = $object["var"]->get("_HIVE_RNAME_ACTIVE_");
 		if(_HIVE_BUILD_ == 0 OR _HIVE_VERSION_ == 0 OR _HIVE_RNAME_ == 0 OR _HIVE_BUILD_ != $tmp_build OR _HIVE_RNAME_ != $tmp_rname) {
 			if(!defined("_HIVE_CRIT_ER_")) { define("_HIVE_CRIT_ER_", 1); }
-		} unset($tmp_build); unset($tmp_rname);		
-		
+		} unset($tmp_build); unset($tmp_rname);				
+	
 	#################################################################################################################################################
 	// Get Site Mode Library Files
 	#################################################################################################################################################
@@ -480,19 +490,19 @@
 			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_lib/lib.*.php") as $filename) { if(@basename($filename) == "index.php") { continue; } require_once $filename; array_push($object["loadup"]["lib"], $filename); }	 
 			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_wfc/wfc.*.php") as $filename) { if(@basename($filename) == "index.php") { continue; } require_once $filename; array_push($object["loadup"]["wfc"], $filename); }	 
 			// Extension Libraries
-			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
+			foreach ($object["extensions_path"] as $hive_extension_loader_current_init) {
 				if (is_dir($hive_extension_loader_current_init."/_lib")) {
 						foreach (glob($hive_extension_loader_current_init."/_lib/lib.*.php") as $filenamex){ require_once $filenamex; array_push($object["loadup"]["lib"], $filenamex); }
 				}		
 			}	
 			// Extension Libraries
-			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
+			foreach ($object["extensions_path"] as $hive_extension_loader_current_init) {
 				if (is_dir($hive_extension_loader_current_init."/_wfc")) {
 						foreach (glob($hive_extension_loader_current_init."/_wfc/wfc.*.php") as $filenamex){ require_once $filenamex; array_push($object["loadup"]["wfc"], $filenamex); }
 				}
 			}	
 		}			
-	
+
 	#################################################################################################################################################
 	// Load Global Configurations from Site Modules (Preconfiguration)
 	#################################################################################################################################################	
@@ -500,53 +510,44 @@
 		if(!defined("_HIVE_CRIT_ER_"))  {
 			if(is_array(_HIVE_MODE_ARRAY_))  {
 				foreach(_HIVE_MODE_ARRAY_ as $key => $value) {
+					$object["hive_mode_config"] = hive__init_site_header($object, $value);
 					$realpath = _HIVE_SITE_PATH_."/".$value."/"; 
 					if (file_exists($realpath."/_config/global_pre.php")) {
-						$object["hive_mode_config"] = array(); 
-						$object["hive_mode_config"]["info"]   = hive__require_x($realpath."/version.php");
-						$object["hive_mode_config"]["path"]   = $realpath;
-						$object["hive_mode_config"]["name"]   = basename($realpath);
-						$object["hive_mode_config"]["prefix"] = _HIVE_COOKIE_."_".$value."_";
-						$object["hive_mode_config"]["cookie"] = _HIVE_COOKIE_."_".$value."_";
 						require_once($value."/_config/global_pre.php");
 						array_push($object["loadup"]["config_global_pre"], $value."/_config/global_pre.php");
 					}
 				}
 			}
-		} unset($object["hive_mode_config"]);		
+		} unset($object["hive_mode_config"]);
 		
 	#################################################################################################################################################
 	// Load Site Specific Pre Configuration (and of extension modules)
 	#################################################################################################################################################	
 		$object["loadup"]["config_pre"] = array();	
 		if(!defined("_HIVE_CRIT_ER_"))  {
-			if(file_exists($object["path"]."/_site/"._HIVE_MODE_."/_config/config_pre.php")) { 
+			$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_); 
+			if(file_exists($object["path"]."/_site/"._HIVE_MODE_."/_config/config_pre.php")) {
 				require_once($object["path"]."/_site/"._HIVE_MODE_."/_config/config_pre.php"); 
 				array_push($object["loadup"]["config_pre"], $object["path"]."/_site/"._HIVE_MODE_."/_config/config_pre.php");
 			}	
 			// Extension Libraries
-			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
+			foreach ($object["extensions_path"] as $hive_extension_loader_current_init) {
 				if (file_exists($hive_extension_loader_current_init."/_config/config_pre.php")) {
-					$object["extension"] = array(); 
-					$object["extension"]["info"]   = hive__require_x($hive_extension_loader_current_init."/version.php");
-					$object["extension"]["path"]   = $hive_extension_loader_current_init;
-					$object["extension"]["name"]   = basename($hive_extension_loader_current_init);
-					$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
-					$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
+					$object["extension"] = hive__init_extension_header($object, basename($hive_extension_loader_current_init)); 
 					require_once $hive_extension_loader_current_init."/_config/config_pre.php";
 					array_push($object["loadup"]["config_pre"], $hive_extension_loader_current_init."/_config/config_pre.php");
 				}
 			}	
-		} unset($object["extension"]);
-
+		} unset($object["extension"]); unset($object["hive_mode_config"]); 		
+		
 	#################################################################################################################################################
 	/* Set Up The Real URL as Configured in Settings.php */	
 	#################################################################################################################################################
 		if(!defined("_HIVE_URL_")) { 
 			define("_HIVE_URL_", $object["url"]); 
 		}
-		$object["url"] = _HIVE_URL_;
-
+		$object["url"] = _HIVE_URL_;		
+		
 	#################################################################################################################################################
 	/* Give constant to work with determinated URLs with no need to set them anywhere. */	
 	#################################################################################################################################################
@@ -562,8 +563,8 @@
 		define('_HIVE_URLC_REL_', $tmprel);	
 		unset($tmprelx);
 		unset($tmprel);
-		unset($link);
-
+		unset($link);		
+		
 	#################################################################################################################################################
 	// Classes Initializations
 	#################################################################################################################################################
@@ -581,8 +582,8 @@
 		$object["hitcounter"]->clearget(false);
 		$object["comment"] 		= 	new x_class_comment($object["mysql"], _TABLE_COMMENT_, _HIVE_SITE_COOKIE_, 0, 0, $tmp_mode);
 		unset($tmp_mode);
-		$object["2fa"] 		= 	false;
-
+		$object["2fa"] 		= 	false;		
+		
 	#################################################################################################################################################
 	// Load Global Configurations from Site Modules (Middleware)
 	#################################################################################################################################################	
@@ -591,13 +592,8 @@
 			if(is_array(_HIVE_MODE_ARRAY_))  {
 				foreach(_HIVE_MODE_ARRAY_ as $key => $value) {
 					$realpath = _HIVE_SITE_PATH_."/".$value."/";
+					$object["hive_mode_config"] = hive__init_site_header($object, $value);
 					if (file_exists($realpath."/_config/global.php")) {
-						$object["hive_mode_config"] = array(); 
-						$object["hive_mode_config"]["info"]   = hive__require_x($realpath."/version.php");
-						$object["hive_mode_config"]["path"]   = $realpath;
-						$object["hive_mode_config"]["name"]   = basename($realpath);
-						$object["hive_mode_config"]["prefix"] = _HIVE_COOKIE_."_".$value."_";
-						$object["hive_mode_config"]["cookie"] = _HIVE_COOKIE_."_".$value."_";
 						require_once($value."/_config/global.php");
 						array_push($object["loadup"]["config_global"], $value."/_config/global.php");
 					}
@@ -610,24 +606,20 @@
 	#################################################################################################################################################
 		$object["loadup"]["config"] = array();		
 		if(!defined("_HIVE_CRIT_ER_")) { 
+			$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_); 
 			if(file_exists($object["path"]."/_site/"._HIVE_MODE_."/_config/config.php")) { 
 				require_once($object["path"]."/_site/"._HIVE_MODE_."/_config/config.php"); 
 				array_push($object["loadup"]["config"], $object["path"]."/_site/"._HIVE_MODE_."/_config/config.php");
 			} 
 			// Extension Libraries
-			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
+			foreach ($object["extensions_path"] as $hive_extension_loader_current_init) {
 				if (file_exists($hive_extension_loader_current_init."/_config/config.php")) {
-					$object["extension"] = array(); 
-					$object["extension"]["info"]   = hive__require_x($hive_extension_loader_current_init."/version.php");
-					$object["extension"]["path"]   = $hive_extension_loader_current_init;
-					$object["extension"]["name"]   = basename($hive_extension_loader_current_init);
-					$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
-					$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
+					$object["extension"] = hive__init_extension_header($object, basename($hive_extension_loader_current_init)); 
 					require_once $hive_extension_loader_current_init."/_config/config.php";
 					array_push($object["loadup"]["config"], $hive_extension_loader_current_init."/_config/config.php");
 				}
 			} unset($object["extension"]);	
-		}	
+		} unset($object["hive_mode_config"]);			
 		
 	#################################################################################################################################################
 	// Init Contants out of Variable Classes
@@ -649,48 +641,44 @@
 		if(!defined("_HIVE_CSRF_TIME_")) 				{ define("_HIVE_CSRF_TIME_", 1200); }
 		if(!defined("_TINYMCE_PLUGINS_")) 				{ define("_TINYMCE_PLUGINS_", "preview importcss searchreplace autolink directionality visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor advlist lists wordcount help charmap quickbars emoticons code"); }
 		if(!defined("_TINYMCE_MENU_BAR_")) 				{ define("_TINYMCE_MENU_BAR_", "file edit view insert format table help"); }
-		if(!defined("_TINYMCE_TOOL_BAR_")) 				{ define("_TINYMCE_TOOL_BAR_", "undo redo | bold italic underline strikethrough | blocks fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | image media link"); }		
+		if(!defined("_TINYMCE_TOOL_BAR_")) 				{ define("_TINYMCE_TOOL_BAR_", "undo redo | bold italic underline strikethrough | blocks fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | image media link"); }				
 		
 	#################################################################################################################################################
 	// Load Modules Current Selected MySQL Configuration
 	#################################################################################################################################################
 		$object["loadup"]["mysql"] = array();		
 		if(!defined("_HIVE_CRIT_ER_")) { 
+			$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_); 
 			foreach (glob($object["path"]."/_site/"._HIVE_MODE_."/_mysql/mysql.*.php") as $filename){ 
 				if(@basename($filename) == "index.php") { continue; } 
 				if(!$object["mysql"]->table_exists(_HIVE_SITE_PREFIX_.substr(basename($filename), 6, -4))) {
-					$object["log"]->warning("MySQL Table Installation for: '<b>".@htmlspecialchars(_HIVE_MODE_ ?? '')."</b>' with Table Name: '<b>".@htmlspecialchars(_HIVE_SITE_PREFIX_.substr(basename($filename), 6, -4) ?? '' )."</b>'", "mysql");
+					$object["log"]->warning("[CORE] [MYSQL] [INSTALL] [TABLE] ".@htmlspecialchars(_HIVE_SITE_PREFIX_.substr(basename($filename), 6, -4) ?? '' )." [SITE] ".@htmlspecialchars(_HIVE_MODE_ ?? '')."", "mysql");
 					require_once($filename);
 					$object["mysql"]->free_all();
 					array_push($object["loadup"]["mysql"], $filename);
-				}
+				} else { array_push($object["loadup"]["mysql"], $filename); }
 			}	
 			// Extension Libraries
-			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
-				$object["extension"] = array(); 
-				$object["extension"]["info"]   = hive__require_x($hive_extension_loader_current_init."/version.php");
-				$object["extension"]["path"]   = $hive_extension_loader_current_init;
-				$object["extension"]["name"]   = basename($hive_extension_loader_current_init);
-				$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
-				$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
+			foreach ($object["extensions_path"] as $hive_extension_loader_current_init) {
+				$object["extension"] = hive__init_extension_header($object, basename($hive_extension_loader_current_init)); 
 				foreach (glob($hive_extension_loader_current_init."/_mysql/mysql.*.php") as $filenamemm){ 
 					if(@basename($filenamemm) == "index.php") { continue; } 
 					if(!$object["mysql"]->table_exists($object["extension"]["prefix"].substr(basename($filenamemm), 6, -4))) {
-						$object["log"]->warning("MySQL Table Installation for: '<b>"._HIVE_MODE_."</b>' on Extension: '<b>".htmlspecialchars($object["extension"]["name"] ?? '') ."</b>' with Table Name: '<b>".@htmlspecialchars($object["extension"]["prefix"].substr(basename($filenamemm), 6, -4) ?? '' )."</b>'", "mysql");
+						$object["log"]->warning("[CORE] [MYSQL] [INSTALL] [TABLE] ".@htmlspecialchars($object["extension"]["prefix"].substr(basename($filenamemm), 6, -4) ?? '' )." [SITE] "._HIVE_MODE_." [EXT] ".htmlspecialchars($object["extension"]["name"] ?? '') ."", "mysql");
 						require_once($filenamemm);
 						$object["mysql"]->free_all();
 						array_push($object["loadup"]["mysql"], $filenamemm);
-					}
+					} else { array_push($object["loadup"]["mysql"], $filename); }
 				}	
-			} unset($object["extension"]);	
-		} unset($object["log_tmp"]);
+			} unset($object["extension"]); unset($object["hive_mode_config"]);
+		} unset($object["log_tmp"]); 
 				
 	#################################################################################################################################################
 	// Define Default Headers for Mails
 	#################################################################################################################################################
 		if(!defined("_SMTP_MAILS_HEADER_")) {
 			define("_SMTP_MAILS_HEADER_", '<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style>body { background-color: #121212; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; } .content { background: #FFFFFF; box-sizing: border-box; display: block; margin: 0 auto; max-width: 580px; padding: 10px; border-radius: 5px; margin-top: 15px;  }  .footer { clear: both; margin-top: 10px; text-align: center; width: 100%; color: #000000; font-size: 12px; text-align: center;  }  h1, h2, h3, h4 { color: #000000; font-family: sans-serif; font-weight: 400; line-height: 1.4; margin: 0; margin-bottom: 30px; }  h1 { font-size: 35px; font-weight: 300; text-align: center; text-transform: capitalize; }  a { color: blue; text-decoration: none; } hr { border: 0; border-bottom: 1px solid #242424; margin: 20px 0; }  @media only screen and (max-width: 620px) { div.content { margin-top: 2vw !important; margin-left: 2vw !important; margin-right: 2vw !important;}} a:hover { color: black; } .alert { padding: 15px; margin: 5px; border-radius: 5px; } .alert-danger { background: #FFCDD2; } .alert-success { background: #A5D6A7; } .alert-warning { background: #FFF9C4; }</style></head><body><div class="content">'); }
-		if(!defined("_SMTP_MAILS_FOOTER_")) { define("_SMTP_MAILS_FOOTER_", '</div></body></html>'); }		
+		if(!defined("_SMTP_MAILS_FOOTER_")) { define("_SMTP_MAILS_FOOTER_", '</div></body></html>'); }				
 		
 	#################################################################################################################################################
 	// Default Captcha Setup
@@ -720,8 +708,8 @@
 		if(!defined("_USER_LOG_SESSIONS_")) 	{ define("_USER_LOG_SESSIONS_", true); }
 		if(!defined("_USER_INITIAL_USERNAME_")) { define("_USER_INITIAL_USERNAME_", "admin@admin.local"); }
 		if(!defined("_USER_INITIAL_USERPASS_")) { define("_USER_INITIAL_USERPASS_", "changeme"); }
-		if(!defined("_USER_LOG_IP_")) 			{ define("_USER_LOG_IP_", false); }
-
+		if(!defined("_USER_LOG_IP_")) 			{ define("_USER_LOG_IP_", false); }		
+		
 	#################################################################################################################################################
 	/* MySQL Debug Mode? */
 	#################################################################################################################################################
@@ -763,7 +751,7 @@
 			} else {
 				define('_HIVE_URL_CUR_', array(false, false, false, false, false));
 			}
-		}	    		
+		}			
 		
 	#################################################################################################################################################
 	// User Init	
@@ -793,13 +781,15 @@
 		$object["user"]->groups(_TABLE_USER_GROUP_, _TABLE_USER_GROUP_LINK_);		
 		$object["user"]->extrafields(_TABLE_USER_EXTRAFIELDS_);		
 		$object["user"]->init();		
+		$object["user"]->user_add_field(" user_firstname TEXT NULL");	
+		$object["user"]->user_add_field(" user_lastname TEXT NULL");	
 		$object["user"]->user_add_field(" user_street TEXT NULL");		
 		$object["user"]->user_add_field(" user_company TEXT NULL");		
-		$object["user"]->user_add_field(" user_postcode TEXT NULL");		
-		$object["user"]->user_add_field(" user_country TEXT NULL");		
-		$object["user"]->user_add_field(" user_region TEXT NULL");		
-		$object["user"]->user_add_field(" user_tel TEXT NULL");		
-		
+		$object["user"]->user_add_field(" user_postcode varchar(12) NULL");		
+		$object["user"]->user_add_field(" user_country varchar(12) NULL");		
+		$object["user"]->user_add_field(" user_region varchar(12) NULL");		
+		$object["user"]->user_add_field(" user_tel varchar(64) NULL");				
+
 	#################################################################################################################################################
 	// User Permissions
 	#################################################################################################################################################
@@ -829,15 +819,15 @@
 				$valuex["perm_obj_glob"] = $object["perm_group_glob"]->item($value["fk_group"]);
 				array_push($object["user_group"], $valuex);
 			}	
-		} unset($tmp);			
-		
+		} unset($tmp);					
+
 	#################################################################################################################################################
 	// Init of may not set variables
 	#################################################################################################################################################		
 		if(!defined("_REDIS_")) 				{ define("_REDIS_", 					false); }
 		if(!defined("_REDIS_HOST_")) 			{ define("_REDIS_HOST_", 				"localhost"); }
 		if(!defined("_REDIS_PORT_")) 			{ define("_REDIS_PORT_", 				6379); }
-		if(!defined("_REDIS_PREFIX_")) 			{ define("_REDIS_PREFIX_", 				_HIVE_SITE_PREFIX_); }
+		if(!defined("_REDIS_PREFIX_")) 			{ define("_REDIS_PREFIX_", 				""); }
 		if(!defined("_HIVE_IP_LIMIT_")) 		{ define("_HIVE_IP_LIMIT_", 			100000); }
 		if(!defined("_HIVE_REFERER_")) 			{ define("_HIVE_REFERER_", 				false); }	
 		if(!defined("_SMTP_HOST_")) 			{ define("_SMTP_HOST_", 				false); }
@@ -849,7 +839,7 @@
 		if(!defined("_SMTP_DEBUG_")) 			{ define("_SMTP_DEBUG_", 				0); }
 		if(!defined("_SMTP_MAILS_IN_HTML_")) 	{ define("_SMTP_MAILS_IN_HTML_", 		true); }
 		if(!defined("_SMTP_SENDER_MAIL_")) 		{ define("_SMTP_SENDER_MAIL_", 			false); }
-		if(!defined("_SMTP_SENDER_NAME_")) 		{ define("_SMTP_SENDER_NAME_", 			false); }
+		if(!defined("_SMTP_SENDER_NAME_")) 		{ define("_SMTP_SENDER_NAME_", 			false); }		
 		
 	#################################################################################################################################################
 	// More Classes Inits
@@ -873,8 +863,8 @@
 			$object["mail_template"] = new x_class_mail_template($object["mysql"], _TABLE_MAIL_TPL_, _HIVE_MODE_);
 			$object["mail_template"]->set_header(_SMTP_MAILS_HEADER_);
 			$object["mail_template"]->set_footer(_SMTP_MAILS_FOOTER_);			
-		}
-		
+		}	
+	
 	#################################################################################################################################################
 	// Referer Class	
 	#################################################################################################################################################
@@ -882,8 +872,7 @@
 		$object["referer"] = new x_class_referer($object["mysql"], _TABLE_LOG_REFERER_, @$tmp_host);	
 		if(_HIVE_REFERER_) 	{ $object["referer"]->execute($tmp_type); }
 		unset($tmp_host);
-		unset($tmp_type);
-
+		unset($tmp_type);		
 	#################################################################################################################################################
 	// Language Initializations	
 	#################################################################################################################################################
@@ -911,22 +900,22 @@
 		} unset($tmp); 
 		// Save in Variable
 		define("_HIVE_LANG_", $_SESSION[_HIVE_SITE_COOKIE_."hive_language"]);
-		// Load Default Language File			
-		$object["lang_tmp_def"] = new x_class_lang(false, false, false, false, $object["path"]."/_core/_lang/en.php");  
 		// Load and merge Language
 		if(is_array($object["hive_mode"])) {
-			$object["lang"] = new x_class_lang(false, false, false, false, _HIVE_SITE_PATH_."/_lang/"._HIVE_LANG_.".php"); 	 
+			// Load Default Language File			
+			$object["lang_tmp_def"] = new x_class_lang(false, false, false, false, $object["path"]."/_core/_lang/"._HIVE_LANG_.".php"); 
+			$object["lang"] = new x_class_lang(false, false, false, false, _HIVE_SITE_PATH_."/_lang/"._HIVE_LANG_.".php"); 	
+			if(is_array($object["lang_tmp_def"]->array)) { 
 			foreach($object["lang_tmp_def"]->array as $key => $value) {	
 				if(@!$object["lang"]->array[$key]) { $object["lang"]->array[$key] = $value; }
-			} unset($object["lang_tmp_def"]); 
+			} } unset($object["lang_tmp_def"]); 
 			$object["lang_tmp"] = new x_class_lang($object["mysql"], _TABLE_LANG_, @$_SESSION[_HIVE_SITE_COOKIE_."hive_language"], _HIVE_MODE_, false);
 			foreach($object["lang_tmp"]->array as $key => $value) { 
-				$object["lang"]->array[$key] = $value;
-			}
-			unset($object["lang_tmp"]);
+				$object["lang"]->array[$key] = $value; 
+			} unset($object["lang_tmp"]);
 		} else {
 			$object["lang"] = new x_class_lang(false, false, false, false, $object["path"]."/_core/_lang/en.php"); 
-		} unset($tmp); unset($object["lang_tmp_def"]);
+		}
 
 	#################################################################################################################################################
 	// Theme Initializations	
@@ -966,7 +955,69 @@
 				}
 			}
 		} define("_HIVE_COLOR_", $_SESSION[_HIVE_SITE_COOKIE_."hive_color"]); unset($tmp);
-
+		
+	#################################################################################################################################################
+	// Preload Hive Mode Config - Pre Languages
+	#################################################################################################################################################
+		$object["hive_mode_config_pre"]["extension_lang"] = array();
+		$object["hive_mode_config_pre"]["site_lang"] = array();
+		if(is_array(_HIVE_MODE_ARRAY_)) {
+			foreach(_HIVE_MODE_ARRAY_ as $k => $v) {
+				if(file_exists($object["path"]."/_site/".$v."/version.php")) { 
+					$object["hive_mode_config_pre"]["site_lang"][$v] = false;
+					$tmp_path = $object["path"]."/_site/".$v."/";
+					// Language Array Information
+					if(defined("_HIVE_LANG_")) {
+						if(file_exists($tmp_path."/_admin/_lang/"._HIVE_LANG_.".php")) { 
+							$object["hive_mode_config_pre"]["site_lang"][$v] = new x_class_lang(false, false, false, false, $tmp_path."/_admin/_lang/"._HIVE_LANG_.".php");  
+						} elseif(file_exists($tmp_path."/_admin/_lang/en.php")) { 
+							$object["hive_mode_config_pre"]["site_lang"][$v] = new x_class_lang(false, false, false, false, $tmp_path."/_admin/_lang/en.php");  
+						} else { $object["hive_mode_config_pre"]["site_lang"][$v] = false; }
+						if(@is_object($object["hive_mode_config_pre"]["site_lang"][$v])) { 
+							$tmp = new x_class_lang($object["mysql"], _TABLE_LANG_, @$_SESSION[_HIVE_SITE_COOKIE_."hive_language"], $v, false);		
+							foreach($tmp->array as $key => $value) { 
+								$nametoget = "___smd_".$v."_";
+								$nametogetcounter = strlen($nametoget);
+								if(substr($key, 0, $nametogetcounter) == $nametoget) { $object["hive_mode_config_pre"]["site_lang"][$v]->array[substr($key, $nametogetcounter)] = $value; } 
+							}
+						}
+						unset($nametoget);
+						unset($nametogetcounter);
+					}
+					unset($tmp_path);
+					unset($tmp);
+				}
+			}
+		}
+		if(is_array($object["extensions_path"])) {
+			foreach($object["extensions_path"] as $k => $v) {
+				if(file_exists($v."/version.php")) { 
+					$v = basename($v);
+					$object["hive_mode_config_pre"]["extension_lang"][$v] = false;
+					// Include Relative Extension Language Files
+					if(defined("_HIVE_LANG_")) {
+						if(file_exists($v."/_lang/"._HIVE_LANG_.".php")) { 
+							$object["hive_mode_config_pre"]["extension_lang"][$v] = new x_class_lang(false, false, false, false, $v."/_lang/"._HIVE_LANG_.".php");  
+						} elseif(file_exists($v."/_lang/en.php")) { 
+							$object["hive_mode_config_pre"]["extension_lang"][$v] = new x_class_lang(false, false, false, false, $v."/_lang/en.php");  
+						} else { $object["hive_mode_config_pre"]["extension_lang"][$v] 		= false; }
+					}
+					$tmp = false;
+					if(@is_object($object["hive_mode_config_pre"]["extension_lang"][$v])) { 
+						$tmp = new x_class_lang($object["mysql"], _TABLE_LANG_, @$_SESSION[_HIVE_SITE_COOKIE_."hive_language"], _HIVE_MODE_, false);		
+						foreach($tmp->array as $key => $value) { 
+							$nametoget = "___ext_".basename($v)."_";
+							$nametogetcounter = strlen($nametoget);
+							if(substr($key, 0, $nametogetcounter) == $nametoget) { $object["hive_mode_config_pre"]["extension_lang"][$v]->array[substr($key, $nametogetcounter)] = $value; } 
+						}
+					}
+					unset($nametoget);
+					unset($nametogetcounter);	
+					unset($tmp);	
+				}
+			}
+		}	
+	
 	#################################################################################################################################################
 	// Robots.TXT for Website if Configured
 	#################################################################################################################################################
@@ -974,19 +1025,19 @@
 			file_put_contents($object["path"]."/robots.txt", 
 "Sitemap: "._HIVE_URL_REL_."sitemap.xml
 User-Agent: *
-Disallow: "._HIVE_URLC_REL_."_api/*
 Disallow: "._HIVE_URLC_REL_."_core/*
-Disallow: "._HIVE_URLC_REL_."_cron/*
 Disallow: "._HIVE_URLC_REL_."_data/*
-Disallow: "._HIVE_URLC_REL_."_disabled/*
 Disallow: "._HIVE_URLC_REL_."_image/*
 Disallow: "._HIVE_URLC_REL_."_script/*
 Disallow: "._HIVE_URLC_REL_."_site/*
 Disallow: "._HIVE_URLC_REL_."_store/*
-Disallow: "._HIVE_URLC_REL_."cfg_ruleset.php
+Disallow: "._HIVE_URLC_REL_."_template/*
 Disallow: "._HIVE_URLC_REL_."README.md
-Disallow: "._HIVE_URLC_REL_."LICENSE.md
+Disallow: "._HIVE_URLC_REL_."cfg_ruleset.php
+Disallow: "._HIVE_URLC_REL_."cronjob.php
 Disallow: "._HIVE_URLC_REL_."cfg_ruleset_sample.php
+Disallow: "._HIVE_URLC_REL_."settings_sample.php
+Disallow: "._HIVE_URLC_REL_."settings.php
 Disallow: "._HIVE_URLC_REL_."updater.php
 Disallow: "._HIVE_URLC_REL_."installer.php
 Disallow: "._HIVE_URLC_REL_."developer.php");
@@ -998,7 +1049,7 @@ Disallow: "._HIVE_URLC_REL_."developer.php");
 		if(!file_exists($object["path"]."/.htaccess")) {	
 			file_put_contents($object["path"]."/.htaccess", 
 "###############################################################
-# HTcess File of bugfishCMS Instance
+# HTcess File of SuitefishCRM Instance
 # Changes will be persistent!
 ###############################################################
 ## Enable Rewriting - Do not comment this out!
@@ -1102,7 +1153,7 @@ ErrorDocument 503 "._HIVE_URLC_REL_."_core/_error/error.503.php
 ###############################################################
 ## Lock Folders which should not be public accessible
 ## Do not comment this out (Seperate with |)
-RewriteRule ^(_disabled) - [F,L]"); }	
+RewriteRule ^(_template) - [F,L]"); }	
 
 	#################################################################################################################################################
 	// Unset Constant Fixes
@@ -1121,14 +1172,9 @@ RewriteRule ^(_disabled) - [F,L]"); }
 		if(!defined("_HIVE_CRIT_ER_"))  {
 			if(is_array(_HIVE_MODE_ARRAY_))  {
 				foreach(_HIVE_MODE_ARRAY_ as $key => $value) {
+					$object["hive_mode_config"] = hive__init_site_header($object, $value); 
 					$realpath = _HIVE_SITE_PATH_."/".$value."/";
 					if (file_exists($realpath."/_config/global_post.php")) {
-						$object["hive_mode_config"] = array(); 
-						$object["hive_mode_config"]["info"]   = hive__require_x($realpath."/version.php");
-						$object["hive_mode_config"]["path"]   = $realpath;
-						$object["hive_mode_config"]["name"]   = basename($realpath);
-						$object["hive_mode_config"]["prefix"] = _HIVE_COOKIE_."_".$value."_";
-						$object["hive_mode_config"]["cookie"] = _HIVE_COOKIE_."_".$value."_";
 						require_once($value."/_config/global_post.php");
 						array_push($object["loadup"]["config_global_post"], $value."/_config/global_post.php");
 					}
@@ -1141,19 +1187,15 @@ RewriteRule ^(_disabled) - [F,L]"); }
 	#################################################################################################################################################
 		$object["loadup"]["config_post"] = array();
 		if(!defined("_HIVE_CRIT_ER_")) { 
+			$object["hive_mode_config"] = hive__init_site_header($object, _HIVE_MODE_); 
 			if(file_exists($object["path"]."/_site/"._HIVE_MODE_."/_config/config_post.php")) { 
 				require_once($object["path"]."/_site/"._HIVE_MODE_."/_config/config_post.php"); 
 				array_push($object["loadup"]["config_post"], $object["path"]."/_site/"._HIVE_MODE_."/_config/config_post.php");
 			} 
 			// Extension Libraries
-			foreach (_HIVE_SITE_EXT_ as $hive_extension_loader_current_init) {
+			foreach ($object["extensions_path"] as $hive_extension_loader_current_init) {
 				if (file_exists($hive_extension_loader_current_init."/_config/config_post.php")) {
-					$object["extension"] = array(); 
-					$object["extension"]["info"]   = hive__require_x($hive_extension_loader_current_init."/version.php");
-					$object["extension"]["path"]   = $hive_extension_loader_current_init;
-					$object["extension"]["name"]   = basename($hive_extension_loader_current_init);
-					$object["extension"]["prefix"] = _HIVE_PREFIX_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
-					$object["extension"]["cookie"] = _HIVE_COOKIE_."_"._HIVE_MODE_."__".$object["extension"]["name"]."_";
+					$object["extension"] = hive__init_extension_header($object, basename($hive_extension_loader_current_init)); 
 					require_once $hive_extension_loader_current_init."/_config/config_post.php";
 					array_push($object["loadup"]["config_post"], $hive_extension_loader_current_init."/_config/config_post.php");
 				}
@@ -1161,13 +1203,19 @@ RewriteRule ^(_disabled) - [F,L]"); }
 			
 			// Define that This Module has Run one Time without any Errors!
 			$object["var"]->setup("_HIVE_BUILD_FIRSTRUN_",@htmlspecialchars( _HIVE_RNAME_ ?? ''), "Has this Module run for the first time without errors in Initializing?");
-		}	
+		} unset($object["hive_mode_config"]);
 		
 	#################################################################################################################################################
 	// API Define Variables for Default Scripts
 	#################################################################################################################################################
-		if(!defined("_HIVE_ACTION_MAILCHANGE_EXEC_")) { define("_HIVE_ACTION_MAILCHANGE_EXEC_", false); } 
-		if(!defined("_HIVE_ACTION_RECOVER_EXEC_")) { define("_HIVE_ACTION_RECOVER_EXEC_", false); } 
-		if(!defined("_HIVE_ACTION_LOGIN_EXEC_")) { define("_HIVE_ACTION_LOGIN_EXEC_", false); } 
-		if(!defined("_HIVE_ACTION_ACTIVATE_EXEC_")) { define("_HIVE_ACTION_ACTIVATE_EXEC_", false); } 
-		if(!defined("_HIVE_ACTION_REGISTER_EXEC_")) { define("_HIVE_ACTION_REGISTER_EXEC_", false); } 
+		if(!defined("_HIVE_ACTION_MAILCHANGE_EXEC_")) 	{ define("_HIVE_ACTION_MAILCHANGE_EXEC_", false); } 
+		if(!defined("_HIVE_ACTION_RECOVER_EXEC_")) 		{ define("_HIVE_ACTION_RECOVER_EXEC_", false); } 
+		if(!defined("_HIVE_ACTION_LOGIN_EXEC_")) 		{ define("_HIVE_ACTION_LOGIN_EXEC_", false); } 
+		if(!defined("_HIVE_ACTION_ACTIVATE_EXEC_")) 	{ define("_HIVE_ACTION_ACTIVATE_EXEC_", false); } 
+		if(!defined("_HIVE_ACTION_REGISTER_EXEC_")) 	{ define("_HIVE_ACTION_REGISTER_EXEC_", false); } 
+		
+		if(!defined("_HIVE_ACTION_MAILCHANGE_")) 	{ define("_HIVE_ACTION_MAILCHANGE_", false); } 
+		if(!defined("_HIVE_ACTION_RECOVER_")) 		{ define("_HIVE_ACTION_RECOVER_", false); } 
+		if(!defined("_HIVE_ACTION_LOGIN_")) 		{ define("_HIVE_ACTION_LOGIN_", false); } 
+		if(!defined("_HIVE_ACTION_REGISTER_")) 		{ define("_HIVE_ACTION_REGISTER_", false); } 
+	}

@@ -1,13 +1,19 @@
 # Tutorials
 
-### General Information
+### YouTube Tutorials
 
-Welcome to the tutorial video series for our Content Management System (CMS). This playlist is designed to help you, whether you're a developer working on customization or an end user managing content. Each video in the series covers specific aspects of the CMS to ensure you can make the most out of the platform.
+Discover a collection of video tutorials designed to help both end users and developers make the most of the software's features. Access the tutorials through the playlist linked below.
 
 [Tutorial Videos](https://www.youtube.com/playlist?list=PL6npOHuBGrpAfrpUzQPTOWdqoCnhq1oP0){.md-button}
 
-### For Developers
-These videos will guide you through various aspects of working with the CMS, including setting up the environment, customizing features, and troubleshooting common issues.
+### CMS Documentation
 
-### For End Users
-You'll find step-by-step instructions on how to perform everyday tasks such as creating and editing content, managing media, and using the CMS's built-in tools.
+Click the button below to access detailed documentation on the CMS. It covers various functions and the initialization process to guide you through its setup and usage.
+
+[CMS Documentation](https://bugfishtm.github.io/suitefish-cms){.md-button}
+
+### Framework Documentation
+
+Learn more about the "Bugfish Framework," which is the foundation of the Suitefish CMS. Detailed information and guidance can be found in the documentation linked below.
+
+[Framework Documentation](https://bugfishtm.github.io/bugfish-framework){.md-button}

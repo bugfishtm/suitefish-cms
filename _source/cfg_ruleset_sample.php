@@ -1,10 +1,13 @@
 <?php if(!is_array(@$object)) { http_response_code(404); exit(); }
 	/* 
-		 _           ___ _     _   _____ _____ _____ 
-		| |_ _ _ ___|  _|_|___| |_|     |     |   __|
-		| . | | | . |  _| |_ -|   |   --| | | |__   |
-		|___|___|_  |_| |_|___|_|_|_____|_|_|_|_____|
-				|___|                                
+		 ____  __  __  ___  ____  ____  ___  _   _ 
+		(  _ \(  )(  )/ __)( ___)(_  _)/ __)( )_( )
+		 ) _ < )(__)(( (_-. )__)  _)(_ \__ \ ) _ ( 
+		(____/(______)\___/(__)  (____)(___/(_) (_) www.bugfish.eu
+				 ___ _   _ ___ _____ ___ ___ ___ ___ _  _ 
+				/ __| | | |_ _|_   _| __| __|_ _/ __| || |
+				\__ \ |_| || |  | | | _|| _| | |\__ \ __ |
+				|___/\___/|___| |_| |___|_| |___|___/_||_|
 		Copyright (C) 2024 Jan Maurice Dahlmanns [Bugfish]
 
 		This program is free software: you can redistribute it and/or modify
@@ -16,6 +19,9 @@
 		but WITHOUT ANY WARRANTY; without even the implied warranty of
 		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 		GNU General Public License for more details.
+
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see <https://www.gnu.org/licenses/>.
 		
 		File Description:
 			Rulset for specific CMS Settings. With this file you can change 
@@ -41,17 +47,13 @@
 		// - Recommended to set to `false` for standalone site modules.
 		// - Default admin module: `_administrator`.
 		// Uncomment and adjust the following line to use:
-		// define('_HIVE_ADMIN_SITE_', "_administrator");
+		// $administrative_page = "_administrator";
 	
 		// **Default Site Module**:
 		// - The default site module to load if no other is specified.
 		// - Default value: `_administrator` (can be changed).
 		// Uncomment and adjust the following line to use:
 		// $hive_mode_default = "_administrator";
-
-	##############################################################################################
-	// Environment Variable Override for Site Mode
-	##############################################################################################
 
 		// **Site Mode Override via Environment Variable**:
 		// - Allows overriding the default site mode by setting an environment variable in the Apache vhost.
@@ -66,21 +68,21 @@
 
 		// **Installer Window Title**:
 		// - Title displayed during CMS installation.
-		// - Default value: "bugfishCMS".
+		// - Default value: "Suitefish".
 		// Uncomment and adjust the following line to use:
-		// define("_INSTALLER_TITLE_", "bugfishCMS");
+		// define("_INSTALLER_TITLE_", "Suitefish");
 		
 		// **Cookie and Session Prefix**:
 		// - Default prefix for cookies and sessions during installation.
-		// - Default value: `bcms_` (max 5 characters, no special chars).
+		// - Default value: `sf_` (max 5 characters, no special chars).
 		// Uncomment and adjust the following line to use:
-		// define("_INSTALLER_COOKIE_", "bcms_");
+		// define("_INSTALLER_COOKIE_", "sf_");
 		
 		// **Database Table Prefix**:
 		// - Default prefix for database tables during installation.
-		// - Default value: `hive_` (max 5 characters, no special chars).
+		// - Default value: `sf_` (max 5 characters, no special chars).
 		// Uncomment and adjust the following line to use:
-		// define("_INSTALLER_PREFIX_", "bcms_");
+		// define("_INSTALLER_PREFIX_", "sf_");
 	
 		// **Installation Password**:
 		// - Option to require a password during installation.
@@ -95,16 +97,16 @@
 		// **Custom Store Server**:
 		// - Option to define a custom server for updates and store functions in an array.
 		// - Multiple Values are possible.
-		// - Default store URL: `https://store.bugfish.eu`.
+		// - Default store URL: `https://suitefish.com`.
 		// - Advanced users can specify their own server.
 		// Uncomment and adjust the following line to use:
-		// define("_HIVE_SERVER_", array("https://STOREURL"));
+		// define("_HIVE_SERVER_", array("https://suitefish.com"));
 		
 		// **Core Update Server**:
 		// - URL for automatic core updates. It is recommended to leave the default.
-		// - Default value: `https://store.bugfish.eu`.
+		// - Default value: `https://suitefish.com`.
 		// Uncomment and adjust the following line to use:
-		// define("_HIVE_SERVER_CORE_", "https://COREUPDATEURL");
+		// define("_HIVE_SERVER_CORE_", "https://suitefish.com");
 
 	##############################################################################################
 	// Session Cookie Domain Settings
@@ -150,7 +152,7 @@
 		// - Enable PHP error reporting during initialization for debugging purposes.
 		// - Default value: `0` (errors are hidden).
 		// Uncomment and adjust the following line to use:
-		// define('_HIVE_PHP_DISPLAY_ERROR_ON_START_', 1);
+		// define('_HIVE_PHP_DISPLAY_ERROR_ON_START_', 0);
 
 	##############################################################################################
 	// Experimental Settings - Not for Productive Environments!

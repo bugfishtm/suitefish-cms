@@ -1,6 +1,6 @@
-site_name: bugfishCMS
-repo_url: https://github.com/bugfishtm/bugfish-cms
-repo_name: bugfishtm/bugfish-cms
+site_name: Suitefish
+repo_url: https://github.com/bugfishtm/suitefish-cms
+repo_name: suitefish-cms
 
 nav:
     - Home: index.md
@@ -20,19 +20,13 @@ nav:
         - Extension Modules: ext.md
         - Script Modules: script.md
         - Image Modules: image.md
-        - Docker Modules: docker.md
-        - Vendor: vendor.md
-    - Included Documentations: 
-        - Bugfish Framework: ./extra-bugfish-framework/index.html
-        - Volt Theme: ./extra-volt/index.html
-        - Windmill Theme: ./extra-windmill/index.html
-        - AdminBSB Theme: ./extra-adminbsb/index.html
     - Support: support.md
+    - Credits: credit.md
     - License: license.md
     - Impressum: https://bugfishtm.blogspot.com/2023/05/impressum.html
     - Privacy: https://bugfishtm.blogspot.com/2023/05/privacy.html
     - More by Bugfish: https://bugfishtm.github.io
- 
+
 theme:
   name: material
   logo: ./logo.png
@@ -44,7 +38,7 @@ theme:
   features:
     - content.code.copy
   palette:
-    - scheme: slate
+    - scheme: default
       primary: deep orange
       accent: deep orange
 
@@ -57,23 +51,8 @@ extra_javascript:
 plugins:
     - mkdocstrings
     - search
-    - mkdocs-video:
-        video_autoplay: false
-    - glightbox:
-        touchNavigation: true
-        loop: false
-        effect: zoom
-        width: 100%
-        height: auto
-        zoomable: true
-        draggable: true
-    - meta-descriptions:
-       export_csv: false
-       quiet: false
-       enable_checks: false
-       min_length: 50
-       max_length: 160
-       trim: false
+    - mkdocs-video
+    - glightbox
     
 markdown_extensions:
   - admonition
