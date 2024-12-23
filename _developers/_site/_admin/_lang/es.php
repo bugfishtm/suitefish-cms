@@ -22,19 +22,27 @@
 #		You should have received a copy of the GNU General Public License
 #		along with this program.  If not, see <https://www.gnu.org/licenses/>. ?>
 ##########################################################################################
-## Administrator Translations
+## Extension Related
 ##########################################################################################
-site_title=Página de Administración de Ejemplo
-site_title_ext=Página de Administración de Ejemplo para el Módulo _tplsite Extensión
-site_title_ext1=¡Este es solo un sitio de prueba para el Módulo de Ejemplo!
-site_title_ext2=¡No tienes los permisos necesarios para ver esta página!
-example_permission=Ver Página de Administración
-example_permission_descr=Permiso para Ver la Página del Módulo del Sitio Administrativo.
-nav_item=Módulo de Ejemplo
-site_settings=¡No hay configuraciones disponibles para este módulo! El archivo mod_setting incluido en este módulo es solo un ejemplo de cómo generar contenido en una página administrativa.
+
+# mod_site.php - Página
+site_title=Sitio Web de Ejemplo
+site_heading_text=¡Esta página ha sido inyectada por el módulo "Example Website" "_site"!
+site_no_permission=No tienes permiso para ver esta página.
+site_has_access=Esta es la página de extensión de Módulos del Sitio de Ejemplo.
+
+# mod_setting.php - Configuración
+site_settings=Normalmente, verías aquí la configuración de la extensión. Sin embargo, esta página está incluida solo como un ejemplo para los desarrolladores, por lo que puedes ignorarla.
+
+# mod_permission.php - Permisos
+permission_name=Acceso
+permission_descr=Permiso para ver la página de contenido de esta extensión y ejecutar todas las funcionalidades disponibles.
+
+# mod_nav.php - Navegación
+nav_title=Sitio Web de Ejemplo
 
 ##########################################################################################
-## Store Translations
+## Store Versioning Translations
 ##########################################################################################
-store_version_name=Plantilla: Módulo del Sitio
-store_version_description=El módulo _tplsite proporciona una plantilla básica para demostrar la estructura de módulos de sitio completos en Suitefish CMS. Muestra principios mínimos de diseño receptivo.
+store_version_name=Plantilla: Módulo de Sitio Web
+store_version_description=El módulo _tplsite proporciona una plantilla básica para demostrar la estructura de módulos completos de sitios web en Suitefish CMS. Presenta principios mínimos de diseño responsivo.

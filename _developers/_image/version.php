@@ -25,7 +25,8 @@
 		
 		File Description:
 			Versioning File to Contain Module Information!
-	*/  $x = array();
+	*/ if(!is_array(@$object)) { @http_response_code(404); Header("Location: ../"); exit(); }
+	$x = array();
 
 	##############################
 	// Critical Module Information
@@ -68,6 +69,7 @@
 			// 2 - Extension Module
 			// 3 - Image Module
 			// 4 - Windows Software
+			// 5 - Docker Template
 			$x["type"] 			= 3;
 		
 		// Single Instance Module?

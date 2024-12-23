@@ -25,7 +25,7 @@
 		File Description:
 			This File Configuration will be executed BEFORE the Initialization. 
 			See Documentation for more insights about initialization.
-	*/ if(!is_array($object)) { http_response_code(404); Header("Location: ../"); exit(); }
+	*/ if(!is_array(@$object)) { http_response_code(404); Header("Location: ../"); exit(); }
 
 	/////////////////////////////////////////////////////////////////////////////
 	## Default Authentication and Account Functionalitites

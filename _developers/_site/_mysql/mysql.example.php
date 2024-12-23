@@ -28,7 +28,7 @@
 			Use CREATE TABLE IF NOT EXISTS - to prevent performance lowagen through handler errors.
 			File name shall not create the Prefix which has been set at the installation, prefix of tables will
 			automatically be included!
-	*/ if(!is_array($object)) { @http_response_code(404); Header("Location: ../"); exit(); }
+	*/ if(!is_array(@$object)) { @http_response_code(404); Header("Location: ../"); exit(); }
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Here is a place to install Database Tables
 	// Only one table per file
@@ -36,7 +36,7 @@
 	// You can do different operations with table here, but if table name corrospondig to file name mysql.X.php
 	// is not present this file will be executed upon site module loadup.
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	$object["mysql"]->multi_query("CREATE TABLE IF NOT EXISTS `"._HIVE_SITE_PREFIX_."example` (
+	$object["mysql"]->multi_query("CREATE TABLE IF NOT EXISTS `".$object["hive_mode_config"]["prefix"]."example` (
 		  `id` int NOT NULL AUTO_INCREMENT COMMENT 'Unique ID',
 		  `creation` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation Date',
 		  `modification` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Modification Date',

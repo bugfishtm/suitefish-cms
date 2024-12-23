@@ -1,6 +1,6 @@
 # Download
 
-This page provides access to view the GitHub repository and download the latest file from the repository.
+This page provides access to view the GitHub repository and download the latest file from the repository. Additionally, you can check for Docker images related to this project.
 
 ## View the GitHub Repository
 
@@ -14,7 +14,8 @@ To download the latest file from the repository directory, click the link below:
 
 [Download Latest Release](https://github.com/bugfishtm/suitefish-cms/archive/refs/heads/main.zip){.md-button}
 
-## Visit our Store
-If you already own an instance of Suitefish CMS you can extend your software with the project documented on this site. Just visit our store and download your desired products!
+## Docker Image
 
-[Visit Store](https://suitefish.com){.md-button}
+To find available Docker images for this software, you can visit my Docker Hub account. 
+
+[View DockerHub](https://hub.docker.com/r/bugfishtm/suitefish){.md-button}

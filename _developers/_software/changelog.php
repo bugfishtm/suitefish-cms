@@ -25,5 +25,5 @@
 		
 		File Description:
 			Changelog Text for this Release, can be in HTML!
-	*/
-	$x = "<b>Template</b><br /> - Updated to current CMS Ruleset and Functionality.";
+	*/ if(!is_array(@$object)) { @http_response_code(404); Header("Location: ../"); exit(); }
+	$x = "<b>Release 1.10.100</b><br /> - Updated to current CMS Ruleset and Functionality.";

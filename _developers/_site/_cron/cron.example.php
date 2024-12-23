@@ -25,7 +25,6 @@
 		File Description:
 			Files with name cron.*.php in this folder will be automatically loaded on cronjob startup
 			See Documentation for Available Variables and more!
-	*/ if(!is_array($object)) { @http_response_code(404); Header("Location: ../"); exit(); }
+	*/ if(!is_array(@$object)) { @http_response_code(404); Header("Location: ../"); exit(); }
 	
 	echo "Daily Cronjob for Example Site (".$object["hive_mode_config"]["name"].") executed!"._CRON_SPACE_;
-?>

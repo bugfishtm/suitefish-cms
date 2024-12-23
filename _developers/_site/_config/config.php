@@ -25,7 +25,7 @@
 		File Description:
 			This File Configuration will be executed in the middle of configuration. 
 			See Documentation for more insights about initialization.
-	*/ if(!is_array($object)) { @http_response_code(404); Header("Location: ../"); exit(); }
+	*/ if(!is_array(@$object)) { @http_response_code(404); Header("Location: ../"); exit(); }
 	
 	/////////////////////////////////////////////////////////////////////////////
 	## TinyMCE Settings

@@ -22,19 +22,27 @@
 #		You should have received a copy of the GNU General Public License
 #		along with this program.  If not, see <https://www.gnu.org/licenses/>. ?>
 ##########################################################################################
-## Administrator Translations
+## Extension Related
 ##########################################################################################
-site_title=Example Admin Page
-site_title_ext=Example Admin Page for Module _tplsite Extension
-site_title_ext1=This is just a test site for the Example Module!
-site_title_ext2=You are missing required Permission to view this page!
-example_permission=View Admin Page
-example_permission_descr=Permission to View Administrative Site Module page.
-nav_item=Example Module
-site_settings=No settings are available for this module! The mod_setting file included in this module is just an example on how to spawn content on an administrative page.
+
+# mod_site.php - Page
+site_title=Example Website
+site_heading_text=This page has been injected by the Example Website module "_site"!
+site_no_permission=You do not have permission to view this page.
+site_has_access=This is the Example Site Modules Extension page.
+
+# mod_setting.php - Settings
+site_settings=Normally, you would see extension settings here. However, this page is only included as an example for developers, so you can disregard this page.
+
+# mod_permission.php - Permissions
+permission_name=Access
+permission_descr=Permission to view the content page of this extension and to execute all available functionalities.
+
+# mod_nav.php - Navigation
+nav_title=Example Website
 
 ##########################################################################################
-## Store Translations
+## Store Versioning Translations
 ##########################################################################################
-store_version_name=Template: Site Module
+store_version_name=Template: Website Module
 store_version_description=The _tplsite module provides a basic template to demonstrate the structure of full site modules in Suitefish CMS. It showcases minimal responsive design principles.

@@ -26,11 +26,30 @@
 			Files with name worker.SCRIPTNAME.php in this folder will be used to load functionalitites via the root
 			server background worker. See Documentation for Available Variables and more!
 	*/ 
+	// Prevent Initialization if Settings.php is included (optional but recommended).
+	define("_HIVE_PREVENT_INIT_", true); 
+	// Check if Settings File exists
 	if(file_exists(dirname(__FILE__)."/../../../settings.php")) { 
 		// Include Webite Settings File
 		require_once(dirname(__FILE__)."/../../../settings.php"); 
-	
-		// Write Background Worker Rootcode here.
-	
+		// Include Libraries if required
+		if(file_exists($object["path"]."/_core/_framework/classes/x_class_mysql.php")) { require_once($object["path"]."/_core/_framework/classes/x_class_mysql.php"); } 
+		if(file_exists($object["path"]."/_core/_framework/classes/x_class_var.php")) { require_once($object["path"]."/_core/_framework/classes/x_class_var.php"); } 
+		if(file_exists($object["path"]."/_core/_framework/functions/x_library.php")) { require_once($object["path"]."/_core/_framework/functions/x_library.php"); } 
+		// Only Allow in Command Line Interface
+		if(!x_inCLI()) { Header("Location: ../"); @http_response_code(404); exit(); } 
+		// Connect to MySQL Database
+		$object["mysql"] = new x_class_mysql(@$mysql["host"], @$mysql["user"], @$mysql["pass"], @$mysql["db"], @$mysql["port"]);   
+		// Execute Code if Connection Successfull
+		if ($object["mysql"]->lasterror == false) {
+			// Example Variable to Update in Database on each run!
+			$object["var_glob"] = new x_class_var($object["mysql"], $mysql['prefix']."cms_var", "");
+			$object["var_glob"]->set("__SMBSITE_EXAMPLE_WORKER", date("Y-m-d H:i"), "Just an example Worker Script Variable", true, true);
+			
+			// Execute Code only if Valid MySQL Connection for MySQL Operations
+			// ...
+		}
+		
+		// Execute Code without MySQL Connection 
+		// ...
 	}
-?>

@@ -33,6 +33,6 @@
 	// Active version is saved in database, if a change in version.php is detected
 	// Update will be forced.
 	///////////////////////////////////////////////////////////////
-	if(!is_array($object)) { @http_response_code(404); Header("Location: ../"); exit(); }
+	if(!is_array(@$object)) { @http_response_code(404); Header("Location: ../"); exit(); }
 
 	echo "Update for Testing Site Module succeded for Build 200!<br /><br />";

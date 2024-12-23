@@ -22,19 +22,27 @@
 #		You should have received a copy of the GNU General Public License
 #		along with this program.  If not, see <https://www.gnu.org/licenses/>. ?>
 ##########################################################################################
-## Administrator Translations
+## Extension Related
 ##########################################################################################
-site_title=Beispiel-Administrationsseite
-site_title_ext=Beispiel-Administrationsseite für das Modul _tplsite Erweiterung
-site_title_ext1=Dies ist nur eine Testseite für das Beispielmodul!
-site_title_ext2=Sie haben nicht die erforderliche Berechtigung, um diese Seite anzuzeigen!
-example_permission=Administrationsseite anzeigen
-example_permission_descr=Berechtigung zum Anzeigen der Seite des Verwaltungsmoduls.
-nav_item=Beispielmodul
-site_settings=Für dieses Modul sind keine Einstellungen verfügbar! Die in diesem Modul enthaltene Datei mod_setting ist nur ein Beispiel dafür, wie Inhalte auf einer Administrationsseite angezeigt werden können.
+
+# mod_site.php - Seite
+site_title=Beispiel-Website
+site_heading_text=Diese Seite wurde vom Modul „_site“ der Beispiel-Website eingefügt!
+site_no_permission=Sie haben keine Berechtigung, diese Seite anzuzeigen.
+site_has_access=Dies ist die Seite der Beispiel-Website-Module-Erweiterung.
+
+# mod_setting.php - Einstellungen
+site_settings=Normalerweise würden Sie hier Erweiterungseinstellungen sehen. Diese Seite ist jedoch nur als Beispiel für Entwickler enthalten, daher können Sie sie ignorieren.
+
+# mod_permission.php - Berechtigungen
+permission_name=Zugriff
+permission_descr=Berechtigung, die Inhaltsseite dieser Erweiterung anzuzeigen und alle verfügbaren Funktionen auszuführen.
+
+# mod_nav.php - Navigation
+nav_title=Beispiel-Website
 
 ##########################################################################################
-## Store Translations
+## Store Versioning Translations
 ##########################################################################################
-store_version_name=Vorlage: Standortmodul
-store_version_description=Das Modul _tplsite bietet eine grundlegende Vorlage, um die Struktur von vollständigen Standortmodulen in der Suitefish CMS zu demonstrieren. Es zeigt minimalistische Prinzipien des responsiven Designs.
+store_version_name=Vorlage: Website-Modul
+store_version_description=Das _tplsite-Modul bietet eine grundlegende Vorlage, um die Struktur vollständiger Website-Module in Suitefish CMS zu demonstrieren. Es zeigt minimale Prinzipien des responsiven Designs.

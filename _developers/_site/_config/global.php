@@ -24,7 +24,7 @@
 		along with this program.  If not, see <https://www.gnu.org/licenses/>.
 		File Description:
 			Global Configuration Injection on ALL Site Modules execution in the Middle of Initializations.
-	*/ if(!is_array($object)) { http_response_code(404); Header("Location: ../"); exit(); }
+	*/ if(!is_array(@$object)) { http_response_code(404); Header("Location: ../"); exit(); }
 	
 	////////////////////////////////////////////////////////////////
 	// You can set up global configuration here, but be cautios.

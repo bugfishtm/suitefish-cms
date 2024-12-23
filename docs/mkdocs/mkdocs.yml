@@ -1,27 +1,28 @@
-site_name: Suitefish
+site_name: Suitefish CMS
 repo_url: https://github.com/bugfishtm/suitefish-cms
 repo_name: suitefish-cms
 
 nav:
-    - Home: index.md
-    - Features: features.md
+    - Introduction: index.md
+    - Screenshots: screenshots.md
+    - Tutorials: tutorials.md
     - Download: download.md
     - Installation: installation.md
-    - Tutorials: tutorials.md
-    - Store: store.md
-    - Developers: 
-        - Admin Module: admin.md
-        - Core Library: corelib.md
-        - Cronjobs: devcron.md
-        - Themes: devthemes.md
-        - Updater: devupdater.md
-        - Folders: folders.md
-        - Site Modules: site.md
-        - Extension Modules: ext.md
-        - Script Modules: script.md
-        - Image Modules: image.md
+    - End-User Documentation:     
+        - Information: ./enduser/general.md
+    - Developer Documentation:        
+        - Core Library: ./developer/corelib.md
+        - Folder Structure: ./developer/folders.md
+        - Site Module: ./developer/mod-site.md
+        - Extension Module: ./developer/mod-ext.md
+        - Image Module: ./developer/mod-image.md
+        - Software Module: ./developer/mod-software.md
+        - Libraries: ./developer/vendor.md
+    - Included Documentation:     
+        - Suitefish-CMS: ./extra-cms/index.html    
+        - Bugfish-Framework: ./extra-framework/index.html     
+        - AdminBSB-Theme: ./extra-adminbsb/index.html    
     - Support: support.md
-    - Credits: credit.md
     - License: license.md
     - Impressum: https://bugfishtm.blogspot.com/2023/05/impressum.html
     - Privacy: https://bugfishtm.blogspot.com/2023/05/privacy.html

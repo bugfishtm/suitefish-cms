@@ -1,0 +1,26 @@
+services:
+  suitefish:
+    build: .
+    image: suitefish:developer 
+    volumes:
+      - data:/var/www/html/_data
+      - image:/var/www/html/_image
+      - template:/var/www/html/_template
+      - store:/var/www/html/_store
+      - mysql:/var/lib/mysql
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      sf_db_host:       "127.0.0.1"
+      sf_db_user:       "root"
+      sf_db_pass:       "${sf_db_pass}"
+      sf_db_name:       "suitefish"
+      sf_url:           "${sf_url}"
+      sf_timezone:      "${sf_timezone}"
+volumes:
+  mysql:
+  data:
+  image:
+  template:
+  store:

@@ -22,19 +22,27 @@
 #		You should have received a copy of the GNU General Public License
 #		along with this program.  If not, see <https://www.gnu.org/licenses/>. ?>
 ##########################################################################################
-## Administrator Translations
+## Extension Related
 ##########################################################################################
-site_title=示例管理页面
-site_title_ext=_tplsite 扩展模块的示例管理页面
-site_title_ext1=这是示例模块的测试网站！
-site_title_ext2=您缺少查看此页面所需的权限！
-example_permission=查看管理页面
-example_permission_descr=查看管理站点模块页面的权限。
-nav_item=示例模块
-site_settings=此模块没有可用的设置！此模块中包含的 mod_setting 文件只是一个在管理页面生成内容的示例。
+
+# mod_site.php - 页面
+site_title=示例网站
+site_heading_text=此页面由示例网站模块“_site”注入！
+site_no_permission=您无权查看此页面。
+site_has_access=这是示例站点模块扩展页面。
+
+# mod_setting.php - 设置
+site_settings=通常，您会在此处看到扩展设置。然而，此页面仅作为开发者的示例，因此您可以忽略此页面。
+
+# mod_permission.php - 权限
+permission_name=访问
+permission_descr=查看此扩展功能的内容页面并执行所有可用功能的权限。
+
+# mod_nav.php - 导航
+nav_title=示例网站
 
 ##########################################################################################
-## Store Translations
+## Store Versioning Translations
 ##########################################################################################
-store_version_name=模板：站点模块
-store_version_description=_tplsite 模块提供了一个基本模板，用于演示 Suitefish CMS 中完整站点模块的结构。它展示了最小化的响应式设计原则。
+store_version_name=模板：网站模块
+store_version_description=_tplsite模块提供了一个基本模板，用于展示Suitefish CMS中完整站点模块的结构。它展示了最小响应式设计原则。

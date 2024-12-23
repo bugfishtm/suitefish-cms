@@ -22,19 +22,27 @@
 #		You should have received a copy of the GNU General Public License
 #		along with this program.  If not, see <https://www.gnu.org/licenses/>. ?>
 ##########################################################################################
-## Administrator Translations
+## Extension Related
 ##########################################################################################
-site_title=例の管理ページ
-site_title_ext=_tplsite 拡張モジュール用の例の管理ページ
-site_title_ext1=これは例のモジュールのテストサイトです！
-site_title_ext2=このページを表示するための必要な権限がありません！
-example_permission=管理ページを表示
-example_permission_descr=管理サイトモジュールページを表示する権限。
-nav_item=例のモジュール
-site_settings=このモジュールには設定がありません！このモジュールに含まれている mod_setting ファイルは、管理ページにコンテンツを生成する方法の例です。
+
+# mod_site.php - ページ
+site_title=例のウェブサイト
+site_heading_text=このページは、モジュール「_site」によって注入されました！
+site_no_permission=このページを表示する権限がありません。
+site_has_access=これは「Example Site Modules」拡張機能のページです。
+
+# mod_setting.php - 設定
+site_settings=通常、ここに拡張設定が表示されます。ただし、このページは開発者向けの例としてのみ含まれているため、無視してください。
+
+# mod_permission.php - 権限
+permission_name=アクセス
+permission_descr=この拡張機能のコンテンツページを表示し、利用可能なすべての機能を実行する権限。
+
+# mod_nav.php - ナビゲーション
+nav_title=例のウェブサイト
 
 ##########################################################################################
-## Store Translations
+## Store Versioning Translations
 ##########################################################################################
-store_version_name=テンプレート: サイトモジュール
-store_version_description=_tplsite モジュールは、Suitefish CMS におけるフルサイトモジュールの構造を示すための基本的なテンプレートを提供します。最小限のレスポンシブデザイン原則を紹介します。
+store_version_name=テンプレート：ウェブサイトモジュール
+store_version_description=_tplsiteモジュールは、Suitefish CMS内のフルサイトモジュールの構造を示す基本テンプレートを提供します。最小限のレスポンシブデザイン原則を示します。
