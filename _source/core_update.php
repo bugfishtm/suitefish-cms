@@ -34,6 +34,7 @@
 	} unset($version);
 	if(!$object["user"]->user_loggedIn OR $object["user"]->user["user_initial"] != "1") { hive__error("Access Denied", "", "You need to be logged in as the initial superuser!", true, 401); exit(); }
 	if(_HIVE_MODE_ != "_administrator") { hive__error("Access Denied", "", "You need to have the administrator module initialized to update this cms!", true, 401); exit(); }
+	if(_ADM_ALLOW_UPGRADE_ != 1) { hive__error("Access Denied", "", "You are not allowed to perform core updates inside this instance.", true, 401); exit(); }
 	if(defined("_HIVE_IS_IN_DOCKER_")) {if(_HIVE_IS_IN_DOCKER_) { hive__error("Dockerized", "", "You cannot use this script in a docker environment!", true, 401); exit(); }}
 	$object["csrf"] = new x_class_csrf(_HIVE_SITE_COOKIE_."core_update");
 	?><!DOCTYPE html>

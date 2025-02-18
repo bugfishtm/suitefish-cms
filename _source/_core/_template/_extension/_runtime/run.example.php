@@ -44,7 +44,7 @@
 		if ($object["mysql"]->lasterror == false) {
 			// Example Variable to Update in Database on each run!
 			$object["var_glob"] = new x_class_var($object["mysql"], $mysql['prefix']."cms_var", "");
-			$object["var_glob"]->set("__EXTEXTENSION_EXAMPLE", date("Y-m-d H:i"), "Just an example Runtime Variable", true, true);
+			$object["var_glob"]->set("___ext__extension_runexample", date("Y-m-d H:i"), "Just an example Runtime Variable", true, true);
 			
 			// Execute Code only if Valid MySQL Connection for MySQL Operations
 			// ...

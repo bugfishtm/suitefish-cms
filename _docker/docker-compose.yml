@@ -1,0 +1,23 @@
+services:
+  obr:
+    build: .
+    image: bugfishtm/suitefish:latest
+    volumes:
+      - ssl:/opt/sf_ssl
+      - mysql:/var/lib/mysql
+      - data:/var/www/html/_data
+      - template:/var/www/html/_template
+      - store:/var/www/html/_store
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      sf_db_pass:       "${sf_db_pass}"
+      sf_url:           "${sf_url}"
+      sf_timezone:      "${sf_timezone}"
+volumes:
+  mysql:
+  ssl:
+  data:
+  template:
+  store:

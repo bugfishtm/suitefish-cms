@@ -44,7 +44,7 @@
 		if ($object["mysql"]->lasterror == false) {
 			// Example Variable to Update in Database on each run!
 			$object["var_glob"] = new x_class_var($object["mysql"], $mysql['prefix']."cms_var", "");
-			$object["var_glob"]->set("__EXTEXTENSION_EXAMPLE_WORKER", date("Y-m-d H:i"), "Just an example Worker Script Variable", true, true);
+			$object["var_glob"]->set("___ext__extension_example", date("Y-m-d H:i"), "Just an example Worker Script Variable", true, true);
 			
 			// Execute Code only if Valid MySQL Connection for MySQL Operations
 			// ...
