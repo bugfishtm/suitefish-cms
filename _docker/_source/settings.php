@@ -62,6 +62,9 @@
 		if(!defined("_HIVE_IS_IN_DOCKER_")) { define("_HIVE_IS_IN_DOCKER_", true); }
 		
 	/* Do not change below! */
+		//if(!defined("_HIVE_IS_IN_DOCKER_SPEC_")) { define("_HIVE_IS_IN_DOCKER_SPEC_", "MODULENAMEMODULENAMEMODULENAME"); }
+		
+	/* Do not change below! */
 		// Check if the core initialization file exists and require it if it does
 		// This file likely contains code that initializes the application environment
 		if(file_exists($object['path']."/_core/initialize.php")) {
