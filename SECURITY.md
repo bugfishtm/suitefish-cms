@@ -1,24 +1,12 @@
-## Security Policy  
+# 🛡️ Security Policy  
 
-### 🛡️ Reporting a Vulnerability  
+I take security seriously and appreciate responsible disclosure. If you discover a vulnerability, please follow these steps:
 
-We take the security of our project seriously. If you discover a security vulnerability, please follow these steps:  
+- **Do not** report it via public GitHub issues or discussions. Instead, please contact the [security@bugfish.eu](mailto:security@bugfish.eu) email address directly.  
+- Provide as much detail as possible, including a description of the issue, steps to reproduce it, and its potential impact.  
 
-1. **Do not** create a public GitHub issue for the vulnerability.  
-2. Email your findings to security@bugfish.eu  
-3. Provide as much information as possible, including:  
-   - A description of the vulnerability  
-   - Steps to reproduce  
-   - Potential impact  
+I aim to acknowledge reports within **2–4 weeks** and will update you on our progress once the issue is verified and addressed.
 
-### 🔍 What to Expect  
+This software is provided as-is, without any guarantees of security, reliability, or fitness for any particular purpose. We do not take responsibility for any damage, data loss, security breaches, or other issues that may arise from using this software. By using this software, you agree that We are not liable for any direct, indirect, incidental, or consequential damages. Use it at your own risk.
 
-- We will acknowledge receipt of your report.  
-- We will strive to keep you informed about the progress of addressing the issue.  
-- Once the vulnerability is confirmed and fixed, we will inform you.  
-
-### ⚖️ No Warranty  
-
-This project is licensed under **GPLv3**, which means it comes **without any warranty**. We provide the software **as-is**, without guarantees of security, reliability, or fitness for any purpose. Use at your own risk.  
-
-🐟 Bugfish <3  
+🐟 Bugfish 

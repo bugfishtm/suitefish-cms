@@ -1,3 +1,5 @@
+# This is just an internal File to setup the repository
+
 # Set default behaviour, in case users don't have core.autocrlf set.
 * text=auto
 

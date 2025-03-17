@@ -1,3 +1,5 @@
+# This is just an internal File to ignore Files during git operations
+
 # Block a File
 # folder/file.php
 # Block a Folder

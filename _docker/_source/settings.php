@@ -24,55 +24,40 @@
 		along with this program.  If not, see <https://www.gnu.org/licenses/>.	
 		
 		File Description:
-			This is an example of a settings.php file. You do not need to enter your credentials here.
-			You can use the installer at installer.php to create this settings.php, which is highly recommended.
-			This file serves as a fallback in case the installer fails to create a settings.php file.
+			This settings.php file is configured to work with Docker and should not be modified unless by developers deploying new images.
 	*/
 
 	/* MySQL Settings */
 		// MySQL Hostname, usually 'localhost' if your database is on the same server
 		$mysql['host'] 		= "127.0.0.1";
-
 		// MySQL Port, the default port for MySQL is 3306
 		$mysql['port'] 		= '3306';
-
 		// MySQL User, replace 'MYSQL_USER' with your actual MySQL username
 		$mysql['user'] 		= "root";
-
 		// MySQL Password, replace 'MYSQL_PASSWORD' with your actual MySQL password
 		$mysql['pass'] 		= getenv('sf_db_pass');
-
 		// MySQL Database, replace 'MYSQL_DATABASE' with the name of your database
 		$mysql['db'] 		= "suitefish";
-
 		// Prefix for MySQL tables, this is useful if you're sharing the database with other applications
 		$mysql['prefix'] 	= 'sf_';
 
 	/* Site Settings */
 		// Cookie Prefix, used to uniquely identify the cookies for this application
 		$object['cookie'] 	= 'sf_';
-
 		// Full Path to the application's root directory on the server
 		$object['path'] 	= '/var/www/html/';
-
 		// Full URL to the site, change 'https://example' to your site's URL
 		$object['url'] 		= getenv('sf_url');
-
-	/* Do not change below! */
-		if(!defined("_HIVE_IS_IN_DOCKER_")) { define("_HIVE_IS_IN_DOCKER_", true); }
 		
-	/* Do not change below! */
-		//if(!defined("_HIVE_IS_IN_DOCKER_SPEC_")) { define("_HIVE_IS_IN_DOCKER_SPEC_", "MODULENAMEMODULENAMEMODULENAME"); }
+	/* All Docker Instances should have this Constant set */
+		if(!defined("_HIVE_IS_IN_DOCKER_")) { define("_HIVE_IS_IN_DOCKER_", true); }
+
+	/* If a docker container is specialzed for a module, set the modules RNAME in this constant! */
+		if(!defined("_HIVE_IS_IN_DOCKER_SPEC_")) { define("_HIVE_IS_IN_DOCKER_SPEC_", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"); }
 		
 	/* Do not change below! */
 		// Check if the core initialization file exists and require it if it does
 		// This file likely contains code that initializes the application environment
 		if(file_exists($object['path']."/_core/initialize.php")) {
 			require_once($object['path']."/_core/initialize.php");
-		} 
-		else { 
-			// If the file doesn't exist, send a 503 HTTP response code (Service Unavailable)
-			// and display an error message
-			http_response_code(503); 
-			echo "Error at PATH in settings.php. Please check your configuration file."; 
-		}
+		} else { http_response_code(503); echo "Error at PATH in settings.php. Please check your configuration file."; }

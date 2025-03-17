@@ -1,4 +1,4 @@
-🖼️ **Repository Images**
+# 🖼️ Images
 
 This folder houses images utilized in the repository's readme file.
 
@@ -10,4 +10,4 @@ To incorporate these images in the repository's readme file, utilize the followi
 
 Replace Alt Text with a descriptive text for the image and image_path with the relative path to the image file within this folder.
 
-🐟 Bugfish <3
+🐟 Bugfish

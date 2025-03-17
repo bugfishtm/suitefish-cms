@@ -15,6 +15,7 @@ RUN apt upgrade -y
 RUN apt install apache2 -y
 RUN apt install curl -y
 RUN apt install cron -y
+RUN apt install redis -y
 RUN apt install tzdata -y
 RUN apt install libonig-dev -y
 RUN apt install libpng-dev -y
@@ -28,17 +29,34 @@ RUN apt install libzip-dev -y
 ############################################################################################################
 # Install PHP Extensions
 ############################################################################################################
+RUN docker-php-ext-install cli 
+RUN docker-php-ext-install mysql 
 RUN docker-php-ext-install mysqli 
-RUN docker-php-ext-install curl
-RUN docker-php-ext-install bcmath
-RUN docker-php-ext-install mbstring
-RUN docker-php-ext-install gd
-RUN docker-php-ext-install intl
 RUN docker-php-ext-install xml
-RUN docker-php-ext-install fileinfo
+RUN docker-php-ext-install mbstring
+RUN docker-php-ext-install curl
 RUN docker-php-ext-install zip
 RUN docker-php-ext-install ctype
 RUN docker-php-ext-install filter
+RUN docker-php-ext-install intl
+RUN docker-php-ext-install fileinfo
+RUN docker-php-ext-install gd
+RUN docker-php-ext-install bcmath
+RUN docker-php-ext-install json
+RUN docker-php-ext-install opcache
+RUN docker-php-ext-install soap
+RUN docker-php-ext-install imagick
+RUN docker-php-ext-install sodium
+RUN docker-php-ext-install pdo
+RUN docker-php-ext-install ssh2
+RUN docker-php-ext-install imap
+RUN docker-php-ext-install smtp
+RUN docker-php-ext-install ldap
+RUN docker-php-ext-install memcached
+RUN docker-php-ext-install redis
+RUN docker-php-ext-install tidy
+RUN docker-php-ext-install bz2
+RUN docker-php-ext-install sqlite3
 
 ############################################################################################################
 # Set Timezone
@@ -49,12 +67,12 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo "$TZ" > /etc/timezone
 ############################################################################################################
 # Apache Module Setup
 ############################################################################################################
+RUN a2enmod ssl 
 RUN a2enmod rewrite 
 RUN a2enmod headers 
 RUN a2enmod cgi
 RUN a2enmod cgid
 RUN a2enmod remoteip 
-RUN a2enmod ssl 
 RUN a2enmod deflate 
 
 ######################################################
@@ -74,7 +92,7 @@ COPY _vhost/ /etc/apache2/conf-available/
 COPY _source/ /var/www/html/
 
 ######################################################
-# Generate Default Apache2 Certificate (Self Signed)
+# Create Folder for Apache Certificate
 ######################################################
 RUN mkdir -p /opt/sf_ssl
 
@@ -115,13 +133,6 @@ RUN chmod +x /restart_mysql.sh
 ############################################################################################################
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
-
-############################################################################################################
-
-
-
-
-############################################################################################################
 
 ############################################################################################################
 # Add Entrypoint

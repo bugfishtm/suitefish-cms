@@ -1,13 +1,16 @@
 services:
-  obr:
+  suitefish:
     build: .
     image: bugfishtm/suitefish:latest
+    restart: unless-stopped
     volumes:
-      - ssl:/opt/sf_ssl
-      - mysql:/var/lib/mysql
-      - data:/var/www/html/_data
-      - template:/var/www/html/_template
-      - store:/var/www/html/_store
+      - sys-ssl:/opt/sf_ssl
+      - sys-mysql:/var/lib/mysql
+      - cms-backup:/var/www/html/_backup
+      - cms-cache:/var/www/html/_cache
+      - cms-data:/var/www/html/_data
+      - cms-store:/var/www/html/_store
+      - cms-template:/var/www/html/_template
     ports:
       - 80:80
       - 443:443
@@ -16,8 +19,10 @@ services:
       sf_url:           "${sf_url}"
       sf_timezone:      "${sf_timezone}"
 volumes:
-  mysql:
-  ssl:
-  data:
-  template:
-  store:
+  sys-mysql:
+  sys-ssl:
+  cms-backup:
+  cms-cache:
+  cms-data:
+  cms-store:
+  cms-template:
