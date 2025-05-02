@@ -1,3 +1,9 @@
+# ⚠️ Warning
+
+> 🚧 **This project is currently in development and should NOT be used in production.**  
+> Estimated development completion: **August 2025**.
+
+
 # Suitefish CMS
 
 ![Screenshot](./_images/_banner/suitefish-banner.jpg)
