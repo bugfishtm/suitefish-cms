@@ -1,0 +1,4190 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../function/hive__library.html">
+      
+      
+        <link rel="next" href="mod-ext.html">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Site - Suitefish CMS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+
+
+    
+   <!-- META INJECTION START -->
+  <!-- META INJECTION START -->
+  <!-- META INJECTION START -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="subject" content="documentation">
+	<meta name="copyright" content="bugfish">
+	<meta name="language" content="en">
+	<meta name="robots" content="index,follow">
+	<meta name="author" content="bugfish, ynvnzmlzaa@gmail.com">
+	<meta property="og:image" content="../meta.png">    
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Suitefish CMS",
+    }
+    </script>
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "TechArticle",
+	  "headline": "Site Modules",
+	  "description": "Learn how to use and manage site modules in your CMS with our detailed tutorials. Explore how these modules enhance functionality, improve user experience, and offer customization options for your website.",
+	  "articleSection": "Overview",
+	  "datePublished": "2025-03-04",
+	  "dateModified": "2025-03-04",
+	  "author": {
+		"@type": "Person",
+		"name": "Jan-Maurice Dahlmanns"
+	  },
+	  "publisher": {
+		"@type": "Organization",
+		"name": "Bugfish",
+		"logo": {
+		  "@type": "ImageObject",
+		  a"url": "../logo.png"
+		}
+	  }
+	}
+	</script> 
+	<meta property="og:title" content="Site Modules - Suitefish CMS">
+	<meta name="description" content="Learn how to use and manage site modules in your CMS with our detailed tutorials. Explore how these modules enhance functionality, improve user experience, and offer customization options for your website.">  
+	<meta name="og:description" content="Learn how to use and manage site modules in your CMS with our detailed tutorials. Explore how these modules enhance functionality, improve user experience, and offer customization options for your website.">  
+  <!-- META INJECTION END -->  
+  <!-- META INJECTION END -->  
+  <!-- META INJECTION END -->   
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+      <link rel="stylesheet" href="../neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#website-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Suitefish CMS" class="md-header__button md-logo" aria-label="Suitefish CMS" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Suitefish CMS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Site
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bugfishtm/suitefish-cms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    suitefish-cms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Suitefish CMS" class="md-nav__button md-logo" aria-label="Suitefish CMS" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    Suitefish CMS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bugfishtm/suitefish-cms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    suitefish-cms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenshots.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error_codes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error-Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../init.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initialization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Folders
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Folders
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_api.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_backup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_cache.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_cache
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_core.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_core
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_cronjob.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_cronjob
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_data.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_image.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_sample.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_sample
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_site.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_store.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_store
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_template.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/_user.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder/root.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table/cms_worker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cms_worker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table/cms_store.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cms_store
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Functions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__default.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__default
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__download.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__download
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__error.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__error
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__user.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__worker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__worker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__template.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__view.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__view
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__trigger.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__trigger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function/hive__library.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Site
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="mod-site.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Site
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#information" class="md-nav__link">
+    <span class="md-ellipsis">
+      📙 Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-to-cms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload to CMS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_action" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_admin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_api
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_cron
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_css" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_css
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_html" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_js" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_lang" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_lang
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_lib" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_lib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_licenses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_mysql
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_runtime
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_theme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_trigger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_vendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_vendor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_view" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_wfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_wfc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_worker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#settings-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Preset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-ruleset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Ruleset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Debug
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Tables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-hive-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Hive Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-variables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-relative" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Relative
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Init: Relative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-globals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Globals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-variables_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include: Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗣️ Language Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Default Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Default Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loadphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      load.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      version.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelogphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      changelog.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previewjpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      preview.jpg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#licensemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      LICENSE.md
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readmemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      README.md
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mod-ext.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extension
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mod-image.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mod-software.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mod-docker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mod-theme.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../warranty.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Warranty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impressum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bugfishtm.blogspot.com/2023/05/privacy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#information" class="md-nav__link">
+    <span class="md-ellipsis">
+      📙 Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Store
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-to-cms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload to CMS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_action" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_admin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_api
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_cron
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_css" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_css
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_html" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_html
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_js" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_lang" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_lang
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_lib" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_lib
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_licenses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_mysql
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_runtime
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_theme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_trigger
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_vendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_vendor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_view" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_view
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_wfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_wfc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./_worker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ./
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#settings-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Preset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-ruleset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Ruleset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Debug
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Tables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-hive-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Hive Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-variables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-relative" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Relative
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Init: Relative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-globals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Globals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-variables_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Init: Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Include: Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗣️ Language Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Default Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Default Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loadphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      load.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      version.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelogphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      changelog.php
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previewjpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      preview.jpg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#licensemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      LICENSE.md
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readmemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      README.md
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div><h1 id="website-module">📦 Website Module</h1>
+<h2 id="information">📙 Information</h2>
+<p>This is a integrated website module example! This kind of website modules use the suitefish-cms as a platform to allow multi-site hosting with one instance!</p>
+<p>For possibilities on triggers and more take a look at trigger and view files at the official administrator module.</p>
+<h2 id="documentation">📄 Documentation</h2>
+<p>If you are a developer you can find examples of modules in the _developers folder at the suitefish-cms github repository if you want to create an own module!</p>
+<p>For more information about the Suitefish CMS: https://github.com/bugfishtm/suitefish-cms</p>
+<h2 id="installation">🛠️ Installation</h2>
+<p>You have two ways installing this module.</p>
+<h3 id="module-store">Module Store</h3>
+<p>Login to your suitefish instance and browse our official store on your page. If you find the module you are looking for just download the package. Then navigate to the Site Package Area and enable the downloaded site module.</p>
+<h3 id="upload-to-cms">Upload to CMS</h3>
+<p>Navigate to the Site Module Package Area inside the suitefish instance. Go to the upload section and upload the modules .zip file.  Then navigate to the Site Module Package Area and enable the downloaded site module.</p>
+<h2 id="structure">📁 Structure</h2>
+<h3 id="_action">./_action</h3>
+<p>Store your action files in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./MODULE_NAME/_action/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── action.ACTIONNAME.php (Action ACTIONNAME)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── ... (Other action Files you may add)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_admin">./_admin</h3>
+<p>Scripts to be injected into the _administrator module.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./MODULE_NAME/_admin/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├─_lang/
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├──── de.php (Language to be injected for Admin Injection Scripts)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├──── en.php (Language to be injected for Admin Injection Scripts)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├──── es.php (Language to be injected for Admin Injection Scripts)
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├──── fr.php (Language to be injected for Admin Injection Scripts)
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├──── it.php (Language to be injected for Admin Injection Scripts)
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├──── ja.php (Language to be injected for Admin Injection Scripts)
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├──── ... (Other Language Files)
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├──── index.php (Prevent Directory Listing)
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├── mod_setting.php (Module Settings for Admin Module)
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>├── mod_nav.php (Module Navigation for Admin Module)
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>├── mod_site.php (Module Site for Admin Module)
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>├── mod_permission.php (Module Permissions for Admin Module)
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>├── mod_topbar.php (Module Topbar Injection for Admin Module)
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_api">./_api</h3>
+<p>Store your api files in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./MODULE_NAME/_api/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── api.NAME.php (API Route File for NAME)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── ... (Other action Files you may add)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_config">./_config</h3>
+<p>Configuration to be injected at site module initialization.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./MODULE_NAME/_config/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── config_pre.php (Pre-startup configuration)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── config_post.php (Post-startup configuration)
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>└── config.php (Main configuration file)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├── global_pre.php (Pre-startup Global configuration)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├── global_post.php (Post-startup Global configuration)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>├── global.php (Main Global configuration file)
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_cron">./_cron</h3>
+<p>Store your code for cronjobs in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./MODULE_NAME/_cron/
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── cron.example.php (Example Cronjob File)
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── .. (Store your other integrated cronjobs here.)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_css">./_css</h3>
+<p>Store your css code in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./MODULE_NAME/_css/
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├── css.example.php (Example CSS File)
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├── .. (Store your other css files here.)
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_html">./_html</h3>
+<p>Store your html template code in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./MODULE_NAME/_html/
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── .. (Store your files here.)
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_js">./_js</h3>
+<p>Store your js code in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./MODULE_NAME/_js/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── js.example.php (Example JS File)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── .. (Store your other js files here.)
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_lang">./_lang</h3>
+<p>Store your language files in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./MODULE_NAME/_lang/
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── de.php (Translation File for German)
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├── en.php (Translation File for English)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>├── es.php (Translation File for Spanish)
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├── fr.php (Translation File for French)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>├── in.php (Translation File for Hindu)
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>├── it.php (Translation File for Italian)
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>├── ja.php (Translation File for Japanese)
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>├── kr.php (Translation File for Korean)
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>├── pt.php (Translation File for Portuguese)
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>├── ru.php (Translation File for Russian)
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>├── tr.php (Translation File for Turkish)
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>├── zh.php (Translation File for Chinese)
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>├── ... (Other language Files you may add)
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_lib">./_lib</h3>
+<p>Store your php libraries in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./MODULE_NAME/_lib/
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>├── lib.example.php (Example Library File)
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>├── .. (Store your other library files here.)
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_licenses">./_licenses</h3>
+<p>Store your external licenses in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>./MODULE_NAME/_licenses/
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── example.lic (Example License File)
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>├── .. (Store your other License files here.)
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_mysql">./_mysql</h3>
+<p>Store your mysql tables in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./MODULE_NAME/_mysql/
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├── mysql.example.php (Example MySQL File for example table)
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>├── .. (Store your other mysql files here.)
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_runtime">./_runtime</h3>
+<p>Store your runtime files in this folder! (For the Background Linux Worker)</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./MODULE_NAME/_runtime/
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>├── run.example.php (Example runtime File)
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>├── .. (Store your other runtime files here.)
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_theme">./_theme</h3>
+<p>Theme files for your module.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./MODULE_NAME/_theme/
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>├── ... (Content you may add)
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_trigger">./_trigger</h3>
+<p>Folder for Trigger files.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>./MODULE_NAME/_trigger/
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── trigger.TRIGGERNAME.php (Example Trigger File for Trigger: TRIGGERNAME)
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>├── ... (Other Trigger Files)
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_update">./_update</h3>
+<p>Theme files for your module.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>./MODULE_NAME/_update/
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>├── 100.php (Example Update File to update to Build 100 from previous versions)
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>├── ... (Other Update Files)
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_vendor">./_vendor</h3>
+<p>Vendor Libraries files for your module.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>./MODULE_NAME/_vendor/
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>├── ... (Vendor Libraries Files)
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_view">./_view</h3>
+<p>View Injections in this folder.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>./MODULE_NAME/_view/
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>├── view.example.php (Example View Library File)
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>├── .. (Store your other WFC library files here.)
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_wfc">./_wfc</h3>
+<p>Wfc php classes code in this folder!</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>./MODULE_NAME/_wfc/
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>├── wfc.example.php (Example WFC Library File)
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>├── .. (Store your other WFC library files here.)
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_worker">./_worker</h3>
+<p>Store your runtime worker files in this folder! (For the Background Linux Worker)</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>./MODULE_NAME/_worker/
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>├── worker.example.php (Example runtime worker File)
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>├── .. (Store your other worker files here.)
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>├── index.php (Prevent Directory Listing)
+</span></code></pre></div>
+<h3 id="_1">./</h3>
+<p>Files in the extensions root directory.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>./MODULE_NAME/
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>├── changelog.php (Changelog info)
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>├── index.php (Prevent Directory Listing)
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>├── LICENSE.md (Extensions License)
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>├── preview.jpg (Preview image)
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>├── README.md (Extensions Readme)
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>├── load.php (Initial Loader file (index))
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>├── version.php (Versioning info)
+</span></code></pre></div>
+<h2 id="initialization">📊 Initialization</h2>
+<h3 id="settings-variables">Settings: Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$mysql['host']</code></td>
+<td><code>'localhost'</code></td>
+<td>MySQL Hostname, usually 'localhost' if your DB is on the same server</td>
+</tr>
+<tr>
+<td><code>$mysql['port']</code></td>
+<td><code>'3306'</code></td>
+<td>MySQL Port, default is 3306</td>
+</tr>
+<tr>
+<td><code>$mysql['user']</code></td>
+<td><code>'MYSQL_USER'</code></td>
+<td>Replace with your MySQL username</td>
+</tr>
+<tr>
+<td><code>$mysql['pass']</code></td>
+<td><code>'MYSQL_PASSWORD'</code></td>
+<td>Replace with your MySQL password</td>
+</tr>
+<tr>
+<td><code>$mysql['db']</code></td>
+<td><code>'MYSQL_DATABASE'</code></td>
+<td>Replace with your database name</td>
+</tr>
+<tr>
+<td><code>$mysql['prefix']</code></td>
+<td><code>'sf_'</code></td>
+<td>Table prefix, useful for shared databases</td>
+</tr>
+<tr>
+<td><code>$object['cookie']</code></td>
+<td><code>'sf_'</code></td>
+<td>Cookie prefix for this application</td>
+</tr>
+<tr>
+<td><code>$object['path']</code></td>
+<td><code>'/var/www/html/'</code></td>
+<td>Full path to app root on the server</td>
+</tr>
+<tr>
+<td><code>$object['url']</code></td>
+<td><code>'https://example'</code></td>
+<td>Full URL to your site</td>
+</tr>
+<tr>
+<td><code>_HIVE_IS_IN_DOCKER_</code></td>
+<td><code>'false'</code></td>
+<td>True if this is a docker instance, string with extension name if specialized docker instance.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-preset">Init: Preset</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_HIVE_OVR_PRE_SETTING_MODE_</code></td>
+<td>Define to override Site Mode to a specific one</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_INIT_INCLUDED_</code></td>
+<td><code>true</code> if <code>initialize.php</code> has been included already</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>_HIVE_IS_IN_DOCKER_</code></td>
+<td><code>true</code> if running in a Docker container, <code>false</code> if not</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_PREVENT_INIT_</code></td>
+<td>If true than prevent init from hive mode specific settings in initialize.php</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-ruleset">Init: Ruleset</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_HIVE_ADMIN_SITE_</code></td>
+<td>Admin Site Module Folder Name</td>
+<td>_administrator</td>
+</tr>
+<tr>
+<td><code>_HIVE_SERVER_</code></td>
+<td>Update Server URL</td>
+<td>https://suitefish.com</td>
+</tr>
+<tr>
+<td><code>_HIVE_COOKIE_DOMAIN_</code></td>
+<td>Cookie Domain to override</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_PHP_LOG_PATH_</code></td>
+<td>Override PHP Logfile Path</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_PHP_DISPLAY_ERROR_ON_START_</code></td>
+<td>Display PHP Errors before Website Constant Error Definition</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>_INSTALLER_TITLE_</code></td>
+<td>Installer Title</td>
+<td>Suitefish</td>
+</tr>
+<tr>
+<td><code>_INSTALLER_COOKIE_</code></td>
+<td>Installer Default Cookie Prefix</td>
+<td>sf_</td>
+</tr>
+<tr>
+<td><code>_INSTALLER_PREFIX_</code></td>
+<td>Installer Default Table Prefix</td>
+<td>sf_</td>
+</tr>
+<tr>
+<td><code>_INSTALLER_CODE_</code></td>
+<td>Code required for installation</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_MOD_OVR_</code></td>
+<td>Override that only a specific site module can be used.</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_UPDATER_CODE_OVR_</code></td>
+<td>Override updater access code.</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_BLOCK_FP_</code></td>
+<td>Block Frontpage Access</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_MOD_FETCH_</code></td>
+<td>Variable to fetch Site Mode from URL</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>$hive_mode_array</code></td>
+<td>Only allow specific Site Module Names</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEBUG_STACKTRACE_</code></td>
+<td>True to enable stack trace output</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-debug">Init: Debug</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$object["debug"]</code></td>
+<td>x_class_debug init</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-tables">Init: Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$object["prefix"]</code></td>
+<td><code>$mysql["prefix"]</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_</code></td>
+<td>prefix_<code>cms_log</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_IP_</code></td>
+<td>prefix_<code>cms_log_ip</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_BENCHMARK_</code></td>
+<td>prefix_<code>cms_log_benchmark</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_CURL_</code></td>
+<td>prefix_<code>cms_log_curl</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_MAIL_</code></td>
+<td>prefix_<code>cms_log_mail</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_MYSQL_</code></td>
+<td>prefix_<code>cms_log_mysql</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_REFERER_</code></td>
+<td>prefix_<code>cms_log_referer</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_CRON_</code></td>
+<td>prefix_<code>cms_log_cron</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_JS_</code></td>
+<td>prefix_<code>cms_log_js</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_VISIT_</code></td>
+<td>prefix_<code>cms_log_hitcounter</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LOG_API_</code></td>
+<td>prefix_<code>cms_log_hitcounter</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_USER_</code></td>
+<td>prefix_<code>cms_user</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_USER_EXTRAFIELDS_</code></td>
+<td>prefix_<code>cms_user_extrafield</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_USER_SESSION_</code></td>
+<td>prefix_<code>cms_user_session</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_USER_PERM_</code></td>
+<td>prefix_<code>cms_user_perm</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_USER_GROUP_</code></td>
+<td>prefix_<code>cms_group</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_USER_GROUP_PERM_</code></td>
+<td>prefix_<code>cms_group_perm</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_USER_GROUP_LINK_</code></td>
+<td>prefix_<code>cms_group_link</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_VAR_</code></td>
+<td>prefix_<code>cms_var</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_LANG_</code></td>
+<td>prefix_<code>cms_lang</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_MAIL_TPL_</code></td>
+<td>prefix_<code>cms_mail_tpl</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_COMMENT_</code></td>
+<td>prefix_<code>cms_comment</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_STORE_</code></td>
+<td>prefix_<code>cms_store</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_WORKER_</code></td>
+<td>prefix_<code>cms_worker</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_API_</code></td>
+<td>prefix_<code>cms_api</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_API_PERM_</code></td>
+<td>prefix_<code>cms_api_perm</code></td>
+</tr>
+<tr>
+<td><code>_TABLE_API_PERM_USER_</code></td>
+<td>prefix_<code>cms_api_perm_user</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-variables">Init: Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_HIVE_CREATOR_</code></td>
+<td>String about the Creator (Powered by Suitefish-CMS)</td>
+</tr>
+<tr>
+<td><code>_HIVE_PREFIX_</code></td>
+<td>Prefix for Databases and Redis from <code>@$mysql["prefix"]</code></td>
+</tr>
+<tr>
+<td><code>_HIVE_COOKIE_</code></td>
+<td>Prefix for Cookies and Sessions from <code>@$object["cookie"]</code></td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_</code></td>
+<td>Absolute Folder Path to website root folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_API_</code></td>
+<td>Absolute Folder Path for API Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_BACKUP_</code></td>
+<td>Absolute Folder Path for Backup Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_DATA_</code></td>
+<td>Absolute Folder Path for Data Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_STORE_</code></td>
+<td>Absolute Folder Path for Store Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_CACHE_</code></td>
+<td>Absolute Folder Path for Cache Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_SITE_</code></td>
+<td>Absolute Folder Path for Site Modules Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_SITE_OFF_</code></td>
+<td>Absolute Folder Path for Disabled Site Modules Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_IMAGE_</code></td>
+<td>Absolute Folder Path for Image Modules Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_IMAGE_OFF_</code></td>
+<td>Absolute Folder Path for Disabled Image Modules Folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_PATH_TPL_</code></td>
+<td>Absolute Folder Path for Templates Folder</td>
+</tr>
+<tr>
+<td><code>$object["core_mode"]</code></td>
+<td>X Array with version codename from version.php core</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-hive-mode">Init: Hive Mode</h3>
+<ul>
+<li>Not defined if <code>_HIVE_PREVENT_INIT_</code> = true</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_HIVE_MODE_ARRAY_</code></td>
+<td>Valid Hive Mode Array</td>
+</tr>
+<tr>
+<td><code>_HIVE_MODE_DEFAULT_</code></td>
+<td>Default Hive Mode</td>
+</tr>
+<tr>
+<td><code>$_SESSION[_HIVE_COOKIE_."hive_mode"]</code></td>
+<td>Session Current Hive Mode</td>
+</tr>
+<tr>
+<td><code>_HIVE_MODE_</code></td>
+<td>Constant with Current Hive Mode</td>
+</tr>
+<tr>
+<td><code>_HIVE_MODE_DEFAULT_</code></td>
+<td>Default Hive Mode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-variables_1">Init: Variables</h3>
+<ul>
+<li>Not defined if <code>_HIVE_PREVENT_INIT_</code> = true</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_HIVE_SITE_COOKIE_</code></td>
+<td>Site Modules Cookie Prefix and Sessions Prefix</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PREFIX_</code></td>
+<td>Site Modules Redis and Database Table prefix</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_CACHE_</code></td>
+<td>Site Module folder for cache</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_BACKUP_</code></td>
+<td>Site Module folder for backups</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_</code></td>
+<td>Site Module folder</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_DATA_</code></td>
+<td>Site Module folder for data</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_DKR_</code></td>
+<td>Site Module folder for docker active</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_DKR_TPL_</code></td>
+<td>Site Module folder for docker template</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_EXT_</code></td>
+<td>Site Module folder for extensions</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_EXT_DATA_PUBLIC_</code></td>
+<td>Site Module folder for extension public data</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_EXT_DATA_PRIVATE_</code></td>
+<td>Site Module folder for extension private data</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_EXT_OFF_</code></td>
+<td>Site Module folder for disabled extensions</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_META_</code></td>
+<td>Site Module folder for meta files</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_PHP_</code></td>
+<td>Site Module folder for php files</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_PUBLIC_</code></td>
+<td>Site Module folder for public files</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_PRIVATE_</code></td>
+<td>Site Module folder for private files</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_TH_</code></td>
+<td>Site Module folder for theme extensions</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_PATH_TH_OFF_</code></td>
+<td>Site Module folder for disabled theme extensions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-relative">Init: Relative</h3>
+<ul>
+<li>Only if Hive_Prevent_Init is false.</li>
+</ul>
+<h4 id="init">Init</h4>
+<table>
+<thead>
+<tr>
+<th>Variable/Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$object["extensions_path"]</code></td>
+<td>Pathes of current Site Module Extensions</td>
+</tr>
+<tr>
+<td><code>$object["hive_mode"]</code></td>
+<td>Current Site Module X Array from version.php</td>
+</tr>
+<tr>
+<td><code>$object["hive_mode_config_pre"]</code></td>
+<td>Array with Pre Configured Information for Extensions and Modules</td>
+</tr>
+<tr>
+<td><code>$object["hive_mode_config_pre"]["extension"]</code></td>
+<td>Information of Extension Modules for current Site Module</td>
+</tr>
+<tr>
+<td><code>$object["hive_mode_config_pre"]["site"]</code></td>
+<td>Information of Site Modules</td>
+</tr>
+<tr>
+<td><code>$object["var_glob"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>_HIVE_BUILD_</code></td>
+<td>Current Mod Build Installed</td>
+</tr>
+<tr>
+<td><code>_HIVE_VERSION_</code></td>
+<td>Current Mod Version Installed</td>
+</tr>
+<tr>
+<td><code>_HIVE_RNAME_</code></td>
+<td>Current Mod RNAME Installed</td>
+</tr>
+<tr>
+<td><code>_HIVE_BUILD_ACTIVE_</code></td>
+<td>Current running new Module Build Number (if not exists setup)</td>
+</tr>
+<tr>
+<td><code>_HIVE_RNAME_ACTIVE_</code></td>
+<td>Current running new Module RNAME (if not exists setup)</td>
+</tr>
+<tr>
+<td><code>_HIVE_VERSION_ACTIVE_</code></td>
+<td>Current running new Module RNAME (if not exists setup)</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_MT_LOCK_OVR_</code></td>
+<td>Do not show maintenance Lock Page</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_BACKUP_LOCK_OVR_</code></td>
+<td>Do not show backup Lock Page</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_UPDATE_LOCK_OVR_</code></td>
+<td>Do not show update Lock Page</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_INIT_ERROR_OVR_</code></td>
+<td>Do not show error page for: <code>_HIVE_INTERNAL_INIT_ERROR_</code></td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_RNAME_ERROR_OVR_</code></td>
+<td>Do not show error page for: <code>_HIVE_INTERNAL_RNAME_ERROR_</code></td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_DOWNGRADE_ERROR_OVR_</code></td>
+<td>Do not show error page for: <code>_HIVE_INTERNAL_DOWNGRADE_ERROR_</code></td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_UPDATE_REQ_OVR_</code></td>
+<td>Do not show error page for: <code>_HIVE_INTERNAL_UPDATE_REQ_</code></td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_VERSION_ERROR_OVR_</code></td>
+<td>Do not show error page for: <code>_HIVE_INTERNAL_VERSION_ERROR_</code></td>
+</tr>
+<tr>
+<td><code>$object["mysql"]</code></td>
+<td>MySQL Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["log"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["api_log"]</code></td>
+<td>API Log</td>
+</tr>
+<tr>
+<td><code>$object["api_perm"]</code></td>
+<td>API Perm Class</td>
+</tr>
+<tr>
+<td><code>$object["api_perm_user"]</code></td>
+<td>API Perm User Class</td>
+</tr>
+<tr>
+<td><code>$object["var"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_BACKUP_LOCK_</code></td>
+<td>Lock Variable</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_MT_LOCK_</code></td>
+<td>Lock Variable</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_LOCK_</code></td>
+<td>Lock Variable (is another one true?)</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_UPDATE_LOCK_</code></td>
+<td>Lock Variable</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_INIT_ERROR_</code></td>
+<td>No valid site module found</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_RNAME_ERROR_</code></td>
+<td>Suddenly different Module RNAME active</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_DOWNGRADE_ERROR_</code></td>
+<td>Current module suddenly downgraded</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_UPDATE_REQ_</code></td>
+<td>Database changes are pending</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_VERSION_ERROR_</code></td>
+<td>Error with version numbers, consistency</td>
+</tr>
+</tbody>
+</table>
+<h4 id="include">Include</h4>
+<p>Pre-Configuration Includes.</p>
+<h4 id="init_1">Init</h4>
+<table>
+<thead>
+<tr>
+<th>Variable/Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$object["url"]</code></td>
+<td>URL of the instance</td>
+</tr>
+<tr>
+<td><code>_HIVE_URL_</code></td>
+<td>same as object url array key</td>
+</tr>
+<tr>
+<td><code>_HIVE_URL_REL_</code></td>
+<td>url for relative operations</td>
+</tr>
+<tr>
+<td><code>_HIVE_URLC_REL_</code></td>
+<td>url for relative operations</td>
+</tr>
+<tr>
+<td><code>$object["crypt"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["zip"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["benchmark"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["api"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["comment"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["hitcounter"]</code></td>
+<td>Class Initialization / clearget = false</td>
+</tr>
+<tr>
+<td><code>$object["2fa"]</code></td>
+<td>Class Initialization (only reserved)</td>
+</tr>
+<tr>
+<td><code>$object["curl"]</code></td>
+<td>Class Initialization</td>
+</tr>
+</tbody>
+</table>
+<h4 id="include_1">Include</h4>
+<p>Configuration Includes.</p>
+<h4 id="init_2">Init</h4>
+<table>
+<thead>
+<tr>
+<th>Variable/Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$object["var"]</code></td>
+<td>NOW GETS INIT ONLY (GLOBALS NO INIT AS CONSTANT)</td>
+</tr>
+<tr>
+<td><code>_TINYMCE_PLUGINS_</code></td>
+<td>Default Tinymce Plugins</td>
+</tr>
+<tr>
+<td><code>_TINYMCE_MENU_BAR_</code></td>
+<td>Default Tinymce Menu Bar</td>
+</tr>
+<tr>
+<td><code>_TINYMCE_TOOL_BAR_</code></td>
+<td>Default Tinymce Toolbar</td>
+</tr>
+<tr>
+<td><code>_CRON_ONLY_CLI_</code></td>
+<td>Cronjobs only over CLI?</td>
+</tr>
+<tr>
+<td><code>_HIVE_CURL_LOGGING_</code></td>
+<td>Activate Curl Logging?</td>
+</tr>
+<tr>
+<td><code>_HIVE_CSRF_TIME_</code></td>
+<td>CSRF Token Valid Time</td>
+</tr>
+<tr>
+<td><code>_HIVE_URL_GET_</code></td>
+<td>GET Variables to use in GET Requests for Location</td>
+</tr>
+<tr>
+<td><code>_HIVE_URL_SEO_</code></td>
+<td>TRUE if using SEO Variables, FALSE if not</td>
+</tr>
+<tr>
+<td><code>_HIVE_TITLE_SPACER_</code></td>
+<td>Spacer for Title</td>
+</tr>
+<tr>
+<td><code>_UPDATER_CODE_</code></td>
+<td>Updater Code if Updater if Code-Secured</td>
+</tr>
+<tr>
+<td><code>_CAPTCHA_COLORS_</code></td>
+<td>Captcha Color Array</td>
+</tr>
+<tr>
+<td><code>_CAPTCHA_SQUARES_</code></td>
+<td>Captcha Square Count</td>
+</tr>
+<tr>
+<td><code>_CAPTCHA_LINES_</code></td>
+<td>Captcha Line Count</td>
+</tr>
+<tr>
+<td><code>_CAPTCHA_HEIGHT_</code></td>
+<td>Captcha Height</td>
+</tr>
+<tr>
+<td><code>_CAPTCHA_WIDTH_</code></td>
+<td>Captcha Width</td>
+</tr>
+<tr>
+<td><code>_CAPTCHA_CODE_</code></td>
+<td>Captcha Generated Code</td>
+</tr>
+<tr>
+<td><code>_CAPTCHA_FONT_PATH_</code></td>
+<td>Font Path for Catpcha</td>
+</tr>
+<tr>
+<td><code>_USER_TOKEN_TIME_</code></td>
+<td>Token are valid for how long (recover requests and stuff)</td>
+</tr>
+<tr>
+<td><code>_USER_MULTI_LOGIN_</code></td>
+<td>Multi login allowed</td>
+</tr>
+<tr>
+<td><code>_USER_REC_DROP_</code></td>
+<td>Drop tokens for reover on success login</td>
+</tr>
+<tr>
+<td><code>_USER_MAX_SESSION_</code></td>
+<td>May php session day validity</td>
+</tr>
+<tr>
+<td><code>_USER_PF_SIGNS_</code></td>
+<td>password filter signs</td>
+</tr>
+<tr>
+<td><code>_USER_PF_CAPSIGNS_</code></td>
+<td>password filter cap signs</td>
+</tr>
+<tr>
+<td><code>_USER_PF_SMSIGNS_</code></td>
+<td>password filter small signs</td>
+</tr>
+<tr>
+<td><code>_USER_PF_SPSIGNS_</code></td>
+<td>password filter special signs</td>
+</tr>
+<tr>
+<td><code>_USER_PF_NUMSIGNS_</code></td>
+<td>password filter num signs</td>
+</tr>
+<tr>
+<td><code>_USER_AUTOBLOCK_</code></td>
+<td>password filter setup</td>
+</tr>
+<tr>
+<td><code>_USER_WAIT_COUNTER_</code></td>
+<td>Wait time between requests</td>
+</tr>
+<tr>
+<td><code>_USER_LOG_SESSIONS_</code></td>
+<td>store logged sessions no cleanup</td>
+</tr>
+<tr>
+<td><code>_USER_INITIAL_USERNAME_</code></td>
+<td>initial username after setup</td>
+</tr>
+<tr>
+<td><code>_USER_INITIAL_USERPASS_</code></td>
+<td>initial userpass after setup</td>
+</tr>
+<tr>
+<td><code>_USER_LOG_IP_</code></td>
+<td>save user ips in logging table</td>
+</tr>
+<tr>
+<td><code>_HIVE_MYSQL_DEBUG_</code></td>
+<td>Defined by site module otherwhise is false</td>
+</tr>
+<tr>
+<td><code>_REDIS_</code></td>
+<td>Redis Configuration</td>
+</tr>
+<tr>
+<td><code>_REDIS_HOST_</code></td>
+<td>Redis Hostname/IP</td>
+</tr>
+<tr>
+<td><code>_REDIS_PORT_</code></td>
+<td>Redis Port Number</td>
+</tr>
+<tr>
+<td><code>_REDIS_PREFIX_</code></td>
+<td>Redis Key Prefix</td>
+</tr>
+<tr>
+<td><code>_HIVE_IP_LIMIT_</code></td>
+<td>IP Request Limit</td>
+</tr>
+<tr>
+<td><code>_HIVE_REFERER_</code></td>
+<td>Referer Header Validation</td>
+</tr>
+<tr>
+<td><code>_SMTP_HOST_</code></td>
+<td>SMTP Server Hostname</td>
+</tr>
+<tr>
+<td><code>_SMTP_PORT_</code></td>
+<td>SMTP Server Port Number</td>
+</tr>
+<tr>
+<td><code>_SMTP_AUTH_</code></td>
+<td>SMTP Authentication Method</td>
+</tr>
+<tr>
+<td><code>_SMTP_USER_</code></td>
+<td>SMTP Username</td>
+</tr>
+<tr>
+<td><code>_SMTP_PASS_</code></td>
+<td>SMTP Password</td>
+</tr>
+<tr>
+<td><code>_SMTP_SENDER_NAME_</code></td>
+<td>SMTP Sender Name</td>
+</tr>
+<tr>
+<td><code>_SMTP_SENDER_MAIL_</code></td>
+<td>SMTP Sender Email</td>
+</tr>
+<tr>
+<td><code>_SMTP_INSECURE_</code></td>
+<td>SMTP Insecure Connection</td>
+</tr>
+<tr>
+<td><code>_SMTP_DEBUG_</code></td>
+<td>SMTP Debugging Mode</td>
+</tr>
+<tr>
+<td><code>_SMTP_MAILS_IN_HTML_</code></td>
+<td>Send Emails in HTML Format</td>
+</tr>
+<tr>
+<td><code>_UPDATER_TITLE_</code></td>
+<td>Updater Title</td>
+</tr>
+<tr>
+<td><code>_HIVE_TITLE_</code></td>
+<td>Website Title</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_URL_</code></td>
+<td>Site Module URL</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITE_REL_</code></td>
+<td>Relative Site Module URL</td>
+</tr>
+<tr>
+<td><code>_HIVE_SITEC_REL_</code></td>
+<td>Relative Site Module URL (alternative)</td>
+</tr>
+<tr>
+<td><code>_HIVE_JS_ACTION_ACTIVE_</code></td>
+<td>Enable JavaScript Error Logging</td>
+</tr>
+<tr>
+<td><code>$object["user"]</code></td>
+<td>User Object (x_class_user)</td>
+</tr>
+<tr>
+<td><code>$object["perm_user"]</code></td>
+<td>Relative User Permission</td>
+</tr>
+<tr>
+<td><code>$object["perm_user_glob"]</code></td>
+<td>Global User Permission Object</td>
+</tr>
+<tr>
+<td><code>$object["perm_group"]</code></td>
+<td>Relative Group Permission</td>
+</tr>
+<tr>
+<td><code>$object["perm_group_glob"]</code></td>
+<td>Global Group Permission Object</td>
+</tr>
+<tr>
+<td><code>$object["user_perm"]</code></td>
+<td>Current User Permission (x_class_perm_item)</td>
+</tr>
+<tr>
+<td><code>$object["user_perm_glob"]</code></td>
+<td>Global Current User Permission (x_class_perm_item)</td>
+</tr>
+<tr>
+<td><code>$object["user_group"]</code></td>
+<td>User Group Information</td>
+</tr>
+<tr>
+<td><code>$valuex["perm_obj"]</code></td>
+<td>Permission Object</td>
+</tr>
+<tr>
+<td><code>$valuex["perm_obj_glob"]</code></td>
+<td>Global Permission Object</td>
+</tr>
+<tr>
+<td><code>$object["referer"]</code></td>
+<td>Referer Object</td>
+</tr>
+<tr>
+<td><code>$object["redis"]</code></td>
+<td>Redis Object</td>
+</tr>
+<tr>
+<td><code>$object["ipbl"]</code></td>
+<td>IP Blacklist Object</td>
+</tr>
+<tr>
+<td><code>$object["curl"]</code></td>
+<td>Curl Object</td>
+</tr>
+<tr>
+<td><code>$object["mail"]</code></td>
+<td>Mail Object</td>
+</tr>
+<tr>
+<td><code>$object["mail_template"]</code></td>
+<td>Mail Template Object</td>
+</tr>
+<tr>
+<td><code>_HIVE_URL_CUR_</code></td>
+<td>Current URL</td>
+</tr>
+<tr>
+<td><code>_HIVE_LANG_</code></td>
+<td>Current Language</td>
+</tr>
+<tr>
+<td><code>_HIVE_LANG_ARRAY_</code></td>
+<td>Language Array</td>
+</tr>
+<tr>
+<td><code>_HIVE_LANG_DEFAULT_</code></td>
+<td>Default Language</td>
+</tr>
+<tr>
+<td><code>$object["lang"]</code></td>
+<td>Language Object</td>
+</tr>
+<tr>
+<td><code>$_SESSION[_HIVE_SITE_COOKIE_."hive_language"]</code></td>
+<td>Stored Language in Session</td>
+</tr>
+<tr>
+<td><code>_HIVE_THEME_ARRAY_</code></td>
+<td>Theme Array</td>
+</tr>
+<tr>
+<td><code>_HIVE_THEME_DEFAULT_</code></td>
+<td>Default Theme</td>
+</tr>
+<tr>
+<td><code>$_SESSION[_HIVE_SITE_COOKIE_."hive_theme"]</code></td>
+<td>Stored Theme in Session</td>
+</tr>
+<tr>
+<td><code>_HIVE_THEME_COLOR_DEFAULT_</code></td>
+<td>Default Theme Color</td>
+</tr>
+<tr>
+<td><code>_HIVE_COLOR_</code></td>
+<td>Current Color</td>
+</tr>
+<tr>
+<td><code>$_SESSION[_HIVE_SITE_COOKIE_."hive_color"]</code></td>
+<td>Stored Color in Session</td>
+</tr>
+<tr>
+<td><code>$object["hive_mode_config_pre"]["extension_lang"][modname]</code></td>
+<td>Extension Language Configuration</td>
+</tr>
+<tr>
+<td><code>$object["hive_mode_config_pre"]["site_lang"][modname]</code></td>
+<td>Site Language Configuration</td>
+</tr>
+<tr>
+<td><code>_HIVE_BUILD_FIRSTRUN_ONUPDATE_</code></td>
+<td>First Run on Update Flag</td>
+</tr>
+<tr>
+<td><code>_HIVE_BUILD_FIRSTRUN_</code></td>
+<td>First Run Flag</td>
+</tr>
+</tbody>
+</table>
+<h4 id="include_2">Include</h4>
+<p>Post-Configuration Includes.</p>
+<h3 id="init-globals">Init: Globals</h3>
+<ul>
+<li>If Init is prevented only</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Variable/Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$object["mysql"]</code></td>
+<td>MySQL Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["log"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["api_log"]</code></td>
+<td>API Log</td>
+</tr>
+<tr>
+<td><code>$object["api_perm"]</code></td>
+<td>API Perm Class</td>
+</tr>
+<tr>
+<td><code>$object["api_perm_user"]</code></td>
+<td>API Perm User Class</td>
+</tr>
+<tr>
+<td><code>$object["var"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_BACKUP_LOCK_</code></td>
+<td>Lock Variable</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_MT_LOCK_</code></td>
+<td>Lock Variable</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_LOCK_</code></td>
+<td>Lock Variable (is another one true?)</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_UPDATE_LOCK_</code></td>
+<td>Lock Variable</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_MT_LOCK_OVR_</code></td>
+<td>Preset Variable to Override Maintenance Stop in Initialize</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_BACKUP_LOCK_OVR_</code></td>
+<td>Preset Variable to Override Backup Stop in Initialize</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_UPDATE_LOCK_OVR_</code></td>
+<td>Preset Variable to Override Update Stop in Initialize</td>
+</tr>
+<tr>
+<td><code>$object["url"]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>_HIVE_URL_</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>_HIVE_URL_REL_</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>_HIVE_URLC_REL_</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>$object["curl"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["2fa"]</code></td>
+<td>Class Initialization (only reserved)</td>
+</tr>
+<tr>
+<td><code>$object["zip"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>$object["crypt"]</code></td>
+<td>Class Initialization</td>
+</tr>
+<tr>
+<td><code>_CRON_ONLY_CLI_</code></td>
+<td>Cronjobs only over CLI?</td>
+</tr>
+<tr>
+<td><code>_HIVE_CURL_LOGGING_</code></td>
+<td>Activate Curl Logging?</td>
+</tr>
+<tr>
+<td><code>$object["perm_user_glob"]</code></td>
+<td>global user x_class_perm object</td>
+</tr>
+<tr>
+<td><code>$object["perm_group_glob"]</code></td>
+<td>global group x_class_perm object</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-variables_2">Init: Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_HIVE_SCRIPT_CACHE_T_</code></td>
+<td>Header Cache-Control:</td>
+</tr>
+<tr>
+<td><code>_HIVE_SCRIPT_CACHE_F_</code></td>
+<td>Header Cache-Control: (with false 2nd argument)</td>
+</tr>
+<tr>
+<td><code>_HIVE_SCRIPT_CACHE_P_</code></td>
+<td>Header Pragma:</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_INIT_ERROR_</code></td>
+<td>Set to 0 if undefined</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_VERSION_ERROR_</code></td>
+<td>Set to 0 if undefined</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_RNAME_ERROR_</code></td>
+<td>Set to 0 if undefined</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_DOWNGRADE_ERROR_</code></td>
+<td>Set to 0 if undefined</td>
+</tr>
+<tr>
+<td><code>_HIVE_INTERNAL_UPDATE_REQ_</code></td>
+<td>Set to 0 if undefined</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_MAILCHANGE_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_PASSCHANGE_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_RECOVER_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_LOGIN_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_LOGOUT_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_REGISTER_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_LANGCHANGE_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_MODESWITCH_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_2FA_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_ENABLESITE_ACTIVATE_</code></td>
+<td>Enable a Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_MAILCHANGE_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_PASSCHANGE_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_RECOVER_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_LOGIN_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_LOGOUT_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_REGISTER_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_LANGCHANGE_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_MODESWITCH_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_2FA_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+<tr>
+<td><code>_HIVE_DEFERSITE_ACTIVATE_</code></td>
+<td>Forward to another URL at Site in <code>_user</code> if true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="include-variables">Include: Variables</h3>
+<p>Inside included extension files you have access to special variables in the object array containing language and extension information.</p>
+<p>You can access this array keys at: <code>$object["hive_mode_config"]["info"]</code> for example. </p>
+<table>
+<thead>
+<tr>
+<th><strong>Key</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>info</code></td>
+<td>Full version.php x array of current site module.</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>Full Path to the Site Module directory.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Name of the Site Module.</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td>Prefix for MySQL and Redis.</td>
+</tr>
+<tr>
+<td><code>cookie</code></td>
+<td>Prefix for cookies and sessions.</td>
+</tr>
+<tr>
+<td><code>prefix_variables</code></td>
+<td>Prefix for variables and permissions.</td>
+</tr>
+<tr>
+<td><code>lang</code></td>
+<td>Language object with loaded site module special admin language file.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="language-files">🗣️ Language Files</h2>
+<p>Below you see an example of an english language file (en.php). The first lines prevent public view of the language file. The variables for translations are for the store to make name and description multi-langual. Languages for the injected sites in the administrator module will be stores in the site modules _admin/_lang folder.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>&lt;?php if(isset($this)) { if(!is_object($this)) { Header("Location: ../"); exit(); } } else { Header("Location: ../"); exit(); } ?&gt;
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>store_version_name=Template: Theme Module
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>store_version_description=This example Theme demonstrates the functioning of Theme Module extensions within this CMS. It includes readme files explaining the use of various folders and provides a skeleton template for creating your own Theme modules.
+</span></code></pre></div>
+<p>In the _lang folder of the site module you can save language files for the frontpage if the site module is activated.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>&lt;?php if(isset($this)) { if(!is_object($this)) { Header("Location: ../"); exit(); } } else { Header("Location: ../"); exit(); } ?&gt;
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>language_key=Translation
+</span></code></pre></div>
+<h2 id="default-files">⚙️ Default Files</h2>
+<p>Suitefish-CMS Modules expect some default files to be in place in modules. Here you can see which files are mandatory.</p>
+<h3 id="loadphp">load.php</h3>
+<p>Initial loader file for the site module which will be acting as index.php as the websites root file if this site module is active.</p>
+<h3 id="versionphp">version.php</h3>
+<p>This file contains detailed information about the module, all variables are mandatory and should be set on a module.</p>
+<p><strong>Initialize Variable Array</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$x = array();
+</span></code></pre></div>
+<p><strong>Module Details</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>// Unique Module ID
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>// - This is a unique id for your module
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>// - If you want your module in the public store contact the developers to get your unique module id.
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>// - Request unique module id for official publication at requestid@suitefish.com
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>// - If you do not have a registered unique module id start your rname with "xxx"
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>// - Use maximum of 15 signs
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>// - No special chars, only a-Z
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>// - No numeric chars
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>// - Underscore (_) prefix is dedicated to suitefish official releases
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>// - This variable is mandatory
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>$x["rname"]         = "_site";
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>// Available Languages 
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>// - Short Codes of available languages in PHP Array
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>// - This variable is mandatory
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>$x["lang"]          = array("en", "de", "fr", "it", "es", "zh", "ja", "in", "kr", "pt", "ru", "tr");
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>// Build Number:
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>// - Do only use integer values here
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>// - Will extend the version number
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>// - Do not use special chars, not even dots
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>// - This variable is mandatory
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>$x["build"]         = "100";
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>// Module Version
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>// - Always add the build number at the end, seperated by a dot (.)
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>// - Define the main Version number if the module.
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>// - This variable is mandatory
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>$x["version"]       = "1.10.".$x["build"];
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>// Module Name 
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>// - Define the Title of the Module displayed in different frontpage areas.
+</span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>// - Only text, no html codes
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>// - This variable is mandatory
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>$x["name"]          = "Template: Website Module";
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>// Module Description 
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>// - Define the Description of the Module displayed in different frontpage areas.
+</span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>// - Only text and simple html codes (like br, li, table)
+</span><span id="__span-24-35"><a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a>// - Do not use style, script or other kind of complex tags
+</span><span id="__span-24-36"><a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a>// - This variable is mandatory
+</span><span id="__span-24-37"><a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>$x["description"] = "This is a integrated website module example! This kind of website modules use the suitefish-cms as a platform to allow multi-site hosting with one instance!";
+</span><span id="__span-24-38"><a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a>// Module Type
+</span><span id="__span-24-39"><a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a>// - There are different Types of Modules inside Suitefish CMS
+</span><span id="__span-24-40"><a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a>// - The set ID 1 is dedicated to site modules and will than be recognized as one.
+</span><span id="__span-24-41"><a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a>// - Other possible values: 1 - Site | 2 - Extension | 3 - Image | 4 - Windows | 5 - Docker | 6 - Theme
+</span><span id="__span-24-42"><a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a>// - This variable is mandatory
+</span><span id="__span-24-43"><a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a>$x["type"]          = 1;
+</span><span id="__span-24-44"><a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a>// Minimal CMS Version to run this module
+</span><span id="__span-24-45"><a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a>// - Define the minimal version of CMS required to run this module.
+</span><span id="__span-24-46"><a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a>// - This variable is mandatory
+</span><span id="__span-24-47"><a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a>$x["cms_version_min"]       = "7.10.100";
+</span></code></pre></div>
+<p><strong>Module Author</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>// Module License (gplv3, gplv2, mit, bsd, bsd2, ...) (can be false)
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>$x["license"]       = "gplv3";
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>// Module Author Name (can be false)
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>$x["author"]        = "Suitefish";
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>// Module Author Mail (can be false)
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>$x["mail"]          = false;
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>// Module Author Website (can be false)
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>$x["website"]       = "https://www.suitefish.com";
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>// Module Documentation Website (can be false)
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>$x["documentation"] = "https://bugfishtm.github.io/suitefish-cms/"; 
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>// Module Github Website (can be false)
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>$x["github"]        = "https://github.com/bugfishtm/suitefish-cms"; 
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>// Module Video URL (a video about the module if exists, can be false)
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>$x["video"]         = false;        
+</span></code></pre></div>
+<p><strong>Extension Specific</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>// Does this Module require an active Background worker?
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>// If true then the background worker is mandatory and a notice will be displayed upon module creation.
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$x["require_worker"]        = false;
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>// Single Instance Module?
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>// If true, than this modules rname can only be deployed a single time on that cms instance.
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>// Recommended for Server Software where duplications of the module activated may lead to issues.
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>$x["single_instance"]       = false;    
+</span></code></pre></div>
+<h3 id="changelogphp">changelog.php</h3>
+<p>Changelog of changes between this and last version of this module. Store the changelog in simple html format in the $x variable.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$x = "&lt;b&gt;Release 1.10.100&lt;/b&gt;&lt;br /&gt; - Initial Release";
+</span></code></pre></div>
+<h3 id="previewjpg">preview.jpg</h3>
+<p>Preview image for the store and other areas the module is visble at.</p>
+<h3 id="licensemd">LICENSE.md</h3>
+<p>License information about the module.</p>
+<h3 id="readmemd">README.md</h3>
+<p>Readme file with general information about the module.</p>
+<p>🐟 Bugfish</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../extra.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

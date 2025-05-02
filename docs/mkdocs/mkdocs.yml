@@ -1,0 +1,97 @@
+site_name: Suitefish CMS
+repo_url: https://github.com/bugfishtm/suitefish-cms
+repo_name: suitefish-cms
+
+nav:
+    - Introduction: index.md
+    - Screenshots: screenshots.md
+    - Tutorials: tutorials.md
+    - Download: download.md
+    - Installation: installation.md
+    - Error-Codes: ./error_codes.md
+    - Initialization: ./init.md
+    - Folders:
+        - ./_api: ./folder/_api.md
+        - ./_backup: ./folder/_backup.md
+        - ./_cache: ./folder/_cache.md
+        - ./_core: ./folder/_core.md
+        - ./_cronjob: ./folder/_cronjob.md
+        - ./_data: ./folder/_data.md
+        - ./_image: ./folder/_image.md
+        - ./_sample: ./folder/_sample.md
+        - ./_site: ./folder/_site.md
+        - ./_store: ./folder/_store.md
+        - ./_template: ./folder/_template.md
+        - ./_user: ./folder/_user.md
+        - ./ : ./folder/root.md
+    - Tables:
+        - cms_worker: ./table/cms_worker.md
+        - cms_store: ./table/cms_store.md
+    - Functions:
+        - hive__default: ./function/hive__default.md
+        - hive__download: ./function/hive__download.md
+        - hive__error: ./function/hive__error.md
+        - hive__user: ./function/hive__user.md
+        - hive__worker: ./function/hive__worker.md
+        - hive__template: ./function/hive__template.md
+        - hive__view: ./function/hive__view.md
+        - hive__trigger: ./function/hive__trigger.md
+        - hive__library: ./function/hive__library.md
+    - Modules:
+        - Site: ./module/mod-site.md
+        - Extension: ./module/mod-ext.md
+        - Image: ./module/mod-image.md
+        - Software: ./module/mod-software.md
+        - Docker: ./module/mod-docker.md
+        - Theme: ./module/mod-theme.md
+    - Contributing: contributing.md
+    - Warranty: warranty.md
+    - Support: support.md
+    - License: license.md
+    - Impressum: https://bugfishtm.blogspot.com/2023/05/impressum.html
+    - Privacy: https://bugfishtm.blogspot.com/2023/05/privacy.html
+
+theme:
+  name: material
+  logo: ./logo.png
+  favicon: ./favicon.ico
+  primary: deep orange
+  language: 'en'
+  accent: deep orange
+  font: false
+  features:
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+
+extra_css:
+  - extra.css
+  - neoteroi-mkdocs.css
+
+extra_javascript:
+  - extra.js
+
+plugins:
+    - mkdocstrings
+    - search
+    - mkdocs-video
+    - glightbox
+    
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  
+use_directory_urls: false
+
+extra:
+  meta:
+    author: "Jan-Maurice Dahlmanns"

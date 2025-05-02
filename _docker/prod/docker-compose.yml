@@ -1,0 +1,30 @@
+services:
+  suitefish:
+    build: .
+    image: bugfishtm/suitefish:latest
+    restart: always
+    volumes:
+      - sys-ssl:/opt/sf_ssl
+      - sys-mysql:/var/lib/mysql
+      - cms-backup:/var/www/html/_backup
+      - cms-cache:/var/www/html/_cache
+      - cms-data:/var/www/html/_data
+      - cms-image:/var/www/html/_image
+      - cms-store:/var/www/html/_store
+      - cms-template:/var/www/html/_template
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      sf_db_pass:       "${sf_db_pass}"
+      sf_url:           "${sf_url}"
+      sf_timezone:      "${sf_timezone}"
+volumes:
+  sys-mysql:
+  sys-ssl:
+  cms-backup:
+  cms-cache:
+  cms-data:
+  cms-image:
+  cms-store:
+  cms-template:

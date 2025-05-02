@@ -1,0 +1,2796 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="download.html">
+      
+      
+        <link rel="next" href="error_codes.html">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Installation - Suitefish CMS</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+   <!-- META INJECTION START -->
+  <!-- META INJECTION START -->
+  <!-- META INJECTION START -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="subject" content="documentation">
+	<meta name="copyright" content="bugfish">
+	<meta name="language" content="en">
+	<meta name="robots" content="index,follow">
+	<meta name="author" content="bugfish, ynvnzmlzaa@gmail.com">
+	<meta property="og:image" content="./meta.png">    
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Suitefish CMS",
+    }
+    </script>
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "TechArticle",
+	  "headline": "Installation",
+	  "description": "Follow our step-by-step installation guide to set up your CMS on a web server. From server configuration to final setup, our detailed instructions ensure a smooth and successful CMS installation process.",
+	  "articleSection": "Installation",
+	  "datePublished": "2025-03-04",
+	  "dateModified": "2025-03-04",
+	  "author": {
+		"@type": "Person",
+		"name": "Jan-Maurice Dahlmanns"
+	  },
+	  "publisher": {
+		"@type": "Organization",
+		"name": "Bugfish",
+		"logo": {
+		  "@type": "ImageObject",
+		  "url": "./logo.png"
+		}
+	  }
+	}
+	</script> 
+	<meta property="og:title" content="Installation - Suitefish CMS">
+	<meta name="description" content="Follow our step-by-step installation guide to set up your CMS on a web server. From server configuration to final setup, our detailed instructions ensure a smooth and successful CMS installation process.">  
+	<meta name="og:description" content="Follow our step-by-step installation guide to set up your CMS on a web server. From server configuration to final setup, our detailed instructions ensure a smooth and successful CMS installation process.">  
+  <!-- META INJECTION END -->  
+  <!-- META INJECTION END -->  
+  <!-- META INJECTION END -->     
+    
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="extra.css">
+    
+      <link rel="stylesheet" href="neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Suitefish CMS" class="md-header__button md-logo" aria-label="Suitefish CMS" data-md-component="logo">
+      
+  <img src="logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Suitefish CMS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bugfishtm/suitefish-cms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    suitefish-cms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Suitefish CMS" class="md-nav__button md-logo" aria-label="Suitefish CMS" data-md-component="logo">
+      
+  <img src="logo.png" alt="logo">
+
+    </a>
+    Suitefish CMS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bugfishtm/suitefish-cms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    suitefish-cms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="screenshots.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshots
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="download.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="installation.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-installation-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Installation (Server)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Installation (Server)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Modules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Webserver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-cronjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Cronjob
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Daemon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-installation-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Installation (Website)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Installation (Website)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webserver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-modules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-modules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Modules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-webserver_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Webserver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-cronjob_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Cronjob
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="error_codes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error-Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="init.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initialization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Folders
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Folders
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_api.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_backup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_cache.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_cache
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_core.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_core
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_cronjob.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_cronjob
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_data.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_image.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_sample.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_sample
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_site.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_store.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_store
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_template.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/_user.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./_user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="folder/root.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ./
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="table/cms_worker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cms_worker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="table/cms_store.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cms_store
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Functions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Functions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__default.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__default
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__download.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__download
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__error.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__error
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__user.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__worker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__worker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__template.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__view.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__view
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__trigger.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__trigger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function/hive__library.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive__library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="module/mod-site.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="module/mod-ext.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extension
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="module/mod-image.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="module/mod-software.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="module/mod-docker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="module/mod-theme.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warranty.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Warranty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="support.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="license.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impressum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bugfishtm.blogspot.com/2023/05/privacy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-installation-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Installation (Server)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Installation (Server)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Modules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Webserver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-cronjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Cronjob
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Daemon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-installation-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Installation (Website)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Installation (Website)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webserver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#php-modules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-modules_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Modules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-webserver_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Webserver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-cronjob_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Cronjob
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div><h1 id="installation">Installation</h1>
+<p>Here, you'll find step-by-step instructions to help you set up the software. Follow the provided resources to ensure a smooth installation process and get up and running in no time.</p>
+<hr>
+<h2 id="docker-installation">Docker Installation</h2>
+<p>Visit the download section of this website and find the link to the Docker image page. There, you'll find detailed instructions and the image needed to set up the Docker instance. Installation is straightforward as our Docker setup uses a single container and can be deployed with just one console command—no need for Docker Compose. If no Docker image is available, Docker installation is not possible.</p>
+<p>Here you can find the official Docker image related to this project. By clicking the link below, you'll be directed to the Docker Hub page where you can access and pull the image for use.</p>
+<p><a class="md-button" href="https://hub.docker.com/r/bugfishtm/suitefish">Docker</a></p>
+<hr>
+<h2 id="script-installation">Script Installation</h2>
+<p>In the github repository's <code>_scripts</code> folder, you'll find an installation script designed to install the full version with all features on a root server. This script is intended for users who wish to utilize our advanced hosting functionality on a fresh system. It is recommended only for advanced users with their own servers and infrastructure.</p>
+<p><a class="md-button" href="https://raw.githubusercontent.com/bugfishtm/suitefish-cms/refs/heads/main/_scripts/suitefish.sh">Script</a></p>
+<p><strong>Install Suitefish (Dependencies)</strong></p>
+<ul>
+<li>Just the dependencies if you want to install manual on a server.</li>
+</ul>
+<p>Upload the suitefish.sh script to your server and use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>chmod u+x ./suitefish.sh  
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sh ./suitefish.sh install-dependencies
+</span></code></pre></div>
+<p><strong>Install Suitefish (Full)</strong></p>
+<ul>
+<li>Install the full package</li>
+<li>Setup Cronjob &amp; Background worker</li>
+<li>Setup PHP8.4 &amp; PHP-FPM</li>
+<li>Setup Apache/Suexec</li>
+<li>Download and install suitefish</li>
+<li>Requires root permission</li>
+</ul>
+<p>Upload the suitefish.sh script to your server and use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod u+x ./suitefish.sh  
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sh ./suitefish.sh install
+</span></code></pre></div>
+<hr>
+<h2 id="manual-installation-server">Manual Installation (Server)</h2>
+<p>For root-level installation, you’ll be setting up the CMS as a server backend, giving you full administrative control over your environment. This method is ideal if you want to manage the entire server, run background services, or access advanced features like Docker container management. Root-level installation requires a dedicated VPS or root server and grants access to system-level modules and configurations that aren’t available with standard website-level installs. Some features and modules will require root privileges, and these will be clearly indicated in the CMS interface. Choose this method if you need maximum flexibility, customization, and control over your server and CMS deployment.</p>
+<h3 id="requirements">Requirements</h3>
+<p>You can use the install dependencies <a href="https://raw.githubusercontent.com/bugfishtm/suitefish-cms/refs/heads/main/_scripts/suitefish.sh">script</a> in the repositories _scripts folder!</p>
+<h4 id="linux">Linux</h4>
+<table>
+<thead>
+<tr>
+<th>Package Name</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu</td>
+<td>Recommended.</td>
+</tr>
+<tr>
+<td>Debian</td>
+<td>Untested, but expected to work.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="packages">Packages</h4>
+<table>
+<thead>
+<tr>
+<th>Package Name</th>
+<th>Purpose (Short Description)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apache2</td>
+<td>Web server for serving websites and web content.</td>
+</tr>
+<tr>
+<td>software-properties-common</td>
+<td>Manage software sources and repositories.</td>
+</tr>
+<tr>
+<td>git</td>
+<td>Distributed version control system for code management.</td>
+</tr>
+<tr>
+<td>gcc</td>
+<td>GNU Compiler Collection for compiling source code.</td>
+</tr>
+<tr>
+<td>make</td>
+<td>Build automation tool for compiling and managing projects.</td>
+</tr>
+<tr>
+<td>autoconf</td>
+<td>Tool for generating configuration scripts for building code.</td>
+</tr>
+<tr>
+<td>pkg-config</td>
+<td>Manage and query installed libraries for compiling software.</td>
+</tr>
+<tr>
+<td>imagemagick</td>
+<td>Toolset for image manipulation and conversion.</td>
+</tr>
+<tr>
+<td>openssl</td>
+<td>Toolkit for SSL/TLS encryption and cryptography.</td>
+</tr>
+<tr>
+<td>redis</td>
+<td>In-memory data structure store, often used as a cache.</td>
+</tr>
+<tr>
+<td>curl</td>
+<td>Command-line tool for transferring data via URLs.</td>
+</tr>
+<tr>
+<td>cron</td>
+<td>Time-based job scheduler for running tasks automatically.</td>
+</tr>
+<tr>
+<td>tzdata</td>
+<td>Time zone and daylight-saving time data.</td>
+</tr>
+<tr>
+<td>supervisor</td>
+<td>Process control system for managing processes.</td>
+</tr>
+<tr>
+<td>zip</td>
+<td>Compression and archiving utility.</td>
+</tr>
+<tr>
+<td>htop</td>
+<td>Interactive process viewer and system monitor.</td>
+</tr>
+<tr>
+<td>unzip</td>
+<td>Tool for extracting compressed zip archives.</td>
+</tr>
+<tr>
+<td>tmux</td>
+<td>Terminal multiplexer for managing multiple terminal sessions.</td>
+</tr>
+<tr>
+<td>redis-server</td>
+<td>Redis server daemon.</td>
+</tr>
+<tr>
+<td>redis-tools</td>
+<td>Command-line tools for interacting with Redis.</td>
+</tr>
+<tr>
+<td>mariadb-server</td>
+<td>Open-source relational database server (MySQL-compatible).</td>
+</tr>
+<tr>
+<td>mariadb-client</td>
+<td>Client utilities for MariaDB database.</td>
+</tr>
+<tr>
+<td>wget</td>
+<td>Command-line tool for downloading files from the web.</td>
+</tr>
+<tr>
+<td>iputils-ping</td>
+<td>Utility for testing network connectivity (ping command).</td>
+</tr>
+<tr>
+<td>apache2-suexec-custom</td>
+<td>Apache module for executing CGI scripts as different users.</td>
+</tr>
+<tr>
+<td>jq</td>
+<td>Command-line JSON processor for parsing and filtering JSON.</td>
+</tr>
+<tr>
+<td>fail2ban</td>
+<td>Recommended for security purposes.</td>
+</tr>
+<tr>
+<td>libc-dev</td>
+<td>Standard C library development files (headers, etc.).</td>
+</tr>
+<tr>
+<td>libonig-dev</td>
+<td>Oniguruma regular expressions library development files.</td>
+</tr>
+<tr>
+<td>libpng-dev</td>
+<td>Development files for PNG image support.</td>
+</tr>
+<tr>
+<td>zlib1g-dev</td>
+<td>Compression library development files (zlib).</td>
+</tr>
+<tr>
+<td>libcurl4-openssl-dev</td>
+<td>cURL library development files with OpenSSL support.</td>
+</tr>
+<tr>
+<td>libicu-dev</td>
+<td>International Components for Unicode (i18n support) development.</td>
+</tr>
+<tr>
+<td>libxml2-dev</td>
+<td>XML parsing library development files.</td>
+</tr>
+<tr>
+<td>libzip-dev</td>
+<td>Library for reading, creating, and modifying zip archives (dev).</td>
+</tr>
+<tr>
+<td>libsodium-dev</td>
+<td>Modern, easy-to-use crypto library development files.</td>
+</tr>
+<tr>
+<td>libmemcached-dev</td>
+<td>Development files for Memcached client library.</td>
+</tr>
+<tr>
+<td>libssl-dev</td>
+<td>SSL/TLS cryptography library development files.</td>
+</tr>
+<tr>
+<td>libtidy-dev</td>
+<td>HTML syntax checker and reformatter library (dev files).</td>
+</tr>
+<tr>
+<td>libkrb5-dev</td>
+<td>Kerberos authentication protocol development files.</td>
+</tr>
+<tr>
+<td>libssh2-1-dev</td>
+<td>SSH2 protocol library development files.</td>
+</tr>
+<tr>
+<td>libc-client2007e-dev</td>
+<td>IMAP client library development files.</td>
+</tr>
+<tr>
+<td>libbz2-dev</td>
+<td>bzip2 compression library development files.</td>
+</tr>
+<tr>
+<td>libmagickwand-dev</td>
+<td>MagickWand API for ImageMagick (image processing, dev files).</td>
+</tr>
+<tr>
+<td>libldap2-dev</td>
+<td>LDAP directory access library development files.</td>
+</tr>
+<tr>
+<td>libfreetype-dev</td>
+<td>FreeType font rendering library development files.</td>
+</tr>
+<tr>
+<td>libfreetype6-dev</td>
+<td>(Same as above; alternate package name/version).</td>
+</tr>
+<tr>
+<td>libjpeg-dev</td>
+<td>JPEG image library development files.</td>
+</tr>
+<tr>
+<td>php8.4</td>
+<td>PHP8.4 Package.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="php-modules">PHP Modules</h4>
+<table>
+<thead>
+<tr>
+<th>Package Name</th>
+<th>Purpose (Short Description)</th>
+<th>Included in PHP 8.4 Core?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>php8.4-cli</td>
+<td>Command-line interface for PHP scripts</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-mysql</td>
+<td>MySQL database driver (mysql_* functions)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-mysqli</td>
+<td>Improved MySQL driver (mysqli_* functions)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-xml</td>
+<td>XML parsing support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-mbstring</td>
+<td>Multibyte string support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-curl</td>
+<td>cURL library support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-zip</td>
+<td>ZIP archive support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-intl</td>
+<td>Internationalization functions</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-common</td>
+<td>Common PHP files</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-soap</td>
+<td>SOAP protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-opcache</td>
+<td>Opcode caching for performance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-gd</td>
+<td>Image processing (GD library)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-bcmath</td>
+<td>Arbitrary precision math</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-bz2</td>
+<td>bzip2 compression support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-imap</td>
+<td>IMAP email protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-tidy</td>
+<td>HTML tidy library support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-ssh2</td>
+<td>SSH2 protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-imagick</td>
+<td>ImageMagick image processing</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-sqlite3</td>
+<td>SQLite3 database support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-ldap</td>
+<td>LDAP protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-memcached</td>
+<td>Memcached caching support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-redis</td>
+<td>Redis caching support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-fpm</td>
+<td>FastCGI Process Manager</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="apache-modules">Apache Modules</h4>
+<table>
+<thead>
+<tr>
+<th>Module Name</th>
+<th>Purpose (Short Description)</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ssl</td>
+<td>Enables HTTPS (SSL/TLS) support</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>rewrite</td>
+<td>URL rewriting and redirection</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>Manipulate HTTP headers</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>cgi</td>
+<td>Support for running CGI scripts</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>cgid</td>
+<td>CGI support using a daemon (for threaded MPMs)</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>remoteip</td>
+<td>Replace client IP with value from proxy/load balancer</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>deflate</td>
+<td>Compress content before sending to clients (gzip)</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>http2</td>
+<td>HTTP/2 protocol support</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>proxy</td>
+<td>Core proxy module (enables basic proxy functionality)</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>proxy_http</td>
+<td>Support for proxying HTTP requests</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>proxy_ftp</td>
+<td>Support for proxying FTP requests</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>proxy_fcgi</td>
+<td>Support for proxying FastCGI requests (e.g., PHP-FPM)</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>proxy_balancer</td>
+<td>Load balancing for proxied connections</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>suexec</td>
+<td>Run CGI scripts as different users</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>php8.4</td>
+<td>PHP 8.4 module for Apache (mod_php)</td>
+<td>Disable</td>
+</tr>
+<tr>
+<td>mpm_prefork</td>
+<td>Non-threaded, pre-forking web server mode</td>
+<td>Disable</td>
+</tr>
+<tr>
+<td>mpm_event</td>
+<td>Event-driven, threaded web server mode</td>
+<td>Enable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="installation_1">Installation</h3>
+<p>By following these steps, your installation will be ready to go!</p>
+<h4 id="prepare-webserver">Prepare Webserver</h4>
+<ol>
+<li>
+<p><strong>Download or Clone the Repository:</strong></p>
+<ul>
+<li>Visit the download section of the website, where you’ll find the download links for the latest release or choose to clone the repository directly from there. <a href="https://github.com/bugfishtm/suitefish-cms">Download@Github</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Copy the Files:</strong></p>
+<ul>
+<li>Navigate to the <code>/source</code> directory in the repository or extract the chosen release file.</li>
+<li>Copy all files from the <code>/source</code> folder to your web server's public HTML directory, ensuring all the necessary project files are accessible by the server.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure the Website:</strong></p>
+<ul>
+<li>Open the website in your browser and follow the installation wizard.</li>
+<li>The wizard will guide you through the initial setup, where you’ll configure the database, administrative user, and other required settings.</li>
+<li>The database tables will be created automatically during the installation process, so there is no need to import anything manually.</li>
+</ul>
+</li>
+<li>
+<p><strong>Set Up Cronjob:</strong></p>
+<ul>
+<li>For the CMS to function properly, you’ll need to set up a cronjob to run <code>_cronjob/cronjob.php</code> every hour as the web server user (usually <code>www-data</code> or the user running your web server). This ensures scheduled tasks run correctly. You can find more details in the "Setup Cronjob" section.</li>
+</ul>
+</li>
+<li>
+<p><strong>Setup Daemon:</strong></p>
+<ul>
+<li>For enhanced features and root-level functionalities, you may set up a background worker. Detailed instructions for setting it up can be found below. This step is optional but recommended for projects requiring more robust background operations. Modules that require this functionality will include a note in the store and during installation in the CMS. You can find more details in the "Setup Daemon" section.</li>
+</ul>
+</li>
+</ol>
+<h4 id="setup-cronjob">Setup Cronjob</h4>
+<p>To enable scheduled tasks, set up an hourly cronjob to run <code>_cronjob/cronjob.php</code> as your web server user (often <code>www-data</code>).  </p>
+<p>Add this line to your crontab (adjust the PHP and path as needed):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/php8.4<span class="w"> </span>/path/to/_cronjob/cronjob.php<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></code></pre></div>
+<p>If you use hosting software (like cPanel, Plesk) or a managed provider, use their interface to schedule this script instead. PHP8.4 should be used for the cronjob.</p>
+<h4 id="setup-daemon">Setup Daemon</h4>
+<ol>
+<li>Login to your server using SSH</li>
+<li>
+<p>Execute the following command: 
+</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apt<span class="w"> </span>install<span class="w"> </span>supervisor
+</span></code></pre></div>
+</li>
+<li>
+<p>Create the file <code>/etc/supervisor/conf.d/suitefish.conf</code> with following content: 
+</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span><span class="o">[</span>program:suitefish<span class="o">]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nv">command</span><span class="o">=</span>/usr/bin/php8.4<span class="w"> </span>/var/www/html/_core/worker.php
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nv">user</span><span class="o">=</span>root
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nv">autostart</span><span class="o">=</span><span class="nb">true</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nv">autorestart</span><span class="o">=</span><span class="nb">true</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nv">stderr_logfile</span><span class="o">=</span>/var/log/suitefish_error.log
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nv">stdout_logfile</span><span class="o">=</span>/var/log/suitefish_log.log
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nv">startsecs</span><span class="o">=</span><span class="m">0</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nv">environment</span><span class="o">=</span><span class="nv">SUITEFISH_SUPERVISOR_LOG_FILE</span><span class="o">=</span><span class="s2">"/var/log/suitefish_log.log"</span><span class="w">  </span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Ensure that the path specified in the <code>suitefish.conf</code> file (<code>/var/www/html/_core/worker.php</code>) correctly points to the location where your SuiteFish CMS is installed. The <code>worker.php</code> file is located in the <code>_core</code> folder within the SuiteFish CMS directory on your web server. Also check that the PHP Execution Path <code>/usr/bin/php8.4</code> leads to a valid php8.4 installation executable.</p>
+</li>
+<li>
+<p>Execute following commands to run the suitefish background worker:
+</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>supervisorctl<span class="w"> </span>reread
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>supervisorctl<span class="w"> </span>update
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>sudo<span class="w"> </span>supervisorctl<span class="w"> </span>start<span class="w"> </span>suitefish
+</span></code></pre></div>
+</li>
+</ol>
+<hr>
+<h2 id="manual-installation-website">Manual Installation (Website)</h2>
+<h4 id="website">Website</h4>
+<p>These requirements apply if you are only using the website functionalities of this CMS on a standard web hosting service or your own web server. In this setup, the background worker will not function, and modules requiring advanced access will also be unavailable without the background worker. However, other modules that do not depend on the background worker will still operate as expected.</p>
+<ul>
+<li>Apache2 webserver with modules: <code>rewrite</code> (mandatory), <code>ssl</code> (optional), <code>deflate</code> (optional).</li>
+<li>MySQL: Version 5.7 or higher required. MySQL 8.0+ recommended for optimal performance.</li>
+<li>Ensure you are using PHP version 8.4.x or higher. Avoid using any lower versions. Compatibility with PHP 9 is untested.</li>
+<li>The following PHP modules are required: <code>curl</code>, <code>mysqli</code>, and <code>mbstring</code>. The website will prompt you to install any additional required modules if they are not already installed.</li>
+<li>A minimum of 5GB of available web space is recommended.</li>
+</ul>
+<h3 id="requirements_1">Requirements</h3>
+<h4 id="webserver">Webserver</h4>
+<table>
+<thead>
+<tr>
+<th>Package Name</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache2</td>
+<td>Recommended.</td>
+</tr>
+<tr>
+<td>Nginx</td>
+<td>Untested, NOT expected to work.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="php-modules_1">PHP Modules</h4>
+<table>
+<thead>
+<tr>
+<th>Package Name</th>
+<th>Purpose (Short Description)</th>
+<th>Included in PHP 8.4 Core?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>php8.4-cli</td>
+<td>Command-line interface for PHP scripts</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-mysql</td>
+<td>MySQL database driver (mysql_* functions)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-mysqli</td>
+<td>Improved MySQL driver (mysqli_* functions)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-xml</td>
+<td>XML parsing support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-mbstring</td>
+<td>Multibyte string support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-curl</td>
+<td>cURL library support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-zip</td>
+<td>ZIP archive support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-intl</td>
+<td>Internationalization functions</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-common</td>
+<td>Common PHP files</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-soap</td>
+<td>SOAP protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-opcache</td>
+<td>Opcode caching for performance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-gd</td>
+<td>Image processing (GD library)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-bcmath</td>
+<td>Arbitrary precision math</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-bz2</td>
+<td>bzip2 compression support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-imap</td>
+<td>IMAP email protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-tidy</td>
+<td>HTML tidy library support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-ssh2</td>
+<td>SSH2 protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-imagick</td>
+<td>ImageMagick image processing</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-sqlite3</td>
+<td>SQLite3 database support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>php8.4-ldap</td>
+<td>LDAP protocol support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-memcached</td>
+<td>Memcached caching support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-redis</td>
+<td>Redis caching support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>php8.4-fpm</td>
+<td>FastCGI Process Manager</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="apache-modules_1">Apache Modules</h4>
+<table>
+<thead>
+<tr>
+<th>Module Name</th>
+<th>Purpose (Short Description)</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ssl</td>
+<td>Enables HTTPS (SSL/TLS) support</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>rewrite</td>
+<td>URL rewriting and redirection</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>Manipulate HTTP headers</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>cgi</td>
+<td>Support for running CGI scripts</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>cgid</td>
+<td>CGI support using a daemon (for threaded MPMs)</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>deflate</td>
+<td>Compress content before sending to clients (gzip)</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td>http2</td>
+<td>HTTP/2 protocol support</td>
+<td>Enable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="installation_2">Installation</h3>
+<p>By following these steps, your installation will be ready to go!</p>
+<h4 id="prepare-webserver_1">Prepare Webserver</h4>
+<ol>
+<li>
+<p><strong>Download or Clone the Repository:</strong></p>
+<ul>
+<li>Visit the download section of the website, where you’ll find the download links for the latest release or choose to clone the repository directly from there. <a href="https://github.com/bugfishtm/suitefish-cms">Download@Github</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Copy the Files:</strong></p>
+<ul>
+<li>Navigate to the <code>/source</code> directory in the repository or extract the chosen release file.</li>
+<li>Copy all files from the <code>/source</code> folder to your web server's public HTML directory, ensuring all the necessary project files are accessible by the server.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure the Website:</strong></p>
+<ul>
+<li>Open the website in your browser and follow the installation wizard.</li>
+<li>The wizard will guide you through the initial setup, where you’ll configure the database, administrative user, and other required settings.</li>
+<li>The database tables will be created automatically during the installation process, so there is no need to import anything manually.</li>
+</ul>
+</li>
+<li>
+<p><strong>Set Up Cronjob:</strong></p>
+<ul>
+<li>For the CMS to function properly, you’ll need to set up a cronjob to run <code>_cronjob/cronjob.php</code> every hour as the web server user (usually <code>www-data</code> or the user running your web server). This ensures scheduled tasks run correctly. You can find more details in the "Setup Cronjob" section.</li>
+</ul>
+</li>
+</ol>
+<h4 id="setup-cronjob_1">Setup Cronjob</h4>
+<p>To enable scheduled tasks, set up an hourly cronjob to run <code>_cronjob/cronjob.php</code> as your web server user (often <code>www-data</code>).  </p>
+<p>Add this line to your crontab (adjust the PHP and path as needed):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/usr/bin/php8.4<span class="w"> </span>/path/to/_cronjob/cronjob.php<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></code></pre></div>
+<p>If you use hosting software (like cPanel, Plesk) or a managed provider, use their interface to schedule this script instead. PHP8.4 should be used for the cronjob.</p>
+<hr>
+<h2 id="initial-login">Initial Login</h2>
+<div class="admonition danger">
+<p class="admonition-title">For your security, change the default password immediately after your first login.</p>
+<p><strong>Important:</strong> To ensure the security of your account and system, it is strongly recommended to change the password right after your first login. Failing to do so may expose your system to potential security risks.</p>
+</div>
+<p>Once the installation is complete, you can log in using the default credentials provided below.</p>
+<p><strong>Username:</strong> admin@admin.local<br>
+<strong>Password:</strong> changeme</p>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="admonition note">
+<p class="admonition-title">This troubleshooting advise is only for non-docker installations.</p>
+</div>
+<p>If the <code>installer.php</code> script fails to generate the <code>settings.php</code> file for any reason, you can manually create the <code>settings.php</code> file by using the <code>settings_sample.php</code> file located in the <code>_source</code> folder of this project. Simply rename the file from <code>_samples/settings_sample.php</code> to <code>settings.php</code> and make the necessary configuration changes.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="extra.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
