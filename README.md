@@ -1,14 +1,12 @@
 # ⚠️ Warning
 
 > 🚧 **This project is currently in development and should NOT be used in production.**  
-> Estimated development completion: **August 2025**.
-
 
 # Suitefish CMS
 
 ![Screenshot](./_images/_banner/suitefish-banner.jpg)
 
-## 🔍 Overview
+## 🚀 Introduction
 
 Suitefish-CMS is a powerful and versatile content management system designed to empower both end-users and developers alike. Whether you're a business owner looking to streamline your online presence or a developer seeking robust backend functionalities, Suitefish-CMS has you covered.
 
@@ -16,66 +14,73 @@ You can extend the CMS Functionality by adding Modules or extensions out of the 
 
 ![Screenshot](./_screenshots/cms_demo.png)
 
+### 🖥️ Installer 
 
+Simplifies the entire installation process with a clear, intuitive graphical user interface (GUI), making setup fast and accessible even for users with minimal technical experience.
 
-## ⚡ User Features
-This section outlines the features available to end-users. No coding knowledge is required to use these functionalities, as they are included in our Administrator Module. Simply install the CMS and log in as the initial user as described in the installation guide to access all features listed below:
+### 🔄 Updater
 
-| **Feature**                | **Description**                                                                                                                                             |
-|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Administrator Module        | Responsive backend with file, user management, debugging insights, and access to the extension store.                                                       |
-| User and Group Manager      | Organize users into groups for streamlined access control, with permission management.                                                                      |
-| Installer                   | Simplified installation process with a graphical user interface (GUI).                                                                                      |
-| Updater                     | GUI-based updater for easy maintenance of the CMS.                                                                                                          |
-| File Management             | Robust file management for uploading and organizing media assets.                                                                                           |
-| Extension and Dedicated Store| Centralized marketplace for discovering, installing, and managing extensions, including setting up an extension store.                                      |
-| Store System and Module Downloads | Fully functional store system for module downloads, enhancing website customization.                                                                 |
-| Notification System         | System notifications for events and changes.                                                                                                               |
+Offers a GUI-based updater tool designed for effortless maintenance of the CMS, ensuring modules and core components stay up to date with minimal user intervention.
 
-## 🐛 Developer Features
+### 🧑‍💼 Administrator Module 
 
-These backend functionalities are tailored for developers and are essential for site modules requiring advanced coding knowledge. If there is no site module to generate the necessary code, developers can directly utilize these functionalities. Below is a detailed overview of the available backend features:
+A fully responsive backend that allows comprehensive file and user management, provides detailed debugging insights, and grants easy access to the extension store for enhanced functionality and control.
 
+### 🛡️ Access Control
 
-| **Feature**                 | **Description**                                                                                                                                             |
-|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Multi-Site Management        | Centralized management of multiple websites.                                                                                                               |
-| Framework Integration        | Integration with Bugfish Framework for bug tracking and debugging with support for CSS, JavaScript, and PHP Libraries.                                      |
-| Debugging Tools              | Robust debugging tools to identify errors and test performance or SQL issues.                                                                               |
-| Multi-Language Support       | Manage multiple languages for a global audience.                                                                                                           |
-| Dynamic Themes and Colors    | Enable dynamic switching of themes and color adjustments.                                                                                                  |
-| Dynamic CSS/JS Load          | Dynamically load CSS and JavaScript files for optimized performance.                                                                                        |
-| Updater Backend              | Ready-to-use updater routines per Site Module.                                                                                                             |
-| Dynamic Code Loading         | Support dynamic loading of code snippets or scripts.                                                                                                       |
-| Dynamic Cronjobs             | Schedule and automate tasks with dynamic cronjobs.                                                                                                         |
-| Extension Support            | Extend modules with custom or store-downloaded extensions.                                                                                                 |
-| Deployment                   | Deploy and control Suitefish-CMS clusters, module updates, and core updates via a public store.                                                               |
-| Integrated Templates         | Pre-designed templates for simplified website design.                                                                                                      |
-| Example Modules              | Collection of example modules for reference and inspiration.                                                                                               |
-| Developer-Friendly Interface | Comprehensive interface for developers to access and customize the system.                                                                                 |
+The software features a robust user and group management system, enabling administrators to efficiently create, organize, and manage both users and user groups. With flexible permission controls, administrators can assign specific access rights to groups and individual users, ensuring secure and streamlined management of user privileges across the platform.
 
-## 🧑‍💼 User Management
+### 💾 File Management
 
-The software includes a powerful user management system, allowing administrators to create, manage, and organize users efficiently. This system helps ensure that user-related tasks are streamlined and secure.
+Provides robust tools for uploading, organizing, and managing media assets efficiently, helping maintain an orderly and accessible file system within the platform.
 
-## 🛡️ Access Control
+### 🧩 Extendability
 
-The software offers an advanced permission management system that allows you to define and control user access to specific features and resources. This helps maintain security and ensures that sensitive information is protected.
+The software includes a built-in store system that allows users to download and deploy modules directly within the platform. By default, end users access the integrated store (set to https://suitefish.com in the ruleset.cfg configuration file), but developers can configure the system to point to their own custom store for deploying proprietary or third-party extensions. Modules can be installed seamlessly through the website interface or manually by uploading .zip files, providing flexibility for both standard users and advanced developers.
 
-## 🧩 Extendability
+### 🌐 Multi-Language Support
 
-This software is integrated with Suitefish CMS, allowing you to extend its functionality by installing various extensions or software from our store. You can easily add them directly through the website or manually by installing .zip modules.
+This project supports multiple languages, including German, English, Spanish, Italian, French, Japanese, Chinese, Russian, Hindi, Portuguese, Korean, and Turkish. You can add new languages or modify existing text on the website by overriding translations.
+
+### 🔔 Notification System
+
+Delivers timely system notifications about important events and changes, keeping administrators informed and enabling quick responses to critical updates or issues.
+
+### 🪟 Windows Software
+
+A dedicated Windows application is available at https://github.com/bugfishtm/suitefish-windows, enabling seamless use of the CMS store for software deployment and offering additional management features tailored for Windows environments.
+
+### 🐛 Developer Features
+
+The software offers centralized multi-site management and integrates with Bugfish Framework for bug tracking and debugging with CSS, JavaScript, and PHP support. It includes powerful debugging tools for error detection and performance testing. Users can switch themes and colors dynamically and load CSS/JS files on demand for better performance. The updater backend handles module updates, while dynamic code loading and cronjobs enable flexible scripting and task automation. Extensions can be added from custom or store sources. Deployment features manage Suitefish-CMS clusters and updates via a public store. Pre-designed templates simplify website design, and example modules provide useful references.
 
 ## 🛠️ Installation 
 
-For installation on Docker view: [https://hub.docker.com/repository/docker/bugfishtm/suitefish/general](https://hub.docker.com/repository/docker/bugfishtm/suitefish/general)  
-Other installation methods and requirements: [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html) 
+You have different options to install the CMS Software, you can see detailed information at the installation documentation page at: [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html).
 
-## 🔒 Initial Login
-
-Initial user account for the website after deployment, change this after installation!  
+>Initial user account for the website after deployment:  
 username: admin@admin.local  
 password: changeme  
+It is urgently advised to change this directly after deployment!
+
+### 🐳 Docker
+
+This method installs the standard version of Suitefish-CMS, providing full website functionality. Please note that the Docker setup runs in a containerized environment, so it does not grant deep system or root-level access required for advanced system authority operations. This ensures a secure and isolated installation suitable for most web use cases. For Docker installation, visit: https://hub.docker.com/r/bugfishtm/suitefish.
+
+### 📄 Script
+
+> This script is intended for use only on freshly installed servers and may corrupt running services or operations.
+
+In the github repository's `_scripts` folder, you'll find an installation script designed to install the full version with all features on a root server. This script is intended for users who wish to utilize our advanced hosting functionality on a fresh system. It is recommended only for advanced users with their own servers and infrastructure.
+
+- Upload the suitefish.sh script to your fresh server.
+- Execute Command: `chmod u+x ./suitefish.sh`  
+- Execute Command: `sh ./suitefish.sh install`  
+- Navigate through the installation process.
+
+### ✋ Manual
+
+Installing the CMS is straightforward, whether you choose root-level access mode or the default website mode. For detailed instructions on manual installation, please refer to the documentation located in the index.html file within the repository's docs folder, or visit https://bugfishtm.github.io/suitefish-cms/installation.html.
 
 ## 📖 Documentation
 
@@ -91,125 +96,40 @@ The following documentation is intended for developers.
 
 | Description | Link  |
 |----------------|----------------------------|
-| Documentation for the integrated CMS - for developers.                                                                                              | [https://bugfishtm.github.io/suitefish-cms/](https://bugfishtm.github.io/suitefish-cms/)|
-| Documentation for the integrated framework - for developers.                                                                                        | [https://bugfishtm.github.io/bugfish-framework/](https://bugfishtm.github.io/bugfish-framework/)  |
-| Documentation for the integrated adminBSB Theme - for developers.                                                                                        | [https://bugfishtm.github.io/suitefish-cms/extra-adminbsb/](https://bugfishtm.github.io/suitefish-cms/extra-adminbsb/)  |
+| CMS Developer Documentation                                                                                              | [https://bugfishtm.github.io/suitefish-cms/](https://bugfishtm.github.io/suitefish-cms/)|
+| Framework Developer Documentation                                                                                        | [https://bugfishtm.github.io/bugfish-framework/](https://bugfishtm.github.io/bugfish-framework/)  |
+| AdminBSB Theme Developer Documentation                                                                                        | [https://bugfishtm.github.io/suitefish-cms/extra-adminbsb/](https://bugfishtm.github.io/suitefish-cms/extra-adminbsb/)  |
 
-## 🗃️ Included Libraries
+The following sites may be interestinig for docker instance developers and users.
 
-This page provides a comprehensive list of the libraries and tools included in our project. Please note that this list is not complete, and while it includes many of the libraries we use, some entries might be missing or not fully detailed. For the most accurate and complete information on licenses, please refer to the `_licenses` folder in the respective GitHub repositories.
+| Description | Link  |
+|----------------|----------------------------|
+| Developer Base Image | [https://hub.docker.com/r/bugfishtm/sf-base](https://hub.docker.com/r/bugfishtm/sf-base)|
+| Suitefish on Docker | [https://hub.docker.com/r/bugfishtm/suitefish](https://hub.docker.com/r/bugfishtm/suitefish)|
 
-This project is powered by Suitefish CMS under GPLv3 License.
+Relevant GitHub Repositories.
 
-![./images/bugfish-framework-banner.jpg](./_images/_banner/suitefish.jpg)
+| Description | Link  |
+|----------------|----------------------------|
+| Suitefish-CMS | [https://github.com/bugfishtm/suitefish-cms](https://github.com/bugfishtm/suitefish-cms)|
+| Suitefish Official Module Library | [https://github.com/bugfishtm/suitefish-modules](https://github.com/bugfishtm/suitefish-modules)|
+| Suitefish Windows Software | [https://github.com/bugfishtm/suitefish-windows](https://github.com/bugfishtm/suitefish-windows)|
+| Bugfish Framework | [https://github.com/bugfishtm/bugfish-framework](https://github.com/bugfishtm/bugfish-framework)|
 
-This project is powered by Bugfish Framework under GPLv3 License.
+Interesting websites.
 
-![./images/bugfish-framework-banner.jpg](./_images/_banner/framework.jpg)
-
-| Name                                | License | Link to Info Page                                                |
-|-------------------------------------|---------|------------------------------------------------------------------|
-| adminbsb                            | MIT | [AdminBSB GitHub](https://github.com/gurayyarar/AdminBSBMaterialDesign) |
-| Alpine                              | MIT     | [Alpine.js GitHub](https://github.com/alpinejs/alpine)           |
-| AnimateCSS                          | MIT     | [AnimateCSS GitHub](https://github.com/animate-css/animate.css)  |
-| animated-calendar-event-gc          | MIT | [Calendar Event GC](https://www.npmjs.com/package/animated-calendar-event-gc) |
-| autosize                            | MIT     | [Autosize GitHub](https://github.com/jackmoore/autosize)         |
-| bootstrap-colorpicker               | MIT     | [Bootstrap Colorpicker GitHub](https://github.com/itsjavi/bootstrap-colorpicker) |
-| bootstrap-material-datetimepicker   | MIT     | [Bootstrap Material DateTimePicker GitHub](https://github.com/T00rk/bootstrap-material-datetimepicker) |
-| bootstrap-notify                    | MIT     | [Bootstrap Notify GitHub](https://github.com/mouse0270/bootstrap-notify) |
-| bootstrap-select                    | MIT     | [Bootstrap Select GitHub](https://github.com/snapappointments/bootstrap-select) |
-| bootstrap-tagsinput                 | MIT     | [Bootstrap TagsInput GitHub](https://github.com/bootstrap-tagsinput/bootstrap-tagsinput) |
-| Bootstrap                           | MIT     | [Bootstrap GitHub](https://github.com/twbs/bootstrap)            |
-| boxicons                            | CC BY 4.0 | [Boxicons GitHub](https://github.com/atisawd/boxicons)           |
-| bugfish-dashboard                   | GPLv3 | N/A                                                              |
-| bugfish-framework                   | GPLv3 | N/A                                                              |
-| bugfish-jquery-sortselect           | GPLv3 | N/A                                                              |
-| bugfish-jquery-sortselect_root       | MIT | N/A                                                              |
-| Changa                              | SIL OFL | [Changa Google Fonts](https://fonts.google.com/specimen/Changa)   |
-| chartjs                             | MIT     | [Chart.js GitHub](https://github.com/chartjs/Chart.js)           |
-| chatist                             | MIT     | [Chatist GitHub](https://github.com/wachidny/chatist)            |
-| choices.js                          | MIT     | [Choices.js GitHub](https://github.com/Choices-js/Choices)       |
-| chosen                              | MIT     | [Chosen GitHub](https://github.com/harvesthq/chosen)             |
-| ComicNeue                           | SIL OFL | [Comic Neue GitHub](https://github.com/crozynski/comic-neue)     |
-| country-flags-icons                 | MIT     | [Country Flags Icons GitHub](https://github.com/lipis/flag-icons) |
-| datatables                          | MIT     | [DataTables GitHub](https://github.com/DataTables/DataTables)    |
-| daypilot-lite                       | AGPLv3  | [DayPilot Lite GitHub](https://github.com/DHTMLX/daypilot-lite)  |
-| dropzone                            | MIT     | [Dropzone.js GitHub](https://github.com/dropzone/dropzone)       |
-| editable-table                      | MIT     | [Editable Table GitHub](https://github.com/mindmup/editable-table) |
-| evo-event-calendar                  | MIT     | [Evo Event Calendar GitHub](https://github.com/serhii-londar/evo-calendar) |
-| flot-charts                         | MIT     | [Flot Charts GitHub](https://github.com/flot/flot)               |
-| focustrap                           | MIT     | [FocusTrap GitHub](https://github.com/focus-trap/focus-trap)     |
-| font-awesome                        | MIT     | [Font Awesome GitHub](https://github.com/FortAwesome/Font-Awesome) |
-| free-file-icons                     | CC0 1.0 | [Free File Icons GitHub](https://github.com/naptha/icon)         |
-| githubbuttons                       | MIT     | [GitHub Buttons GitHub](https://github.com/ntkme/github-buttons) |
-| gmaps                               | MIT     | [Gmaps GitHub](https://github.com/hpneo/gmaps)                   |
-| ion-rangeslider                     | MIT     | [Ion.RangeSlider GitHub](https://github.com/IonDen/ion.rangeSlider) |
-| jquery-cookie                       | MIT     | [jQuery Cookie GitHub](https://github.com/carhartl/jquery-cookie) |
-| jquery-countto                      | MIT     | [jQuery CountTo GitHub](https://github.com/mhuggins/jquery-countTo) |
-| jquery-gantt                        | MIT     | [jQuery Gantt GitHub](https://github.com/robicch/jQueryGantt)    |
-| jquery-inputmask                    | MIT     | [jQuery Inputmask GitHub](https://github.com/RobinHerbots/Inputmask) |
-| jquery-knob                         | MIT     | [jQuery Knob GitHub](https://github.com/aterrien/jQuery-Knob)    |
-| jquery-slimscroll                   | MIT     | [jQuery SlimScroll GitHub](https://github.com/rochal/jQuery-slimScroll) |
-| jquery-sparkline                    | MIT     | [jQuery Sparkline GitHub](https://github.com/gwatts/jquery.sparkline) |
-| jquery-spinner                      | MIT     | [jQuery Spinner GitHub](https://github.com/xixilive/jquery-spinner) |
-| jquery-steps                        | MIT     | [jQuery Steps GitHub](https://github.com/rstaib/jquery-steps)    |
-| jquery-timeline                     | MIT     | [jQuery Timeline GitHub](https://github.com/ryanfitzgerald/jquery-timeline) |
-| jquery-validation                   | MIT     | [jQuery Validation GitHub](https://github.com/jquery-validation/jquery-validation) |
-| jquery                              | MIT     | [jQuery GitHub](https://github.com/jquery/jquery)                |
-| jvectormap                          | MIT     | [jVectorMap GitHub](https://github.com/bjornd/jvectormap)        |
-| Lato                                | SIL OFL | [Lato Google Fonts](https://fonts.google.com/specimen/Lato)      |
-| leafletjs                           | BSD-2-Clause | [Leaflet.js GitHub](https://github.com/Leaflet/Leaflet)        |
-| light-gallery                       | GPL-3.0 | [LightGallery GitHub](https://github.com/sachinchoolur/lightgallery) |
-| login-template                      | MIT     | [Login Template GitHub](https://github.com/gustavohenke/login-template) |
-| magicsuggest                        | MIT     | [MagicSuggest GitHub](https://github.com/nicolasbize/magicsuggest) |
-| material-design-iconic-font         | MIT     | [Material Design Iconic Font GitHub](https://github.com/zavoloklom/material-design-iconic-font) |
-| materialize-css                     | MIT     | [Materialize GitHub](https://github.com/Dogfalo/materialize)     |
-| modelviewer                         | Apache-2.0 | [ModelViewer GitHub](https://github.com/google/model-viewer)    |
-| momentjs                            | MIT     | [Moment.js GitHub](https://github.com/moment/moment)             |
-| morrisjs                            | MIT     | [Morris.js GitHub](https://github.com/morrisjs/morris.js)        |
-| multi-select                        | MIT     | [MultiSelect GitHub](https://github.com/lou/multi-select)        |
-| multi.js                            | MIT     | [multi.js GitHub](https://github.com/WillSullivan/multi.js)      |
-| nestable                            | MIT     | [Nestable GitHub](https://github.com/dbushell/Nestable)          |
-| Nestable2                           | MIT     | [Nestable2 GitHub](https://github.com/RamonSmit/Nestable2)       |
-| node-waves                          | MIT     | [Node Waves GitHub](https://github.com/fians/Waves)              |
-| notyf                               | MIT     | [Notyf GitHub](https://github.com/caroso1222/notyf)              |
-| nouislider                          | MIT     | [noUiSlider GitHub](https://github.com/leongersen/noUiSlider)    |
-| onscreen                            | MIT     | [onScreen GitHub](https://github.com/silvestreh/onScreen)        |
-| phpmailer                           | LGPL-2.1 | [PHPMailer GitHub](https://github.com/PHPMailer/PHPMailer)       |
-| popperjs                            | MIT     | [Popper.js GitHub](https://github.com/popperjs/popper-core)      |
-| raphael                             | MIT     | [Raphael.js GitHub](https://github.com/DmitryBaranovskiy/raphael) |
-| resumable                           | MIT     | [Resumable.js GitHub](https://github.com/23/resumable.js)        |
-| Roboto                              | Apache-2.0 | [Roboto Google Fonts](https://fonts.google.com/specimen/Roboto) |
-| Salt_Regular                        | SIL OFL | [Salt Regular](https://www.fontspace.com/salt-regular-font-f88036) |
-| sass                                | MIT     | [Sass GitHub](https://github.com/sass/sass)                      |
-| select2                | MIT      | [Select2 GitHub](https://github.com/select2/select2)           |
-| Simple-Error-Page      | MIT  | [Simple Error Page](https://github.com/matuzo/simple-error-page) |
-| Simple-Mail-Template   | MIT  | N/A                                                            |
-| simplebar              | MIT      | [SimpleBar GitHub](https://github.com/Grsmto/simplebar)        |
-| smooth-scroll          | MIT      | [Smooth Scroll GitHub](https://github.com/cferdinandi/smooth-scroll) |
-| sortablejs             | MIT      | [SortableJS GitHub](https://github.com/SortableJS/Sortable)    |
-| spaceinvader           | MIT      | [Space Invader](https://github.com/samisaf/spaceinvader)       |
-| sweetalert             | MIT      | [SweetAlert GitHub](https://github.com/t4t5/sweetalert)        |
-| sweetalert2            | MIT      | [SweetAlert2 GitHub](https://github.com/sweetalert2/sweetalert2) |
-| tinymce                | LGPL 2.1 | [TinyMCE GitHub](https://github.com/tinymce/tinymce)           |
-| vanillajs-datepicker   | MIT      | [VanillaJS DatePicker GitHub](https://github.com/mymth/vanillajs-datepicker) |
-| Volt                   | MIT      | [Volt GitHub](https://github.com/themeselection/volt-bootstrap-5-dashboard) |
-| waitme                 | MIT      | [WaitMe GitHub](https://github.com/vadimsva/waitMe)            |
-| waypoints              | MIT      | [Waypoints GitHub](https://github.com/imakewebthings/waypoints)|
-| you-login              | MIT      | [You-Login GitHub](https://github.com/mohamed-aziz-you/you-login) |
-
+| Description | Link  |
+|----------------|----------------------------|
+| Bugfish Website | [https://bugfish.eu](https://bugfish.eu)|
+| Suitefish-CMS Store / Website | [https://suitefish.com](https://suitefish.com)|
 
 ## ❓ Support Channels
 
 If you encounter any issues or have questions while using this software, feel free to contact us:
 
 - **GitHub Issues** is the main platform for reporting bugs, asking questions, or submitting feature requests: [https://github.com/bugfishtm/suitefish-cms/issues](https://github.com/bugfishtm/suitefish-cms/issues)
-- **Discord Community** is available for live discussions, support, and connecting with other users: [Join us on Discord](https://discord.com/invite/y5d2px9KEw)  
+- **Discord Community** is available for live discussions, support, and connecting with other users: [Join us on Discord](https://discord.com/invite/nqe2HSuKee)  
 - **Email support** is recommended only for urgent security-related issues: [security@bugfish.eu](mailto:security@bugfish.eu)
-
-## 🌐 Multi-Language Support
-
-This project supports multiple languages, including German, English, Spanish, Italian, French, Japanese, Chinese, Russian, Hindi, Portuguese, Korean, and Turkish. You can add new languages or modify existing text on the website by overriding translations.
 
 ## 📢 Spread the Word
 

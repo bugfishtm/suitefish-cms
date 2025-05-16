@@ -36,5 +36,4 @@ chmod u+x ./suitefish.sh
 sh ./suitefish.sh server-check
 ```
 
-
 🐟 Bugfish

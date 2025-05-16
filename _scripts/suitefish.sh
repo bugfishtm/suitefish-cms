@@ -1478,17 +1478,6 @@ EOF
 		fi		
 	fi
 	echo	
-	echo	
-	echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
-	echo "  Fix Permissions"
-	echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
-	echo "  ${GREEN}Ok${RESET}: Setting up ownership to suitefish user on /suitefish recursively...";
-	chown suitefish:suitefish /suitefish -R > /dev/null 2>&1
-	echo "  ${GREEN}Ok${RESET}: Setting up permissions on /suitefish/web to 0770 recursively...";
-	chmod 0770 /suitefish -R > /dev/null 2>&1
-	echo "  ${GREEN}Ok${RESET}: Setting up permissions on /etc/cron.d/suitefish to 0644...";
-	chmod 0740 /etc/cron.d/suitefish > /dev/null 2>&1
-	echo	
 	echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 	echo "  Restart Services"
 	echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
@@ -1515,7 +1504,17 @@ EOF
 	supervisorctl start suitefish > /dev/null 2>&1
 	echo "  ${GREEN}Ok${RESET}: Starting supervisor services."
 	echo
-	echo
+	echo	
+	echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+	echo "  Fix Permissions"
+	echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+	echo "  ${GREEN}Ok${RESET}: Setting up ownership to suitefish user on /suitefish recursively...";
+	chown suitefish:suitefish /suitefish -R > /dev/null 2>&1
+	echo "  ${GREEN}Ok${RESET}: Setting up permissions on /suitefish/web to 0770 recursively...";
+	chmod 0770 /suitefish -R > /dev/null 2>&1
+	echo "  ${GREEN}Ok${RESET}: Setting up permissions on /etc/cron.d/suitefish to 0644...";
+	chmod 0740 /etc/cron.d/suitefish > /dev/null 2>&1
+	echo	
 	echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 	echo "  ${GREEN} Installation Finished successfully${RESET}"
 	echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
