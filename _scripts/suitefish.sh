@@ -387,6 +387,7 @@ if [ "$1" = "install-dependencies" ]; then
 	check_and_install_pkg iputils-ping
 	check_and_install_pkg apache2-suexec-custom
 	check_and_install_pkg jq
+	check_and_install_pkg jailkit
 	echo
 	echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 	echo "  Install Specialized Server Packages"
@@ -600,6 +601,7 @@ if [ "$1" = "install" ]; then
 	check_and_install_pkg iputils-ping
 	check_and_install_pkg apache2-suexec-custom
 	check_and_install_pkg jq
+	check_and_install_pkg jailkit
 	echo
 	echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 	echo "  Install Specialized Server Packages"

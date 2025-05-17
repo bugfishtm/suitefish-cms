@@ -2,7 +2,7 @@
 
 > 🚧 **This project is currently in development and should NOT be used in production.**  
 
-# Suitefish CMS
+# 🦈 Suitefish CMS
 
 ![Screenshot](./_images/_banner/suitefish-banner.jpg)
 
@@ -34,11 +34,19 @@ The software features a robust user and group management system, enabling admini
 
 Provides robust tools for uploading, organizing, and managing media assets efficiently, helping maintain an orderly and accessible file system within the platform.
 
+### 🏷️ Page Manager
+
+Create and manage custom frontend and backend pages with an function and control editor. Easily design layouts, add content, and control access permissions for each page, enabling secure and flexible site management for all user roles.
+
+### 🧱 Workflow Manager
+
+Suitefish-CMS e is a comprehensive platform designed to streamline every aspect of your web project. With powerful tools for CMS design, item processing, and overall site management, this suite empowers teams to efficiently build, organize, and maintain complex digital environments. Whether you are structuring content, managing user roles, or optimizing workflows, our all-in-one solution provides the flexibility and control needed for modern web operations.
+
 ### 🧩 Extendability
 
-The software includes a built-in store system that allows users to download and deploy modules directly within the platform. By default, end users access the integrated store (set to https://suitefish.com in the ruleset.cfg configuration file), but developers can configure the system to point to their own custom store for deploying proprietary or third-party extensions. Modules can be installed seamlessly through the website interface or manually by uploading .zip files, providing flexibility for both standard users and advanced developers.
+The software includes a built-in store system that allows users to download and deploy modules directly within the platform. By default, end users access the integrated store (set to https://suitefish.com by default or can be changed in the cfg_ruleset.php configuration file), but developers can configure the system to point to their own custom store for deploying proprietary or third-party extensions. Modules can be installed seamlessly through the website interface or manually by uploading .zip files, providing flexibility for both standard users and advanced developers.
 
-### 🌐 Multi-Language Support
+### 🏳️‍🌈 Multi-Language Support
 
 This project supports multiple languages, including German, English, Spanish, Italian, French, Japanese, Chinese, Russian, Hindi, Portuguese, Korean, and Turkish. You can add new languages or modify existing text on the website by overriding translations.
 
@@ -54,9 +62,25 @@ A dedicated Windows application is available at https://github.com/bugfishtm/sui
 
 The software offers centralized multi-site management and integrates with Bugfish Framework for bug tracking and debugging with CSS, JavaScript, and PHP support. It includes powerful debugging tools for error detection and performance testing. Users can switch themes and colors dynamically and load CSS/JS files on demand for better performance. The updater backend handles module updates, while dynamic code loading and cronjobs enable flexible scripting and task automation. Extensions can be added from custom or store sources. Deployment features manage Suitefish-CMS clusters and updates via a public store. Pre-designed templates simplify website design, and example modules provide useful references.
 
+## 🗒️ Requirements 
+
+Below are the requirements for both server (root-level) and website installation methods.
+
+### 🌍 Website Mode
+
+For website mode installation, the CMS runs as a standard website without requiring root-level access. This method is ideal for shared hosting or web hosting environments where you don’t manage the entire server. You can deploy the software on most web hosts without needing a dedicated VPS or root server, making it accessible and easy to set up. Website mode is perfect if you want a straightforward installation and management experience using default hosting features.
+
+For detailed server requirements and installation methods see the installation documentation at: [https://bugfishtm.github.io/suitefish-cms/mode_website.html](https://bugfishtm.github.io/suitefish-cms/mode_website.html).
+
+### 👑 Server Mode
+
+For root-level installation, you’ll set up the CMS as a server backend with full administrative control. This approach is ideal for managing the entire server, running background services, or using advanced features like Docker management. It requires a dedicated VPS or root server and unlocks system-level modules not available in standard installs. Choose this method if you need maximum flexibility and control over your server and CMS deployment.
+
+For detailed server requirements and installation methods see the installation documentation at: [https://bugfishtm.github.io/suitefish-cms/mode_server.html](https://bugfishtm.github.io/suitefish-cms/mode_server.html).
+
 ## 🛠️ Installation 
 
-You have different options to install the CMS Software, you can see detailed information at the installation documentation page at: [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html).
+You can see detailed information at the installation documentation page at: [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html).
 
 >Initial user account for the website after deployment:  
 username: admin@admin.local  
@@ -65,22 +89,25 @@ It is urgently advised to change this directly after deployment!
 
 ### 🐳 Docker
 
-This method installs the standard version of Suitefish-CMS, providing full website functionality. Please note that the Docker setup runs in a containerized environment, so it does not grant deep system or root-level access required for advanced system authority operations. This ensures a secure and isolated installation suitable for most web use cases. For Docker installation, visit: https://hub.docker.com/r/bugfishtm/suitefish.
+This method installs the standard version of Suitefish-CMS, providing full website functionality (website-mode). Please note that the Docker setup runs in a containerized environment, so it does not grant deep system or root-level access required for advanced system authority operations. This ensures a secure and isolated installation suitable for most web use cases. For Docker installation, visit: https://hub.docker.com/r/bugfishtm/suitefish.
 
 ### 📄 Script
 
-> This script is intended for use only on freshly installed servers and may corrupt running services or operations.
+This script is intended for use only on freshly installed servers (server-mode) and may corrupt running services or operations. In the github repository's `_scripts` folder, you'll find an installation script designed to install the full version with all features on a root/kvm server. This script is intended for users who wish to utilize our advanced hosting functionality on a fresh system. It is recommended only for advanced users with their own servers and infrastructure.
 
-In the github repository's `_scripts` folder, you'll find an installation script designed to install the full version with all features on a root server. This script is intended for users who wish to utilize our advanced hosting functionality on a fresh system. It is recommended only for advanced users with their own servers and infrastructure.
+Execute the following Commands and navigate through the installation shell process to install suitefish-cms on a fresh server with full root-level access.
 
-- Upload the suitefish.sh script to your fresh server.
-- Execute Command: `chmod u+x ./suitefish.sh`  
-- Execute Command: `sh ./suitefish.sh install`  
-- Navigate through the installation process.
+```bash
+curl -o ./suitefish.sh https://raw.githubusercontent.com/bugfishtm/suitefish-cms/refs/heads/main/_scripts/suitefish.sh
+chmod u+x ./suitefish.sh  
+sh ./suitefish.sh install
+```
 
 ### ✋ Manual
 
-Installing the CMS is straightforward, whether you choose root-level access mode or the default website mode. For detailed instructions on manual installation, please refer to the documentation located in the index.html file within the repository's docs folder, or visit https://bugfishtm.github.io/suitefish-cms/installation.html.
+Installing the CMS is straightforward, whether you choose root-level (server-mode) access mode or the default website mode. For detailed instructions on manual installation, please refer to the documentation located in the index.html file within the repository's docs folder, or visit https://bugfishtm.github.io/suitefish-cms/installation.html.
+
+You can install the CMS in two ways: Root-Level Installation gives you full server control and access to advanced features, but requires a dedicated VPS or root server. Website Mode runs the CMS as a standard website, making it easy to deploy on shared or managed hosting without root access. Choose the method that best fits your hosting environment and needs.
 
 ## 📖 Documentation
 
@@ -170,6 +197,7 @@ This table provides an overview of key files and folders related to the reposito
 | [CHANGELOG.md](CHANGELOG.md) | Information about changelogs. | 
 | [SECURITY.md](SECURITY.md) | How to handle security issues. |
 | [LICENSE.md](LICENSE.md) | License of this project. |
+| [MODULES.md](MODULES.md) | Reserved Module ID List. |
 
 ## 📑 Changelog Information
 
