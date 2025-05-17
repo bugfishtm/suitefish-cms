@@ -543,7 +543,7 @@
 			array_push($object["loadup"]["stack"], array("text" => "PHP Module Found: bcmath (debug)"));
 			hive___stackecho($object["loadup"]["stack"]);					
 		}						
-		if(!$object["debug"]->required_php_module("pdo_mysql", false)) {
+		/*if(!$object["debug"]->required_php_module("pdo_mysql", false)) {
 			array_push($object["loadup"]["stack"], array("text" => "PHP Module Not Found: pdo_mysql (debug)"));
 			hive___stackecho($object["loadup"]["stack"]);	
 			array_push($object["loadup"]["stack"], array("text" => "ERROR - Check graphical onscreen error."));
@@ -553,7 +553,7 @@
 		} else {
 			array_push($object["loadup"]["stack"], array("text" => "PHP Module Found: pdo_mysql (debug)"));
 			hive___stackecho($object["loadup"]["stack"]);					
-		}											
+		}*/										
 	
 	#################################################################################################################################################
 	// Start a session php [xxxx105]
@@ -756,6 +756,10 @@
 		array_push($object["loadup"]["stack"], array("text" => "------- Area for CMS Folder Creation [xxxx100]"));
 		hive___stackecho($object["loadup"]["stack"]);
 		hive__folder_create($object["path"]."/_template", true, true);
+		hive__folder_create($object["path"]."/_store", true, false);
+		hive__folder_create($object["path"]."/_store/software", true, false);
+		hive__folder_create($object["path"]."/_store/module", true, false);
+		hive__folder_create($object["path"]."/_store/cms", true, false);
 		hive__folder_create($object["path"]."/_data", true, false);
 		hive__folder_create($object["path"]."/_backup", true, true);
 		hive__folder_create($object["path"]."/_cache", true, false);
