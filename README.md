@@ -10,9 +10,11 @@
 
 You can see detailed information at the installation documentation page at: [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html).
 
-> ["CAUTION] It is urgently advised to change this directly after deployment!
+> [!CAUTION] 
+> It is urgently advised to change this directly after deployment!
 
-> [!NOTE] Initial user account for the website after deployment:  
+> [!NOTE] 
+> Initial user account for the website after deployment:  
 username: admin@admin.local  
 password: changeme  
 
