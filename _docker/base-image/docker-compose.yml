@@ -1,0 +1,12 @@
+services:
+  sf-base:
+    build: .
+    image: bugfishtm/sf-base:1.0
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      sf_db_pass:       "${sf_db_pass}"
+      sf_url:           "${sf_url}"
+      sf_timezone:      "${sf_timezone}"

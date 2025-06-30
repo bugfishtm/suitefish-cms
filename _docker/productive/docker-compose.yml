@@ -1,0 +1,30 @@
+services:
+  suitefish:
+    build: .
+    image: bugfishtm/suitefish:7.10.100
+    restart: always
+    volumes:
+      - sf-ssl:/opt/sf_ssl
+      - sf-mysql:/var/lib/mysql
+      - sf-backup:/var/www/html/_backup
+      - sf-cache:/var/www/html/_cache
+      - sf-data:/var/www/html/_data
+      - sf-image:/var/www/html/_image
+      - sf-store:/var/www/html/_store
+      - sf-template:/var/www/html/_template
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      sf_db_pass:       "${sf_db_pass}"
+      sf_url:           "${sf_url}"
+      sf_timezone:      "${sf_timezone}"
+volumes:
+  sf-mysql:
+  sf-ssl:
+  sf-backup:
+  sf-cache:
+  sf-data:
+  sf-image:
+  sf-store:
+  sf-template:
