@@ -1,10 +1,74 @@
+# Suitefish CMS
 
+![Screenshot](./_images/_banner/suitefish-banner.jpg)
 
+## 🚀 Introduction
 
+Suitefish-CMS is a powerful and versatile content management system designed to empower both end-users and developers alike. Whether you're a business owner looking to streamline your online presence or a developer seeking robust backend functionalities, Suitefish-CMS has you covered.
 
+You can extend the CMS Functionality by adding Modules or extensions out of the internal store or by uploading them manually if you obtained them at our store.
 
+![Screenshot](./_screenshots/cms_welcome.png)
 
+### 🛡️ Access Control
 
+The software features a robust user and group management system, enabling administrators to efficiently create, organize, and manage both users and user groups. With flexible permission controls, administrators can assign specific access rights to groups and individual users, ensuring secure and streamlined management of user privileges across the platform.
+
+### 💾 File Management
+
+Provides robust tools for uploading, organizing, and managing media assets efficiently, helping maintain an orderly and accessible file system within the platform.
+
+### 🏷️ Page Manager
+
+Create and manage custom frontend and backend pages with an function and control editor. Easily design layouts, add content, and control access permissions for each page, enabling secure and flexible site management for all user roles.
+
+### 🧱 Workflow Manager
+
+Suitefish-CMS e is a comprehensive platform designed to streamline every aspect of your web project. With powerful tools for CMS design, item processing, and overall site management, this suite empowers teams to efficiently build, organize, and maintain complex digital environments. Whether you are structuring content, managing user roles, or optimizing workflows, our all-in-one solution provides the flexibility and control needed for modern web operations.
+
+### 🧩 Extendability
+
+The software includes a built-in store system that allows users to download and deploy modules directly within the platform. By default, end users access the integrated store (set to https://suitefish.com by default or can be changed in the cfg_ruleset.php configuration file), but developers can configure the system to point to their own custom store for deploying proprietary or third-party extensions. Modules can be installed seamlessly through the website interface or manually by uploading .zip files, providing flexibility for both standard users and advanced developers.
+
+### 🏳️‍🌈 Multi-Language Support
+
+This project supports multiple languages, including German, English, Spanish, Italian, French, Japanese, Chinese, Russian, Hindi, Portuguese, Korean, and Turkish. You can add new languages or modify existing text on the website by overriding translations.
+
+### 🔔 Notification System
+
+Delivers timely system notifications about important events and changes, keeping administrators informed and enabling quick responses to critical updates or issues.
+
+### 🖥️ Installer 
+
+Simplifies the entire installation process with a clear, intuitive graphical user interface (GUI), making setup fast and accessible even for users with minimal technical experience.
+
+### 🔄 Updater
+
+Offers a GUI-based updater tool designed for effortless maintenance of the CMS, ensuring modules and core components stay up to date with minimal user intervention.
+
+### 🪟 Windows Software
+
+A dedicated Windows application is available at https://github.com/bugfishtm/suitefish-windows, enabling seamless use of the CMS store for software deployment and offering additional management features tailored for Windows environments.
+
+### 🐛 Developer Features
+
+The software offers centralized multi-site management and integrates with Bugfish Framework for bug tracking and debugging with CSS, JavaScript, and PHP support. It includes powerful debugging tools for error detection and performance testing. Users can switch themes and colors dynamically and load CSS/JS files on demand for better performance. The updater backend handles module updates, while dynamic code loading and cronjobs enable flexible scripting and task automation. Extensions can be added from custom or store sources. Deployment features manage Suitefish-CMS clusters and updates via a public store. Pre-designed templates simplify website design, and example modules provide useful references.
+
+## 🗒️ Requirements 
+
+Below are the requirements for both server (root-level) and website installation methods.
+
+### 🌍 Website Mode
+
+For website mode installation, the CMS runs as a standard website without requiring root-level access. This method is ideal for shared hosting or web hosting environments where you don’t manage the entire server. You can deploy the software on most web hosts without needing a dedicated VPS or root server, making it accessible and easy to set up. Website mode is perfect if you want a straightforward installation and management experience using default hosting features.
+
+For detailed server requirements and installation methods see the installation documentation at: [https://bugfishtm.github.io/suitefish-cms/mode_website.html](https://bugfishtm.github.io/suitefish-cms/mode_website.html).
+
+### 👑 Server Mode
+
+For root-level installation, you’ll set up the CMS as a server backend with full administrative control. This approach is ideal for managing the entire server, running background services, or using advanced features like Docker management. It requires a dedicated VPS or root server and unlocks system-level modules not available in standard installs. Choose this method if you need maximum flexibility and control over your server and CMS deployment.
+
+For detailed server requirements and installation methods see the installation documentation at: [https://bugfishtm.github.io/suitefish-cms/mode_server.html](https://bugfishtm.github.io/suitefish-cms/mode_server.html).
 
 ## 🛠️ Installation 
 
