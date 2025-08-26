@@ -4,9 +4,12 @@ You can see detailed information at the installation documentation page at: [htt
 
 You can install the CMS in two ways: Root-Level Installation (Server-Mode) gives you full server control and access to advanced features, but requires a dedicated VPS or root server. Website Mode runs the CMS as a standard website, making it easy to deploy on shared or managed hosting without root access. Choose the method that best fits your hosting environment and needs.
  
-> Initial user account for the website after installation:  
-🧍 **username:** admin@admin.local  
-🔑 **password:** changeme  
+ The initial user account created for the website during installation serves as the primary administrator. This account has full access to configure and manage the system. It is important to secure this account by updating its credentials promptly after installation to protect the site from unauthorized access. 
+ 
+🧍 **Initial username:** admin@admin.local  
+🔑 **Initial password:** changeme  
+
+Consider setting up additional user accounts with appropriate roles and permissions to ensure proper administration and security management going forward.
 
 ### ✋ Manual
 
