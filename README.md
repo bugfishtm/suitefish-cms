@@ -3,27 +3,26 @@
 You can see detailed information at the installation documentation page at: [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html).
 
 You can install the CMS in two ways: Root-Level Installation (Server-Mode) gives you full server control and access to advanced features, but requires a dedicated VPS or root server. Website Mode runs the CMS as a standard website, making it easy to deploy on shared or managed hosting without root access. Choose the method that best fits your hosting environment and needs.
-
-> [!NOTE] 
+ 
 > Initial user account for the website after installation:  
-**username:** admin@admin.local  
-**password:** changeme  
+🧍 **username:** admin@admin.local  
+🔑 **password:** changeme  
 
 ### ✋ Manual
 
-> ⚠️ It is highly recommended to change the superuser password immediately after installation to ensure system security.
+> ⚠️ It is highly recommended to change the superuser password immediately after installation.
 
 Installing the CMS is straightforward, whether you choose root-level (server-mode) access mode or the default website mode. For detailed instructions on manual installation, please refer to the documentation located in the index.html file within the repository's docs folder, or visit https://bugfishtm.github.io/suitefish-cms/installation.html.
 
 ### 🐳 Docker
 
-> ⚠️ It is highly recommended to change the superuser password immediately after installation to ensure system security.
+> ⚠️ It is highly recommended to change the superuser password immediately after installation.
 
 This method installs the standard version of Suitefish-CMS, providing full website functionality (website-mode). Please note that the Docker setup runs in a containerized environment, so it does not grant deep system or root-level access required for advanced system authority operations. This ensures a secure and isolated installation suitable for most web use cases. For Docker installation, visit: https://hub.docker.com/r/bugfishtm/suitefish.
 
 ### 📄 Script
 
-> ⚠️ It is highly recommended to change the superuser password immediately after installation to ensure system security.
+> ⚠️ It is highly recommended to change the superuser password immediately after installation.
 
 This script is intended for use only on freshly installed servers. In the github repository's `_scripts` folder, you'll find an installation script designed to install the full version with all features on a dedicated server.  Execute the following Commands and navigate through the installation shell process to install suitefish-cms on a fresh server with full root-level access in server-mode.
 
