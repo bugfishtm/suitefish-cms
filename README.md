@@ -1,6 +1,6 @@
 # Suitefish - CMS
 
-![Screenshot](./_images/_banner/suitefish-banner.jpg)
+![Screenshot](./_images/_banner/suitefish.jpg)
 
 ---
 

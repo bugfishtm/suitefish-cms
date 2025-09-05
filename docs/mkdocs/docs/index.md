@@ -16,7 +16,7 @@ This project is powered by Suitefish CMS under GPLv3 License.
 
 ## Get started!
 
-You can install the CMS in two ways: Root-Level Installation (Server-Mode) gives you full server control and access to advanced features, but requires a dedicated VPS or root server. Website Mode runs the CMS as a standard website, making it easy to deploy on shared or managed hosting without root access. Choose the method that best fits your hosting environment and needs.
+Begin by selecting the installation method that best fits your needs. Whether you prefer a quick setup or a more customized approach, the available options will guide you through the process and help you get up and running smoothly.
 
 <div class="product-grid">
   <div class="product-card" onclick="window.location.href='./installation_docker.html';">
