@@ -1,3 +1,87 @@
+# Suitefish - CMS
+
+![Screenshot](./_images/_banner/suitefish-banner.jpg)
+
+---
+
+## 🚀 Introduction
+
+Suitefish-CMS is a powerful and versatile content management system designed to empower both end-users and developers alike. Whether you're a business owner looking to streamline your online presence or a developer seeking robust backend functionalities, Suitefish-CMS has you covered.
+
+You can extend the CMS Functionality by adding Modules or extensions out of the internal store or by uploading them manually if you obtained them at our store. Visit the official suitefish-cms website/store for more information at: [https://suitefish.com](https://suitefish.com).
+
+Get started by visiting our installation page at [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html)!
+
+---
+
+## 🔥 Features
+
+Delivers the essential tools to effectively manage your site’s content, structure, and user roles—streamlined for simplicity, without unnecessary complexity. For a broad overview of its capabilities, refer to the feature list below.
+
+### 🛡️ Access Control
+
+The software features a robust user and group management system, enabling administrators to efficiently create, organize, and manage both users and user groups. With flexible permission controls, administrators can assign specific access rights to groups and individual users, ensuring secure and streamlined management of user privileges across the platform.
+
+### 💾 File Management
+
+Provides comprehensive tools for uploading, organizing, and managing media assets efficiently within the platform. This ensures an orderly, accessible, and well-structured file system, enabling users to quickly find, categorize, and maintain digital content. With support for metadata tagging, folder organization, and advanced search capabilities, the system helps streamline media workflows and improves overall asset management productivity.
+
+### 🏷️ Page Manager
+
+Create and manage custom frontend and backend pages with an function and control editor. Easily design layouts, add content, and control access permissions for each page, enabling secure and flexible site management for all user roles.
+
+### 🔧 Objects and Workflows
+
+A lightweight PHP tool that manages object creation, dependencies, and lifecycle, streamlining the development of modular, maintainable applications. It provides robust features for CMS design, item processing, and site management, enabling teams to efficiently organize and maintain complex digital environments with flexibility and control.
+
+### 🧩 Extendability
+
+The software includes a built-in store system that allows users to download and deploy modules directly from within the platform. These modules can significantly alter and customize the entire CMS environment, offering powerful flexibility. By default, end users access the integrated store, but developers have the option to configure the system to connect to their own custom stores for deploying proprietary or third-party extensions. Modules can be installed seamlessly via the website interface or manually by uploading .zip files, providing convenience for standard users and flexibility for advanced developers alike.
+
+### 🤖 AI Integration
+
+Suitefish supports integration with various API endpoints, including OpenAI, allowing seamless interaction with AI models embedded within your projects. The platform includes a comprehensive system for creating AI Agents, which can be assigned to users or managed directly by users themselves for personalized AI-driven chats and interactions. Additionally, Suitefish offers support for Vision AI and image generation, enabling advanced multimedia capabilities within your applications.
+
+### 🏳️‍🌈 Multi-Language Support
+
+This project supports multiple languages, including German, English, Spanish, Italian, French, Japanese, Chinese, Russian, Hindi, Portuguese, Korean, and Turkish. You can add new languages or modify existing text on the website by overriding translations.
+
+### 🖥️ Integrated Installer 
+
+The installation process is simplified through a clear and intuitive graphical user interface (GUI), making setup quick and accessible for users with minimal technical experience. Additionally, advanced users can choose from alternative installation methods such as Docker containers or automated scripts, providing flexible deployment options to suit different environments and preferences.
+
+### 🔄 Integrated Updater
+
+The software offers a user-friendly GUI-based updater tool that simplifies CMS maintenance by ensuring core components, extension modules, and site modules remain current with minimal user effort. It also supports seamless database updates through integrated update scripts that apply changes progressively based on build numbers, providing a comprehensive and automated system update experience.
+
+### 🪟 Windows Software
+
+The Suitefish Windows application (https://github.com/bugfishtm/suitefish-windows) enables seamless software updating and deployment through the Suitefish web CMS. It allows users to manage, download, and deploy software directly from the Suitefish store within a Windows environment, providing convenient desktop integration and extended management capabilities tailored specifically for Windows users.
+
+### 🐛 Developer Friendly
+
+The software offers centralized multi-site management and integrates with Bugfish Framework for bug tracking and debugging with CSS, JavaScript, and PHP support. It includes powerful debugging tools for error detection and performance testing. 
+
+---
+
+## 🗒️ Requirements 
+
+Below are the requirements for both server (root-level) and website installation methods.
+
+### ⚙️ Website Mode
+
+Website mode runs Suitefish as a standard site without needing root access, ideal for shared or typical web hosting. It’s easy to deploy on most hosts, offering a simple installation and management experience using default hosting features.
+
+For detailed server requirements and installation methods see the installation documentation at: [https://bugfishtm.github.io/suitefish-cms/mode_website.html](https://bugfishtm.github.io/suitefish-cms/mode_website.html).
+
+### ⚙️ Server Mode
+
+Root-level installation sets up the CMS as a server backend with full control, ideal for managing servers and running advanced services. This requires a dedicated root or virtual server and unlocks system-level features for deeper integration.
+
+For detailed server requirements and installation methods see the installation documentation at: [https://bugfishtm.github.io/suitefish-cms/mode_server.html](https://bugfishtm.github.io/suitefish-cms/mode_server.html).
+
+---
+
 ## 🛠️ Installation 
 
 You can see detailed information at the installation documentation page at: [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html).
@@ -15,7 +99,7 @@ Consider setting up additional user accounts with appropriate roles and permissi
 
 > ⚠️ It is highly recommended to change the superuser password immediately after installation.
 
-Installing the CMS is straightforward, whether you choose root-level (server-mode) access mode or the default website mode. For detailed instructions on manual installation, please refer to the documentation located in the index.html file within the repository's docs folder, or visit https://bugfishtm.github.io/suitefish-cms/installation.html.
+Installing the CMS is straightforward, whether you choose root-level (server-mode) access mode or the default website mode. For detailed instructions on manual installation, please refer to the documentation located in the index.html file within the repository's docs folder, or visit https://bugfishtm.github.io/suitefish-cms/installation_manual.html.
 
 ### 🐳 Docker
 
@@ -36,6 +120,8 @@ sh ./installer.sh install
 ```
 
 This script is intended for users who wish to utilize advanced functionality on a fresh system.
+
+---
 
 ## 📖 Documentation
 
@@ -67,6 +153,8 @@ Relevant docker repositories related to suitefish-cms.
 |----------------|----------------------------|--------|
 | Suitefish Docker Base Image | [https://hub.docker.com/r/bugfishtm/sf-base](https://hub.docker.com/r/bugfishtm/sf-base)| Developers |
 | Suitefish Docker Image  | [https://hub.docker.com/r/bugfishtm/suitefish](https://hub.docker.com/r/bugfishtm/suitefish) | Users |
+
+---
 
 ## 📁 Repository Structure 
 
@@ -100,6 +188,20 @@ This table provides an overview of key files and folders related to the reposito
 | [LICENSE.md](LICENSE.md) | Suitefish license file. |
 | [README.md](README.md) | Suitefish readme file. |
 
+---
+
+## 🏷️ Versioning Codenames
+
+The software adopts various codenames to indicate the release type and its intended use. You can identify the codename corresponding to your installed version by checking the `_core/version.php` file in your source code. The following table details each codename and its specific purpose.
+
+| Codename | Version        | Purpose                           |
+|----------|---------------|-----------------------------------|
+| Weasel   | >7.10         | Alpha releases for early testing.  |
+| Rat      | 7.10/7.10.100 | Beta releases for feature preview. |
+| Onyx     | 7.10/7.10.100 | Stable production releases.        |
+
+---
+
 ## 💬 Support Channels
 
 If you encounter any issues or have questions while using this software, feel free to contact us:
@@ -107,6 +209,8 @@ If you encounter any issues or have questions while using this software, feel fr
 - **GitHub Issues** is the main platform for reporting bugs, asking questions, or submitting feature requests: [https://github.com/bugfishtm/suitefish-cms/issues](https://github.com/bugfishtm/suitefish-cms/issues)
 - **Discord Community** is available for live discussions, support, and connecting with other users: [Join us on Discord](https://discord.com/invite/xCj7AEMmye)  
 - **Email support** is recommended only for urgent security-related issues: [security@bugfish.eu](mailto:security@bugfish.eu)
+
+---
 
 ## 📢 Spread the Word
 
@@ -117,13 +221,19 @@ Help us grow by sharing this project with others! You can:
 * **Share on Reddit** – Talk about it in relevant subreddits like [r/programming](https://www.reddit.com/r/programming/) or [r/opensource](https://www.reddit.com/r/opensource/).  
 * **Tell Your Community** – Spread the word in Discord servers, Slack groups, and forums.  
 
+---
+
 ## 🦈 Powered by Suitefish
 
 This project has been created with [Suitefish-CMS](https://github.com/bugfishtm/suitefish-cms). The Backend consists of a various set of Suitefish functionalities and the full included [Bugfish-Framework](https://github.com/bugfishtm/bugfish-framework).
 
+---
+
 ## 📑 Changelog Information
 
 Refer to the _changelogs folder for detailed HTML changelogs tracking updates across versions. These changelogs are also included in GitHub Releases for easy access.
+
+---
 
 ## 🌱 Contributing to the Project
 
@@ -155,6 +265,8 @@ To ensure your implementation is effective and maintainable by other developers,
 
 If you encounter a bug or have an enhancement suggestion, please check the "Issues" section of our GitHub repository or visit our official website for guidance before beginning any work on it.
 
+---
+
 ## 🤝 Community Guidelines
 
 We’re focused on developing innovative solutions and advancing technology. By being part of this, you contribute to our progress.
@@ -164,6 +276,8 @@ Positive guidelines include being kind, empathetic, and respectful in all intera
 Unacceptable behaviors include harassment, hate speech, or offensive language. Personal attacks, discrimination, or any form of bullying are not tolerated. Sharing private or sensitive information without explicit consent is strictly prohibited.
 
 Together, we can partner to achieve common goals by following guidelines designed to promote effective collaboration and positive teamwork.
+
+---
 
 ## 🛡️ Security Policy
 
@@ -175,6 +289,9 @@ I take security seriously and appreciate responsible disclosure. If you discover
 I aim to acknowledge reports within **2–4 weeks** and will update you on our progress once the issue is verified and addressed.
 
 This software is provided as-is, without any guarantees of security, reliability, or fitness for any particular purpose. We do not take responsibility for any damage, data loss, security breaches, or other issues that may arise from using this software. By using this software, you agree that We are not liable for any direct, indirect, incidental, or consequential damages. Use it at your own risk.
+
+
+---
 
 ## 📜 License Information
 
@@ -261,7 +378,7 @@ Below is a table listing the integrated libraries used in suitefish-cms, located
 | leafletjs | Berkeley Software Distribution 2-Clause (BSD-2-Clause) | 
 | magicsuggest | Massachusetts Institute of Technology License (MIT) | 
 | marked | Massachusetts Institute of Technology License (MIT) | 
-| markdown | Berkeley Software Distribution 3-Clause (BSD-3-Clause) |
+|  | Markdown itself has: Berkeley Software Distribution 3-Clause (BSD-3-Clause) |
 | material-design-iconic-font | Apache License 2.0 | 
 | materialize-css | Massachusetts Institute of Technology License (MIT) | 
 | mdi | Apache License 2.0 | 
@@ -285,6 +402,7 @@ Below is a table listing the integrated libraries used in suitefish-cms, located
 | raphael | Massachusetts Institute of Technology License (MIT) | 
 | remix-icons | Apache License 2.0 |
 | resumable | Massachusetts Institute of Technology License (MIT) | 
+| sabredav | Berkeley Software Distribution 3-Clause (BSD-3-Clause) | 
 | sass | Massachusetts Institute of Technology License (MIT) | 
 | select2 | Massachusetts Institute of Technology License (MIT) | 
 | showdown | Massachusetts Institute of Technology License (MIT) | 
