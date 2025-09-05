@@ -1,7 +1,5 @@
 # Suitefish - CMS
 
-![Screenshot](./_images/_banner/suitefish.jpg)
-
 ---
 
 ## 🚀 Introduction
@@ -11,6 +9,8 @@ Suitefish-CMS is a powerful and versatile content management system designed to 
 You can extend the CMS Functionality by adding Modules or extensions out of the internal store or by uploading them manually if you obtained them at our store. Visit the official suitefish-cms website/store for more information at: [https://suitefish.com](https://suitefish.com).
 
 Get started by visiting our installation page at [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html)!
+
+![Screenshot](./_images/_banner/suitefish.jpg)
 
 ---
 

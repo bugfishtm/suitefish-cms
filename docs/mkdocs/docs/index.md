@@ -5,6 +5,15 @@ Suitefish-CMS: Powering Your Content, Your Way.
 
 -----------
 
+## Introduction
+
+Suitefish-CMS is a powerful and versatile content management system designed to empower both end-users and developers alike. Whether you're a business owner looking to streamline your online presence or a developer seeking robust backend functionalities, Suitefish-CMS has you covered.
+
+You can extend the CMS Functionality by adding Modules or extensions out of the internal store or by uploading them manually if you obtained them at our store. Visit the official suitefish-cms website/store for more information at: [https://suitefish.com](https://suitefish.com).
+
+Get started by visiting our installation page at [https://bugfishtm.github.io/suitefish-cms/installation.html](https://bugfishtm.github.io/suitefish-cms/installation.html)!
+
+---
 
 This project is powered by Suitefish CMS under GPLv3 License.
 
