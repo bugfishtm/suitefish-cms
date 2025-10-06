@@ -1,0 +1,19 @@
+############################################################################################################
+# This Compose File will be substituted before deployment!
+# See the example docker modules readme.md for more information about substitutions.
+############################################################################################################
+services:
+  dummy:
+    build: .
+    image: bugfishtm/dummy:latest
+    restart: unless-stopped
+    environment:
+      var_string_example: "${var_string_example}"
+      var_numeric_example: "${var_numeric_example}"
+      var_port_example: "${var_port_example}"
+      var_select_example: "${var_select_example}"
+      var_checkbox_example_1: "${var_checkbox_example_1}"
+      var_checkbox_example_2: "${var_checkbox_example_2}"
+      var_checkbox_example_3: "${var_checkbox_example_3}"
+    ports:
+      - '${var_port_example}:80'

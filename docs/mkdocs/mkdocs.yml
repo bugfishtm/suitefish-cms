@@ -1,0 +1,89 @@
+site_name: Suitefish CMS
+repo_url: https://github.com/bugfishtm/suitefish-cms
+repo_name: suitefish-cms
+
+nav:
+    - Introduction: index.md
+    - Screenshots: screenshots.md
+    - Tutorials: tutorials.md
+    - Download: download.md
+    - Requirements: 
+        - Requirements: ./mode.md
+        - Website Mode: ./mode_website.md
+        - Server Mode: ./mode_server.md 
+    - Installation: 
+        - Installation: ./installation.md
+        - Install via Docker: ./installation_docker.md
+        - Install via Script: ./installation_script.md
+        - Manual Installation: ./installation_manual.md       
+    - Backend:
+        - Backend: ./core.md
+        - Initialization: ./core_init.md
+        - Framework: ./core_framework.md
+        - Function Library: ./core_functions.md
+        - Folder Structure: ./core_folders.md
+        - MySQL Tables: ./core_mysql.md
+        - API Routing: ./core_api.md
+        - Cronjob Management: ./core_cron.md
+        - Background Daemon: ./core_daemon.md
+        - Third Party Libraries: ./core_thirdparty.md
+        - Error Codes: ./core_error_codes.md
+    - Development:
+        - Development: ./mod.md
+        - Site Modules: ./mod_site.md
+        - Extension Modules: ./mod_extension.md
+        - Image Modules: ./mod_image.md
+        - Theme Modules: ./mod_theme.md
+        - Docker Modules: ./mod_docker.md
+        - Software Modules: ./mod_software.md
+    - Contributing: contributing.md
+    - Warranty: warranty.md
+    - Support: support.md
+    - License: license.md
+    - Impressum: https://bugfishtm.blogspot.com/2023/05/impressum.html
+    - Privacy: https://bugfishtm.blogspot.com/2023/05/privacy.html
+
+theme:
+  name: material
+  logo: ./logo.png
+  favicon: ./favicon.ico
+  primary: deep orange
+  language: 'en'
+  accent: deep orange
+  font: false
+  features:
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+
+extra_css:
+  - inner_css/extra.css
+  - inner_css/neoteroi-mkdocs.css
+
+extra_javascript:
+  - inner_js/extra.js
+
+plugins:
+    - mkdocstrings
+    - search
+    - mkdocs-video
+    - glightbox
+    
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  
+use_directory_urls: false
+
+extra:
+  meta:
+    author: "Jan-Maurice Dahlmanns"
